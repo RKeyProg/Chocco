@@ -1,0 +1,97 @@
+$circle-color: #f2f5f4;
+$decor-width: 21px;
+$icon-width: 125px;
+
+.why {
+    padding: 110px 0;
+    position: relative;
+    color: #000;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        width: 284px;
+        text-align: center;
+
+        &-decor {
+            position: relative;
+            width: $decor-width;
+            height: $decor-width;
+            border-radius: 50%;
+            background-color: $circle-color;
+            margin-top: $icon-width/2;
+            transform: translateY(-50%);
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 50%;
+                width: 13px;
+                height: 13px;
+                background-color: $circle-color;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                right: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 50%;
+                border-radius: 50%;
+                width: 13px;
+                height: 13px;
+                background-color: $circle-color;
+            }
+        }
+    }
+
+    &__icon {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $icon-width;
+        height: $icon-width;
+        border-radius: 50%;
+        background-color: $circle-color;
+        margin-bottom: 30px;
+
+        &-img {
+            width: 56%;
+            max-height: 56%;
+        }
+    }  
+    
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__paragraph {
+        line-height: 1.3em;
+    }
+
+    &__sheet {
+        width: 190px;
+        max-height: 315px;
+        position: absolute;
+        left: 0;
+        bottom: 150px;
+    }
+
+    &__cake {
+        width: 190px;
+        max-height: 230px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}

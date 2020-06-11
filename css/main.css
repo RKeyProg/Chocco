@@ -95,8 +95,6 @@
 .sitetitle {
   width: 350px; }
   .sitetitle__title {
-    text-transform: uppercase;
-    font-size: 48px;
     line-height: 1.2em;
     margin-bottom: 25px; }
   .sitetitle__subtitle {
@@ -157,5 +155,89 @@
       background-color: #fff; }
     .pagenator__link_active {
       border: 1px solid #fff; }
+
+.why {
+  padding: 110px 0;
+  position: relative;
+  color: #000; }
+  .why__list {
+    display: flex;
+    justify-content: space-between; }
+  .why__item {
+    width: 284px;
+    text-align: center; }
+    .why__item-decor {
+      position: relative;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background-color: #f2f5f4;
+      margin-top: 62.5px;
+      transform: translateY(-50%); }
+      .why__item-decor::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        width: 13px;
+        height: 13px;
+        background-color: #f2f5f4; }
+      .why__item-decor::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        border-radius: 50%;
+        width: 13px;
+        height: 13px;
+        background-color: #f2f5f4; }
+  .why__icon {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background-color: #f2f5f4;
+    margin-bottom: 30px; }
+    .why__icon-img {
+      width: 56%;
+      max-height: 56%; }
+  .why__title {
+    margin-bottom: 25px; }
+  .why__paragraph {
+    line-height: 1.3em; }
+  .why__sheet {
+    width: 190px;
+    max-height: 315px;
+    position: absolute;
+    left: 0;
+    bottom: 150px; }
+  .why__cake {
+    width: 190px;
+    max-height: 230px;
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+
+.section__header {
+  margin-bottom: 50px; }
+
+.section__title {
+  text-align: center; }
+
+.section__subtitle {
+  color: #666;
+  width: 420px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.3em; }
 
 /*# sourceMappingURL=main.css.map */

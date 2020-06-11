@@ -1,0 +1,16 @@
+.sitetitle {
+    width: 350px;
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 48px;
+        line-height: 1.2em;
+        margin-bottom: 25px;
+    }
+
+    &__subtitle {
+        font-size: 21px;
+        margin-top: 25px;
+        margin-bottom: 30px;
+    }
+}

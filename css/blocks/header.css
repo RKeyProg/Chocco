@@ -1,0 +1,13 @@
+.header {
+  padding-top: 24px;
+  margin-bottom: 109px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 5; }
+  .header__logo {
+    width: 53px;
+    max-height: 40px; }
+
+/*# sourceMappingURL=header.css.map */

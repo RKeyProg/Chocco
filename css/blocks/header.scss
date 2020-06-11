@@ -1,0 +1,14 @@
+.header {
+    padding-top: 24px;
+    margin-bottom: 109px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+
+    &__logo {
+        width: 53px;
+        max-height: 40px;
+    }    
+}

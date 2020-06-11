@@ -1,0 +1,161 @@
+@import url(layout/reset.css);
+@import url(layout/normalize.css);
+@import url(layout/base.css);
+.header {
+  padding-top: 24px;
+  margin-bottom: 109px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 5; }
+  .header__logo {
+    width: 53px;
+    max-height: 40px; }
+
+.hero {
+  background-color: #86c3d7;
+  padding-bottom: 45px;
+  position: relative; }
+  .hero__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 68px; }
+  .hero__palm {
+    max-width: 540px;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden; }
+  .hero__chocolate {
+    max-width: 500px;
+    max-height: 520px;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    z-index: 2; }
+  .hero__firstsheet {
+    max-width: 240px;
+    max-height: 210px;
+    position: absolute;
+    z-index: 3;
+    right: -30px;
+    bottom: 90px; }
+  .hero__secondsheet {
+    max-width: 150px;
+    max-height: 110px;
+    position: absolute;
+    z-index: 3;
+    right: 240px;
+    bottom: -75px; }
+  .hero__thirdsheet {
+    max-width: 60px;
+    max-height: 110px;
+    position: absolute;
+    z-index: 3;
+    left: -60px;
+    bottom: -95px; }
+  .hero__berries {
+    max-width: 230px;
+    max-height: 150px;
+    position: absolute;
+    z-index: 3;
+    right: 210px;
+    bottom: 50px; }
+  .hero__blackberry {
+    max-width: 110px;
+    max-height: 110px;
+    position: absolute;
+    right: 50px;
+    bottom: -90px; }
+
+.menu__list {
+  display: flex; }
+.menu__item {
+  margin-right: 28px; }
+  .menu__item:last-child {
+    margin-right: 0; }
+
+.contacts {
+  display: flex;
+  align-items: center;
+  font-style: normal; }
+  .contacts:hover {
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); }
+  .contacts__icon {
+    width: 12px;
+    margin-right: 6px; }
+  .contacts__phone {
+    font-size: 24px; }
+
+.sitetitle {
+  width: 350px; }
+  .sitetitle__title {
+    text-transform: uppercase;
+    font-size: 48px;
+    line-height: 1.2em;
+    margin-bottom: 25px; }
+  .sitetitle__subtitle {
+    font-size: 21px;
+    margin-top: 25px;
+    margin-bottom: 30px; }
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  border-radius: 60px;
+  background-color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #365a49; }
+  .btn:hover {
+    color: #fff;
+    background-color: #2e4e3f; }
+
+.dignitieslist {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 480px; }
+  .dignitieslist__icon {
+    width: 45px;
+    margin-right: 10px; }
+  .dignitieslist__item {
+    display: flex;
+    align-items: flex-start; }
+  .dignitieslist__text {
+    font-size: 16px;
+    width: 85px;
+    line-height: 1.2em; }
+
+.pagenator {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 5; }
+  .pagenator__item {
+    margin-bottom: 5px; }
+  .pagenator__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid transparent; }
+    .pagenator__link::after {
+      content: '';
+      display: block;
+      border-radius: 50%;
+      width: 6px;
+      height: 6px;
+      background-color: #fff; }
+    .pagenator__link_active {
+      border: 1px solid #fff; }
+
+/*# sourceMappingURL=main.css.map */

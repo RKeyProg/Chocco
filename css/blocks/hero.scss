@@ -1,0 +1,76 @@
+.hero {
+    background-color: #86c3d7;
+    padding-bottom: 45px;
+    position: relative;
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 68px;
+    }
+
+    &__palm {
+        max-width: 540px;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    &__chocolate {
+        max-width: 500px;
+        max-height: 520px;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        z-index: 2;
+    }
+
+    &__firstsheet {
+        max-width: 240px;
+        max-height: 210px;
+        position: absolute;
+        z-index: 3;
+        right: -30px;
+        bottom: 90px;
+    }
+
+    &__secondsheet {
+        max-width: 150px;
+        max-height: 110px;
+        position: absolute;
+        z-index: 3;
+        right: 240px;
+        bottom: -75px;
+    }
+
+    &__thirdsheet {
+        max-width: 60px;
+        max-height: 110px;
+        position: absolute;
+        z-index: 3;
+        left: -60px;
+        bottom: -95px;
+    }
+
+    &__berries {
+        max-width: 230px;
+        max-height: 150px;
+        position: absolute;
+        z-index: 3;
+        right: 210px;
+        bottom: 50px;
+    }
+
+    &__blackberry {
+        max-width: 110px;
+        max-height: 110px;
+        position: absolute;
+        right: 50px;
+        bottom: -90px;
+    }
+}

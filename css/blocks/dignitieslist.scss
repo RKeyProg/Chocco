@@ -1,0 +1,22 @@
+.dignitieslist {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 480px;
+
+    &__icon {
+        width: 45px;
+        margin-right: 10px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__text {
+        font-size: 16px;
+        width: 85px;
+        line-height: 1.2em;
+    }
+}

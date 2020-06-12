@@ -338,7 +338,7 @@
 .orders {
   padding: 85px 0 92px;
   position: relative;
-  background: url("../../img/berriesBG.jpg") center top/cover; }
+  background: url("./../../img/berriesBG.jpg") center top/cover; }
   .orders__sheet {
     width: 138px;
     max-height: 190px;

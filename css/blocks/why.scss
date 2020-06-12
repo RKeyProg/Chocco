@@ -3,7 +3,7 @@ $decor-width: 21px;
 $icon-width: 125px;
 
 .why {
-    padding: 110px 0;
+    padding: 105px 0;
     position: relative;
     color: #000;
 
@@ -72,11 +72,7 @@ $icon-width: 125px;
     }  
     
     &__title {
-        margin-bottom: 25px;
-    }
-
-    &__paragraph {
-        line-height: 1.3em;
+        margin-bottom: 18px;
     }
 
     &__sheet {
@@ -84,14 +80,14 @@ $icon-width: 125px;
         max-height: 315px;
         position: absolute;
         left: 0;
-        bottom: 150px;
+        bottom: 140px;
     }
 
     &__cake {
-        width: 190px;
+        width: 161px;
         max-height: 230px;
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: -31px;
     }
 }

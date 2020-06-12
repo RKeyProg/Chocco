@@ -132,7 +132,7 @@
                 <li class="why__item-decor"></li>
                 <li class="why__item">
                     <div class="why__icon">
-                        <img src="img/icons/2.svg" alt="smile" class="why__icon-img">
+                        <img src="img/icons/3.svg" alt="smile" class="why__icon-img">
                     </div>
                     <div class="why__text">
                         <h4 class="h4 why__title">Вкусно</h4>
@@ -142,7 +142,7 @@
                 <li class="why__item-decor"></li>
                 <li class="why__item">
                     <div class="why__icon">
-                        <img src="img/icons/3.svg" alt="power" class="why__icon-img">
+                        <img src="img/icons/2.svg" alt="power" class="why__icon-img">
                     </div>
                     <div class="why__text">
                         <h4 class="h4 why__title">Питательно</h4>
@@ -168,7 +168,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="section__header">
+            <div class="section__header reviews__header">
                 <h2 class="h2 section__title">отзывы</h2>
             </div>
             <div class="review">
@@ -198,6 +198,88 @@
                     <img src="img/thirdperson.jpg" alt="man" class="person__item-img">
                 </li>
             </ul>
+        </div>
+    </section>
+
+    <!-- Orders -->
+
+    <section class="orders">
+        <div class="orders__decor">
+            <div class="orders__sheet">
+                <img src="img/sheet6.png" alt="sheet" class="orders__sheet-img">
+            </div>
+            <div class="orders__blueberries">
+                <img src="img/blueberries2.png" alt="blueberries" class="orders__blueberries-img">
+            </div>
+        </div>
+        <div class="container">
+            <div class="section__header">
+                <h2 class="h2 section__title section__title_color_green">Закажите доставку</h2>
+            </div>
+            <form action="" class="form">
+                <div class="form__column">
+                    <div class="form__string">
+                        <label class="form__label form__label_size_half">
+                            <div class="form__inputname">Имя</div>
+                            <input type="text" class="form__input">
+                        </label>
+                        <label class="form__label form__label_size_half">
+                            <div class="form__inputname">Телефон</div>
+                            <input type="tel" class="form__input">
+                        </label>
+                    </div>
+                    <div class="form__string">
+                        <label class="form__label">
+                            <div class="form__inputname">Улица</div>
+                            <input type="text" class="form__input">
+                        </label>
+                    </div>
+                    <div class="form__string">
+                        <label class="form__label form__label_size_quarter">
+                            <div class="form__inputname">Дом</div>
+                            <input type="text" class="form__input">
+                        </label>
+                        <label class="form__label form__label_size_quarter">
+                            <div class="form__inputname">Корпус</div>
+                            <input type="text" class="form__input">
+                        </label>
+                        <label class="form__label form__label_size_quarter">
+                            <div class="form__inputname">Квартира</div>
+                            <input type="text" class="form__input">
+                        </label>
+                        <label class="form__label form__label_size_quarter">
+                            <div class="form__inputname">Этаж</div>
+                            <input type="text" class="form__input">
+                        </label>
+                    </div>
+                </div>
+                <div class="form__column">
+                    <div class="form__string form__string_mb_small">
+                        <label class="form__label">
+                            <div class="form__inputname">Комментарий</div>
+                            <textarea name="message" class="form__textarea" id="" cols="30" rows="10"></textarea>
+                        </label>
+                    </div>
+                    <div class="form__string form__string_flexwrap_wrap form__string_mb_none">
+                        <label class="form__label form__label_display_flex form__label_size_auto">
+                            <input type="radio" name="paytype" class="form__radio">
+                            <div class="form__inputname form__inputname_mb_none">Потребуется сдача</div>
+                        </label>
+                        <label class="form__label form__label_display_flex form__label_size_auto">
+                            <input type="radio" name="paytype" class="form__radio">
+                            <div class="form__inputname form__inputname_mb_none">Оплата по карте</div>
+                        </label>
+                        <label class="form__label form__label_display_flex form__label_size_auto">
+                            <input type="checkbox" class="form__check">
+                            <div class="form__inputname form__inputname_mb_none">Не перезванивать</div>
+                        </label>
+                    </div>
+                </div>
+                <div class="form__buttons">
+                    <button class="form__button btn form__button_bg_green">Заказать</button>
+                    <button type="reset" class="form__button form__button_bg_transpar">Очистить</button>
+                </div>
+            </form>
         </div>
     </section>
 

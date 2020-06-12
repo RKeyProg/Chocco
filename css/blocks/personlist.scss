@@ -1,0 +1,25 @@
+.person__list {
+    display: flex;
+    justify-content: center;
+}
+
+.person__item {
+    width: 79px;
+    height: 79px;
+    border: 7px solid transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 5px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &_active {
+        border-color: #365a49;
+    }
+
+    &-img {
+        object-fit: cover;
+    }
+}

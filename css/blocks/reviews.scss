@@ -1,0 +1,30 @@
+.reviews {
+    padding: 70px 0;
+    position: relative;
+
+    &__strawberry {
+        width: 150px;
+        max-height: 85px;
+        position: absolute;
+        top: 40px;
+        right: 12px;
+    }
+
+    &__patternsheet {
+        width: 110px;
+        max-height: 285px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(50%);
+    }
+
+    &__berries {
+        width: 140px;
+        max-height: 190px;
+        position: absolute;
+        bottom: 0;
+        left: 7px;
+        transform: translateY(55%);
+    }
+}

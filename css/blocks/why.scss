@@ -1,4 +1,3 @@
-$circle-color: #f2f5f4;
 $decor-width: 21px;
 $icon-width: 125px;
 
@@ -15,43 +14,6 @@ $icon-width: 125px;
     &__item {
         width: 284px;
         text-align: center;
-
-        &-decor {
-            position: relative;
-            width: $decor-width;
-            height: $decor-width;
-            border-radius: 50%;
-            background-color: $circle-color;
-            margin-top: $icon-width/2;
-            transform: translateY(-50%);
-
-            &::before {
-                content: "";
-                display: block;
-                position: absolute;
-                left: -20px;
-                top: 50%;
-                transform: translateY(-50%);
-                border-radius: 50%;
-                width: 13px;
-                height: 13px;
-                background-color: $circle-color;
-            }
-
-            &::after {
-                content: "";
-                display: block;
-                position: absolute;
-                right: -20px;
-                top: 50%;
-                transform: translateY(-50%);
-                border-radius: 50%;
-                border-radius: 50%;
-                width: 13px;
-                height: 13px;
-                background-color: $circle-color;
-            }
-        }
     }
 
     &__icon {
@@ -62,12 +24,27 @@ $icon-width: 125px;
         width: $icon-width;
         height: $icon-width;
         border-radius: 50%;
-        background-color: $circle-color;
+        background-color: $gray;
         margin-bottom: 30px;
 
         &-img {
             width: 56%;
             max-height: 56%;
+        }
+
+        &_decor_is {
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 150%;
+                width: 67px;
+                min-height: 21px;
+                max-height: 25px;
+                background: url("../img/ellipse.png") center center no-repeat;
+            }
         }
     }  
     
@@ -75,19 +52,27 @@ $icon-width: 125px;
         margin-bottom: 18px;
     }
 
-    &__sheet {
+    &::before {
+        content: "";
+        display: block;
+        background: url("../img/patternsheet.png") center center no-repeat;
         width: 190px;
-        max-height: 315px;
+        min-height: 315px;
+        max-height: 320px;
         position: absolute;
         left: 0;
         bottom: 140px;
     }
 
-    &__cake {
+    &::after {
+        content: "";
+        display: block;
+        background: url("../img/cake.png") left bottom no-repeat;
         width: 161px;
-        max-height: 230px;
+        min-height: 225px;
+        max-height: 240px;
         position: absolute;
         left: 0;
-        bottom: -31px;
+        bottom: -100px;
     }
 }

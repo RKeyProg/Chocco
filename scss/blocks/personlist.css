@@ -1,0 +1,19 @@
+.person__list {
+  display: flex;
+  justify-content: center; }
+
+.person__item {
+  width: 79px;
+  height: 79px;
+  border: 7px solid transparent;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 5px; }
+  .person__item:last-child {
+    margin-right: 0; }
+  .person__item_active {
+    border-color: #365a49; }
+  .person__item-img {
+    object-fit: cover; }
+
+/*# sourceMappingURL=personlist.css.map */

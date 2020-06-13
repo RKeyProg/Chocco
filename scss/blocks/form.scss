@@ -1,6 +1,4 @@
 $input-height: 57px;
-$radioandchecksize: 25px;
-
 .form {
     width: 940px;
     margin: 0 auto;
@@ -24,14 +22,14 @@ $radioandchecksize: 25px;
         }
 
         &_flexwrap_wrap {
-            min-height: $input-height;
+            min-height: $input-height + 5px;
             justify-content: flex-start;
             align-content: space-between;
             flex-wrap: wrap;
         }
 
         &_mb_small {
-            margin-bottom: 12px;
+            margin-bottom: 7px;
         }
     }
 
@@ -74,16 +72,12 @@ $radioandchecksize: 25px;
     }
 
     &__inputname {
-        color: $darkGreen;
+        color: #365b4a;
         font-size: 18.09px;
         margin-bottom: 5px;
 
         &_mb_none {
             margin-bottom: 0;
-        }
-
-        &:hover {
-            cursor: pointer;
         }
     }
 
@@ -102,54 +96,9 @@ $radioandchecksize: 25px;
     }
 
     &__radio, &__check {
-        display: none;
-
-        &-picture {
-            width: $radioandchecksize;
-            height: $radioandchecksize;
-            background-color: #fff;
-            margin-right: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
-    }
-
-    &__radio-picture {
-        border-radius: 50%;
-
-        &::after {
-            content: "";
-            display: none;
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            background-color: $darkGreen;
-        }
-    }
-
-    &__radio:checked {
-        ~ .form__radio-picture::after {
-            display: block;
-        }
-    }
-
-    &__check-picture::after {
-        content: "";
-        display: none;
-        background: url("../img/icons/checkmark.svg") center center no-repeat;
-        width: $radioandchecksize - 14px;
-        height: $radioandchecksize - 16px;
-    }
-
-    &__check:checked {
-        ~ .form__check-picture::after {
-            display: block;
-        }
+        width: 27px;
+        height: 27px;
+        margin-right: 10px;
     }
 
     &__buttons {
@@ -160,7 +109,7 @@ $radioandchecksize: 25px;
     &__button {
         border: 0;
         transition: all .3s ease;
-        color: $darkGreen;
+        color: #365b4a;
         margin-right: 24px;
     
         &:last-child {
@@ -172,7 +121,7 @@ $radioandchecksize: 25px;
         }
 
         &_bg_green {
-            background-color: $darkGreen;
+            background-color: #365a49;
             color: #fff;
             
             &:hover {

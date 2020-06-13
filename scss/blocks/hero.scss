@@ -1,9 +1,10 @@
 .hero {
-    background: $blue url("../img/palm.png") right bottom / contain no-repeat;
+    background: #86c3d7 url("../img/palm.png") right bottom / contain no-repeat;
     padding-bottom: 45px;
     position: relative;
+    height: 100vh;
 
-    &__title-section {
+    &__wrapper {
         width: 350px;
         display: flex;
         flex-direction: column;

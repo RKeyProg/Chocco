@@ -1,19 +1,27 @@
 .orders {
     padding: 85px 0 92px;
     position: relative;
-    background: url("./../../img/berriesBG.jpg") center top / cover;
+    background: url("../img/berriesBG.jpg") center top / cover;
 
-    &__sheet {
+    &::before {
+        content: "";
+        display: block;
+        background: url("../img/sheet6.png") left top no-repeat;
         width: 138px;
-        max-height: 190px;
+        min-height: 190px;
+        max-height: 195px;
         position: absolute;
         bottom: 85px;
         right: 0;
     }
 
-    &__blueberries {
+    &::after {
+        content: "";
+        display: block;
+        background: url("../img/blueberries2.png") left top no-repeat;
         width: 47px;
-        max-width: 50px;
+        min-height: 50px;
+        max-height: 52px;
         position: absolute;
         left: 20px;
         bottom: 85px;

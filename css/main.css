@@ -101,6 +101,25 @@
   color: #fff;
   background-color: #365a49;
 }
+.btn_theme_green {
+  background-color: #365a49;
+  color: #fff;
+}
+.btn_theme_green:hover {
+  background-color: #fff;
+  color: #365a49;
+}
+.btn_theme_transparent {
+  background-color: transparent;
+  color: #365a49;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0;
+  text-transform: none;
+}
+.btn_theme_transparent:hover {
+  color: #000;
+}
 
 .dignitieslist {
   display: flex;
@@ -529,7 +548,6 @@
 .form__button {
   border: 0;
   transition: all 0.3s ease;
-  color: #365a49;
   margin-right: 24px;
 }
 .form__button:last-child {
@@ -537,19 +555,5 @@
 }
 .form__button:hover {
   cursor: pointer;
-}
-.form__button_bg_green {
-  background-color: #365a49;
-  color: #fff;
-}
-.form__button_bg_green:hover {
-  background-color: #2d4d3d;
-}
-.form__button_bg_transpar {
-  background-color: transparent;
-  padding: 0;
-}
-.form__button_bg_transpar:hover {
-  color: #000;
 }
 /*# sourceMappingURL=main.css.map */

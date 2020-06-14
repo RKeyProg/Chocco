@@ -173,7 +173,6 @@ $radioandchecksize: 25px;
     &__button {
         border: 0;
         transition: all .3s ease;
-        color: $darkGreen;
         margin-right: 24px;
     
         &:last-child {
@@ -182,24 +181,6 @@ $radioandchecksize: 25px;
 
         &:hover {
             cursor: pointer;
-        }
-
-        &_bg_green {
-            background-color: $darkGreen;
-            color: #fff;
-            
-            &:hover {
-                background-color: #2d4d3d;
-            }
-        }
-
-        &_bg_transpar {
-            background-color: transparent;
-            padding: 0;
-
-            &:hover {
-                color: #000;
-            }
         }
     }
 }

@@ -1,5 +1,11 @@
-$containerWidth: 940px;
-$baseFontSize: 18px;
+$container-width: 940px;
+$base-font-size: 18px;
+$radio-and-check-size: 25px;
+$benefits-icon-width: 126px;
+
+// z-index
+
+$z-pagenator: 100;
 
 // colors
 
@@ -11,7 +17,7 @@ $gray: #f2f5f4;
 
 @import "layout/reset.css";
 @import "layout/normalize.css";
-@import "layout/base.css";
+@import "layout/base";
 
 @import "blocks/header";
 @import "blocks/hero";

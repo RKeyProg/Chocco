@@ -1,6 +1,45 @@
 @import "layout/reset.css";
 @import "layout/normalize.css";
-@import "layout/base.css";
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #666;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 27px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -147,7 +186,8 @@
 
 .pagenator {
   position: fixed;
-  right: 45px;
+  z-index: 100;
+  right: 3%;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -156,8 +196,6 @@
 }
 .pagenator__item {
   margin-bottom: 5px;
-}
-.pagenator__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,7 +204,7 @@
   border-radius: 50%;
   border: 1px solid transparent;
 }
-.pagenator__link::after {
+.pagenator__item::after {
   content: "";
   display: block;
   border-radius: 50%;
@@ -174,8 +212,8 @@
   height: 6px;
   background-color: #fff;
 }
-.pagenator__link_active {
-  border: 1px solid #fff;
+.pagenator__item_active {
+  border-color: #fff;
 }
 
 .section {
@@ -264,6 +302,12 @@
 }
 .section__orders {
   background: url("../img/berriesBG.jpg") center top/cover;
+}
+.section_font-color_green {
+  color: #365a49;
+}
+.section_font-color_green .section__title {
+  color: inherit;
 }
 
 .headline {
@@ -482,8 +526,7 @@
   outline: none;
 }
 .form__inputname {
-  color: #365a49;
-  font-size: 18.09px;
+  font-size: 18px;
   margin-bottom: 5px;
 }
 .form__inputname_mb_none {

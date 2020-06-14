@@ -98,6 +98,14 @@
     &__orders {
         background: url("../img/berriesBG.jpg") center top / cover;
     }
+
+    &_font-color_green {
+        color: $darkGreen;
+
+        .section__title {
+            color: inherit;
+        }
+    }
 }
 
 .headline {

@@ -1,5 +1,3 @@
-$icon-width: 126px;
-
 .benefits {
     display: flex;
     justify-content: space-between;
@@ -13,7 +11,7 @@ $icon-width: 126px;
             content: url("../img/ellipse.png");
             position: absolute;
             right: 0;
-            top: $icon-width / 2;
+            top: $benefits-icon-width / 2;
             transform: translate(50%, -50%);
             width: 67px;
             min-height: 21px;
@@ -41,8 +39,8 @@ $icon-width: 126px;
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: $icon-width;
-        height: $icon-width;
+        width: $benefits-icon-width;
+        height: $benefits-icon-width;
         border-radius: 50%;
         overflow: hidden;
         background-color: $gray;

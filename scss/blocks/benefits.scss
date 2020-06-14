@@ -1,0 +1,56 @@
+$icon-width: 126px;
+
+.benefits {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+        flex: 1;
+        padding: 0 3%;
+        position: relative;
+
+        &::after {
+            content: url("../img/ellipse.png");
+            position: absolute;
+            right: 0;
+            top: $icon-width / 2;
+            transform: translate(50%, -50%);
+            width: 67px;
+            min-height: 21px;
+            max-height: 25px;
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+        
+        &:last-child {
+            padding-right: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.benefit {
+    text-align: center;
+
+    &__image-wrapper {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: $icon-width;
+        height: $icon-width;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: $gray;
+        margin-bottom: 30px;
+    }
+
+    &__icon {
+        width: 75px;
+        height: 69px;
+    } 
+}

@@ -1,0 +1,116 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    min-height: 650px;
+    padding: 105px 0;
+    position: relative;
+    color: #000;
+
+    &__why {
+        &::before {
+            content: url("../img/patternsheet.png");
+            display: block;
+            width: 190px;
+            min-height: 315px;
+            max-height: 320px;
+            position: absolute;
+            left: 0;
+            bottom: 140px;
+        }
+    
+        &::after {
+            content: url("../img/cake.png");
+            display: block;
+            width: 161px;
+            min-height: 225px;
+            max-height: 240px;
+            position: absolute;
+            left: 0;
+            bottom: -36px;
+        }
+    }
+
+    &__reviews {
+        &::before {
+            content: "";
+            display: block;
+            background: url("../img/strawberry.png") center center no-repeat;
+            width: 150px;
+            min-height: 85px;
+            max-height: 90px;
+            position: absolute;
+            top: 40px;
+            right: 12px;
+        }
+    
+        &::after {
+            content: "";
+            display: block;
+            background: url("../img/berries2.png") 0 54px no-repeat, url("../img/patternsheet2.png") left top no-repeat;
+            width: 140px;
+            min-height: 285px;
+            max-height: 290px;
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 0;
+            transform: translateY(50%);
+        }
+    }
+
+    &__orders {
+        &::before {
+            content: "";
+            display: block;
+            background: url("../img/sheet6.png") left top no-repeat;
+            width: 138px;
+            min-height: 190px;
+            max-height: 195px;
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+        }
+    
+        &::after {
+            content: "";
+            display: block;
+            background: url("../img/blueberries2.png") left top no-repeat;
+            width: 47px;
+            min-height: 50px;
+            max-height: 52px;
+            position: absolute;
+            left: 20px;
+            bottom: 85px;
+        }
+    }
+
+    &__title {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 60px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000;
+    }
+
+    &__orders {
+        background: url("../img/berriesBG.jpg") center top / cover;
+    }
+}
+
+.headline {
+    margin-bottom: 50px;
+    text-align: center;
+
+    &__title {
+        margin-bottom: 7px;
+    }
+
+    &__subtitle {
+        padding: 0 26%;
+        margin: 0 auto;
+        line-height: 1.3em;
+    }
+}

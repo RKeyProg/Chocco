@@ -8,8 +8,7 @@ body {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #000;
-    background: #fff;
+    color: #666;
 }
 
 .container {
@@ -30,7 +29,7 @@ a {
     transition: all .3s ease;
 }
 
-h1, h2 {
+h1 {
     font-size: 48px;
     text-transform: uppercase;
 }

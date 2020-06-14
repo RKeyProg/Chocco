@@ -1,0 +1,26 @@
+$containerWidth: 940px;
+$baseFontSize: 18px;
+
+// colors
+
+$blue: #86c3d7;
+$darkGreen: #365a49;
+$gray: #f2f5f4;
+
+// imports
+
+@import "layout/reset.css";
+@import "layout/normalize.css";
+@import "layout/base.css";
+
+@import "blocks/header";
+@import "blocks/hero";
+@import "blocks/menu";
+@import "blocks/btn";
+@import "blocks/dignitieslist";
+@import "blocks/pagenator";
+@import "blocks/section";
+@import "blocks/benefits";
+@import "blocks/reviews";
+@import "blocks/interactive-avatar";
+@import "blocks/form";

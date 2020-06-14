@@ -1,0 +1,51 @@
+.hero {
+    background: url("../img/palm.png") right bottom / contain no-repeat;
+    background-color: $blue;
+    padding: 24px 0 45px;
+    position: relative;
+    height: 100vh;
+    color: #fff;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        background: url("../img/chocclate.png") right center / 50% auto no-repeat;
+    }
+
+    &__title-section {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__title {
+        line-height: 1.2em;
+        margin-bottom: 7px;
+    }
+
+    &__subtitle {
+        font-size: 21px;
+        margin-bottom: 31px;
+    }
+
+    &::before {
+        content: url("../img/sheet3.png");
+        max-width: 60px;
+        max-height: 110px;
+        position: absolute;
+        left: 2%;
+        bottom: -40px;
+    }
+
+    &::after {
+        content: url("../img/berries.png");
+        max-width: 465px;
+        max-height: 345px;
+        position: absolute;
+        right: 1%;
+        bottom: -40px;
+    }
+}

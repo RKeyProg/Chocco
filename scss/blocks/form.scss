@@ -1,5 +1,5 @@
 .form {
-    width: 940px;
+    width: $container-width;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -7,7 +7,7 @@
 
     &__column {
         flex: 1;
-        margin: 0 20px 44px 0;
+        margin: 0 rem(20px) rem(44px) 0;
 
         &:last-child {
             margin-right: 0;
@@ -18,36 +18,36 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 15px;
+        margin-bottom: rem(15px);
 
         &:last-child {
             margin-bottom: 0;
         }
 
         &_mb_big {
-            margin-bottom: 22px;
+            margin-bottom: rem(22px);
         }
     }
 
     &__label {
         flex: 1;
-        margin-right: 20px;
+        margin-right: rem(20px);
 
         &:last-child {
             margin-right: 0;
         }
 
         &_size_half {
-            width: 220px;
+            width: rem(220px);
         }
 
         &_size_quarter {
-            width: 100px;
+            width: rem(100px);
         }
 
         &_size_auto {
             width: auto;
-            margin-right: 22px;
+            margin-right: rem(22px);
 
             &:last-child {
                 margin-right: 0;
@@ -59,7 +59,7 @@
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
-        margin-bottom: 4px;
+        margin-bottom: rem(4px);
 
         &:last-child {
             margin-bottom: 0;
@@ -69,24 +69,24 @@
             display: flex;
             align-items: center;
             flex: none;
-            margin-bottom: 7px;
+            margin-bottom: rem(7px);
         }
     }
 
     &__input {
         width: 100%;
-        padding: 18px 11px;
-        border: 3px solid transparent;
+        padding: rem(18px) rem(11px);
+        border: rem(3px) solid transparent;
 
         &:focus {
-            border: 3px solid #dee2bd;
+            border: rem(3px) solid #dee2bd;
             outline: none;
         }
     }
 
     &__inputname {
         font-size: $base-font-size;
-        margin-bottom: 5px;
+        margin-bottom: rem(5px);
 
         &_mb_none {
             margin-bottom: 0;
@@ -98,14 +98,14 @@
     }
 
     &__textarea {
-        height: 180px;
+        height: rem(180px);
         resize: none;
-        padding: 11px;
-        border: 3px solid transparent;
+        padding: rem(11px);
+        border: rem(3px) solid transparent;
 
 
         &:focus {
-            border: 3px solid #dee2bd;
+            border: rem(3px) solid #dee2bd;
             outline: none;
         }
     }
@@ -117,7 +117,7 @@
             width: $radio-and-check-size;
             height: $radio-and-check-size;
             background-color: #fff;
-            margin-right: 10px;
+            margin-right: rem(10px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -134,8 +134,8 @@
         &::after {
             content: "";
             display: none;
-            width: 13px;
-            height: 13px;
+            width: rem(13px);
+            height: rem(13px);
             border-radius: 50%;
             background-color: $darkGreen;
         }
@@ -151,8 +151,8 @@
         content: "";
         display: none;
         background: url("../img/icons/checkmark.svg") center center no-repeat;
-        width: $radio-and-check-size - 14px;
-        height: $radio-and-check-size - 16px;
+        width: $radio-and-check-size - rem(14px);
+        height: $radio-and-check-size - rem(16px);
     }
 
     &__check:checked {
@@ -162,14 +162,14 @@
     }
 
     &__buttons {
-        width: calc(50% - 14px);
+        width: calc(50% - 0.875rem);
         margin-left: auto;
     }
 
     &__button {
         border: 0;
         transition: all .3s ease;
-        margin-right: 24px;
+        margin-right: rem(24px);
     
         &:last-child {
             margin-right: 0;

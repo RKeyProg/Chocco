@@ -1,7 +1,7 @@
 .hero {
     background: url("../img/palm.png") right bottom / contain no-repeat;
     background-color: $blue;
-    padding: 24px 0 45px;
+    padding: rem(24px) 0 rem(45px);
     position: relative;
     height: 100vh;
     color: #fff;
@@ -23,29 +23,33 @@
 
     &__title {
         line-height: 1.2em;
-        margin-bottom: 7px;
+        margin-bottom: rem(7px);
     }
 
     &__subtitle {
-        font-size: 21px;
-        margin-bottom: 31px;
+        font-size: rem(21px);
+        margin-bottom: rem(31px);
     }
 
     &::before {
-        content: url("../img/sheet3.png");
-        max-width: 60px;
-        max-height: 110px;
+        content: "";
+        background: url("../img/sheet3.png") center center no-repeat;
+        display: block;
+        width: rem(60px);
+        min-height: rem(110px);
         position: absolute;
         left: 2%;
-        bottom: -40px;
+        bottom: rem(-40px);
     }
 
     &::after {
-        content: url("../img/berries.png");
-        max-width: 465px;
-        max-height: 345px;
+        content: "";
+        background: url("../img/berries.png") center center no-repeat;
+        display: block;
+        width: rem(465px);
+        min-height: rem(345px);
         position: absolute;
         right: 1%;
-        bottom: -40px;
+        bottom: rem(-40px);
     }
 }

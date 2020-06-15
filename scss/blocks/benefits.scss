@@ -13,9 +13,9 @@
             right: 0;
             top: $benefits-icon-width / 2;
             transform: translate(50%, -50%);
-            width: 67px;
-            min-height: 21px;
-            max-height: 25px;
+            width: rem(67px);
+            min-height: rem(21px);
+            max-height: rem(25px);
         }
 
         &:first-child {
@@ -44,11 +44,11 @@
         border-radius: 50%;
         overflow: hidden;
         background-color: $gray;
-        margin-bottom: 30px;
+        margin-bottom: rem(30px);
     }
 
     &__icon {
-        width: 75px;
-        height: 69px;
+        width: rem(75px);
+        height: rem(69px);
     } 
 }

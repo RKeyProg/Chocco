@@ -1,7 +1,15 @@
+// functions
+
+@function rem($px){
+    @return $px / $base-font-size + 0rem;
+}
+
+// perem
+
 $container-width: 940px;
 $base-font-size: 18px;
-$radio-and-check-size: 25px;
-$benefits-icon-width: 126px;
+$radio-and-check-size: rem(25px);
+$benefits-icon-width: rem(126px);
 
 // z-index
 

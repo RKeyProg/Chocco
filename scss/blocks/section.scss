@@ -10,25 +10,25 @@
 
     &__why {
         &::before {
-            content: url("../img/patternsheet.png");
+            content: "";
             display: block;
+            background: url("../img/patternsheet.png") center center no-repeat;
             width: 190px;
             min-height: 315px;
-            max-height: 320px;
             position: absolute;
             left: 0;
             bottom: 140px;
         }
     
         &::after {
-            content: url("../img/cake.png");
+            content: "";
             display: block;
+            background: url("../img/cake.png") bottom left no-repeat;
             width: 161px;
             min-height: 225px;
-            max-height: 240px;
             position: absolute;
             left: 0;
-            bottom: -36px;
+            bottom: -105px;
         }
     }
 
@@ -39,7 +39,6 @@
             background: url("../img/strawberry.png") center center no-repeat;
             width: 150px;
             min-height: 85px;
-            max-height: 90px;
             position: absolute;
             top: 40px;
             right: 12px;
@@ -51,7 +50,6 @@
             background: url("../img/berries2.png") 0 54px no-repeat, url("../img/patternsheet2.png") left top no-repeat;
             width: 140px;
             min-height: 285px;
-            max-height: 290px;
             position: absolute;
             z-index: 2;
             bottom: 0;
@@ -67,7 +65,6 @@
             background: url("../img/sheet6.png") left top no-repeat;
             width: 138px;
             min-height: 190px;
-            max-height: 195px;
             position: absolute;
             bottom: 85px;
             right: 0;
@@ -79,7 +76,6 @@
             background: url("../img/blueberries2.png") left top no-repeat;
             width: 47px;
             min-height: 50px;
-            max-height: 52px;
             position: absolute;
             left: 20px;
             bottom: 85px;

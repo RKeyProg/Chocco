@@ -1,18 +1,23 @@
 html, body {
     height: 100%;
+    font-size: $base-font-size;
 }
 
 body {
     font-family: 'Alegreya Sans', sans-serif;
-    font-size: 18px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #666;
 }
 
+.wrapper {
+    width: 100%;
+    // overflow: hidden;
+}
+
 .container {
-    width: 940px;
+    width: $container-width;
     margin: 0 auto;
     position: relative;
     z-index: 10;
@@ -30,10 +35,10 @@ a {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: rem(48px);
     text-transform: uppercase;
 }
 
 h4 {
-    font-size: 27px;
+    font-size: rem(27px);
 }

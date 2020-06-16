@@ -4,8 +4,8 @@
         justify-content: center;
 
         &-item {
-            margin-right: 5px;
-            border: 6px solid transparent;
+            margin-right: rem(5px);
+            border: rem(6px) solid transparent;
 
             &:last-child {
                 margin-right: 0;
@@ -24,18 +24,18 @@
 
 .review {
     background-color: #f8faf9;
-    padding: 50px 44px 36px;
+    padding: rem(50px) rem(44px) rem(36px);
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
-    margin: 0 auto 20px;
+    margin: 0 auto rem(20px);
     color: #000;
 
     &::before {
         content: "";
-        width: 90px;
-        height: 90px;
+        width: rem(90px);
+        height: rem(90px);
         background-color: #fff;
         border-radius: 50%;
         position: absolute;
@@ -49,41 +49,40 @@
     }
 
     &__photo {
-        width: 253px;
-        max-height: 260px;
+        width: rem(253px);
+        max-height: rem(260px);
         overflow: hidden;
-        margin-right: 20px;
+        margin-right: rem(20px);
 
         &-img {
             object-fit: cover;
-            object-position: center -50px;
+            object-position: center rem(-50px);
         }
     }
 
     &__title {
-        font-size: 30px; 
+        font-size: rem(30px); 
         font-weight: 700;
-        margin-bottom: 25px;
+        margin-bottom: rem(25px);
     }
 
     &__text {
-        width: 445px;
+        width: rem(445px);
 
         & > p {
             color: #666;
-            font-size: 17.98px;
-            margin-bottom: 30px;
+            margin-bottom: rem(30px);
         }
     }
 
     &__author {
         font-weight: 700;
-        font-size: 18px;
+        font-size: $base-font-size;
     }
 
     &__decor {
-        width: 130px;
-        max-height: 160px;
+        width: rem(130px);
+        max-height: rem(160px);
         position: absolute;
         right: 0;
         top: 0;

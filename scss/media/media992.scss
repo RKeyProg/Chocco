@@ -1,0 +1,128 @@
+@media screen and (max-width: 992px) {
+    .container {
+        width: rem(720px);
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .phone-number {
+        display: none;
+    }
+
+    .hero {
+        background: url(../img/palm.png) right top/ 65% auto no-repeat;
+        background-color: #86c3d7;
+        padding-bottom: 18vh;
+
+        &__container {
+            background: url(../img/chocclate.png) center top 30%/auto 50% no-repeat;
+            z-index: 2;
+        }
+
+        &__title-section {
+            width: 100%;
+            align-items: center;
+        }
+
+        &__title {
+            text-align: center;
+        }
+
+        &__subtitle {
+            text-align: center;
+            width:  rem(345px);
+        }
+
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            background: url(../img/berries768.png) left 54% top 39%/auto 25% no-repeat;
+            width: 100%;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 5;
+        }
+    }
+
+    .benefits {
+        &__item {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .section {
+        &__why::before {
+            bottom: auto;
+            top: 90px;
+        }
+
+        &__orders {
+            &::after, &::before {
+                display: none;
+            }
+        }
+    }
+
+    .review {
+        flex-direction: column;
+
+        &__photo {
+            width: rem(132px);
+            height: rem(132px);
+            margin-bottom: rem(35px);
+            margin-right: 0;
+        }
+
+        &__content {
+            text-align: center;
+        }
+
+        &__title {
+            margin-bottom: rem(15px);
+        }
+
+        &__text {
+            width: 100%;
+
+            &>p {
+                margin-bottom: rem(15px);
+            }
+        }
+    }
+
+    .form {
+        flex-direction: column;
+
+        &__column {
+            margin-bottom: rem(15px);
+        }
+
+        &__input {
+            padding: rem(10px) rem(10px);
+        }
+
+        &__textarea {
+            height: 80px;
+        }
+
+        &__buttons {
+            margin: 0 auto;
+        }
+    }
+
+    .dignitieslist {
+        display: none;
+    }
+
+    .pagenator {
+        display: none;
+    }
+}

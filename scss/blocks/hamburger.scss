@@ -1,0 +1,27 @@
+@mixin hamb-line {
+    width: rem(24px);
+    height: rem(4px);
+    background-color: #fff;
+    border-radius: 2px;
+    display: block;
+    position: relative;
+}
+
+.hamburger {
+    @include hamb-line;
+    
+
+    &::before {
+        content: '';
+        @include hamb-line;
+        position: absolute;
+        top: rem(-7px);
+    }
+
+    &::after {
+        content: '';
+        @include hamb-line;
+        position: absolute;
+        top: rem(7px);
+    }
+}

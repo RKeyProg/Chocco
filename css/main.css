@@ -1,5 +1,9 @@
 @import "layout/reset.css";
 @import "layout/normalize.css";
+article > * + * {
+  margin-top: 0;
+}
+
 html, body {
   height: 100%;
   font-size: 18px;
@@ -15,6 +19,7 @@ body {
 
 .wrapper {
   width: 100%;
+  overflow: hidden;
 }
 
 .container {
@@ -69,6 +74,37 @@ h4 {
 }
 .phone-number:hover {
   text-shadow: 0rem 0rem 0.5555555556rem rgba(0, 0, 0, 0.2);
+}
+
+.hamburger {
+  width: 1.3333333333rem;
+  height: 0.2222222222rem;
+  background-color: #fff;
+  border-radius: 2px;
+  display: block;
+  position: relative;
+}
+.hamburger::before {
+  content: "";
+  width: 1.3333333333rem;
+  height: 0.2222222222rem;
+  background-color: #fff;
+  border-radius: 2px;
+  display: block;
+  position: relative;
+  position: absolute;
+  top: -0.3888888889rem;
+}
+.hamburger::after {
+  content: "";
+  width: 1.3333333333rem;
+  height: 0.2222222222rem;
+  background-color: #fff;
+  border-radius: 2px;
+  display: block;
+  position: relative;
+  position: absolute;
+  top: 0.3888888889rem;
 }
 
 .hero {
@@ -229,8 +265,8 @@ h4 {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  min-height: 650px;
-  padding: 105px 0;
+  min-height: 36.1111111111rem;
+  padding: 5.8333333333rem 0;
   position: relative;
   color: #000;
 }
@@ -238,38 +274,38 @@ h4 {
   content: "";
   display: block;
   background: url("../img/patternsheet.png") center center no-repeat;
-  width: 190px;
-  min-height: 315px;
+  width: 10.5555555556rem;
+  min-height: 17.5rem;
   position: absolute;
   left: 0;
-  bottom: 140px;
+  bottom: 7.7777777778rem;
 }
 .section__why::after {
   content: "";
   display: block;
   background: url("../img/cake.png") bottom left no-repeat;
-  width: 161px;
-  min-height: 225px;
+  width: 8.9444444444rem;
+  min-height: 12.5rem;
   position: absolute;
   left: 0;
-  bottom: -105px;
+  bottom: -5.8333333333rem;
 }
 .section__reviews::before {
   content: "";
   display: block;
   background: url("../img/strawberry.png") center center no-repeat;
-  width: 150px;
-  min-height: 85px;
+  width: 8.3333333333rem;
+  min-height: 4.7222222222rem;
   position: absolute;
-  top: 40px;
-  right: 12px;
+  top: 2.2222222222rem;
+  right: 0.6666666667rem;
 }
 .section__reviews::after {
   content: "";
   display: block;
-  background: url("../img/berries2.png") 0 54px no-repeat, url("../img/patternsheet2.png") left top no-repeat;
-  width: 140px;
-  min-height: 285px;
+  background: url("../img/berries2.png") 0 3rem no-repeat, url("../img/patternsheet2.png") left top no-repeat;
+  width: 7.7777777778rem;
+  min-height: 15.8333333333rem;
   position: absolute;
   z-index: 2;
   bottom: 0;
@@ -280,26 +316,26 @@ h4 {
   content: "";
   display: block;
   background: url("../img/sheet6.png") left top no-repeat;
-  width: 138px;
-  min-height: 190px;
+  width: 7.6666666667rem;
+  min-height: 10.5555555556rem;
   position: absolute;
-  bottom: 85px;
+  bottom: 4.7222222222rem;
   right: 0;
 }
 .section__orders::after {
   content: "";
   display: block;
   background: url("../img/blueberries2.png") left top no-repeat;
-  width: 47px;
-  min-height: 50px;
+  width: 2.6111111111rem;
+  min-height: 2.7777777778rem;
   position: absolute;
-  left: 20px;
-  bottom: 85px;
+  left: 1.1111111111rem;
+  bottom: 4.7222222222rem;
 }
 .section__title {
-  font-size: 48px;
+  font-size: 2.6666666667rem;
   font-weight: 700;
-  margin-bottom: 60px;
+  margin-bottom: 3.3333333333rem;
   text-align: center;
   text-transform: uppercase;
   color: #000;
@@ -315,7 +351,7 @@ h4 {
 }
 
 .headline {
-  margin-bottom: 50px;
+  margin-bottom: 2.7777777778rem;
   text-align: center;
 }
 .headline__title {
@@ -459,7 +495,7 @@ h4 {
 }
 
 .form {
-  width: 940px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -522,10 +558,10 @@ h4 {
 .form__input {
   width: 100%;
   padding: 1rem 0.6111111111rem;
-  border: 0.1666666667rem solid transparent;
+  border: 3px solid transparent;
 }
 .form__input:focus {
-  border: 0.1666666667rem solid #dee2bd;
+  border: 3px solid #dee2bd;
   outline: none;
 }
 .form__inputname {
@@ -542,10 +578,10 @@ h4 {
   height: 10rem;
   resize: none;
   padding: 0.6111111111rem;
-  border: 0.1666666667rem solid transparent;
+  border: 3px solid transparent;
 }
 .form__textarea:focus {
-  border: 0.1666666667rem solid #dee2bd;
+  border: 3px solid #dee2bd;
   outline: none;
 }
 .form__radio, .form__check {
@@ -601,5 +637,209 @@ h4 {
 }
 .form__button:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 40rem;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .phone-number {
+    display: none;
+  }
+
+  .hero {
+    background: url(../img/palm.png) right top/65% auto no-repeat;
+    background-color: #86c3d7;
+    padding-bottom: 18vh;
+  }
+  .hero__container {
+    background: url(../img/chocclate.png) center top 30%/auto 50% no-repeat;
+    z-index: 2;
+  }
+  .hero__title-section {
+    width: 100%;
+    align-items: center;
+  }
+  .hero__title {
+    text-align: center;
+  }
+  .hero__subtitle {
+    text-align: center;
+    width: 19.1666666667rem;
+  }
+  .hero::before {
+    display: none;
+  }
+  .hero::after {
+    background: url(../img/berries768.png) left 54% top 39%/auto 25% no-repeat;
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+  }
+
+  .benefits__item::after {
+    display: none;
+  }
+
+  .section__why::before {
+    bottom: auto;
+    top: 90px;
+  }
+  .section__orders::after, .section__orders::before {
+    display: none;
+  }
+
+  .review {
+    flex-direction: column;
+  }
+  .review__photo {
+    width: 7.3333333333rem;
+    height: 7.3333333333rem;
+    margin-bottom: 1.9444444444rem;
+    margin-right: 0;
+  }
+  .review__content {
+    text-align: center;
+  }
+  .review__title {
+    margin-bottom: 0.8333333333rem;
+  }
+  .review__text {
+    width: 100%;
+  }
+  .review__text > p {
+    margin-bottom: 0.8333333333rem;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+  .form__column {
+    margin-bottom: 0.8333333333rem;
+  }
+  .form__input {
+    padding: 0.5555555556rem 0.5555555556rem;
+  }
+  .form__textarea {
+    height: 80px;
+  }
+  .form__buttons {
+    margin: 0 auto;
+  }
+
+  .dignitieslist {
+    display: none;
+  }
+
+  .pagenator {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 25.5555555556rem;
+  }
+
+  .hero {
+    padding-bottom: 12.5vh;
+    background: url(../img/palm.png) right top 18%/65% auto no-repeat;
+    background-color: #86c3d7;
+  }
+  .hero__container {
+    background: url(../img/chocclate.png) center top 22%/auto 50% no-repeat;
+  }
+  .hero__title {
+    font-size: 2.2222222222rem;
+    line-height: 1em;
+  }
+  .hero__subtitle {
+    font-size: 18px;
+  }
+  .hero::after {
+    background: url(../img/berries768.png) left 54% top 33%/auto 30% no-repeat;
+  }
+
+  .benefits {
+    flex-direction: column;
+  }
+  .benefits__item {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+  .benefits__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .benefit {
+    text-align: start;
+  }
+  .benefit__image-wrapper {
+    margin: 0 0.8333333333rem 0 0;
+  }
+
+  .headline__subtitle {
+    padding: 0;
+    font-size: 18px;
+  }
+
+  .section__title {
+    font-size: 2.2222222222rem;
+    margin-bottom: 2.3888888889rem;
+  }
+  .section__why::before, .section__why::after {
+    display: none;
+  }
+  .section__reviews::before {
+    top: 0;
+    right: -1.3888888889rem;
+  }
+  .section__reviews::after {
+    left: -30px;
+  }
+
+  .review__photo {
+    width: 6.6666666667rem;
+    height: 6.6666666667rem;
+  }
+
+  .interactive-avatar {
+    width: 3.5555555556rem;
+    height: 3.5555555556rem;
+  }
+
+  .form__input {
+    padding: 0.4444444444rem 0.4444444444rem;
+  }
+  .form__controls {
+    justify-content: center;
+  }
+  .form__buttons {
+    width: auto;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container {
+    width: 16.6666666667rem;
+  }
+
+  .hero__container {
+    background: url(../img/chocclate.png) center top 22%/100% auto no-repeat;
+  }
+  .hero__subtitle {
+    width: 100%;
+  }
+  .hero::after {
+    background: url(../img/berries768.png) left 54% top 33%/90% auto no-repeat;
+  }
 }
 /*# sourceMappingURL=main.css.map */

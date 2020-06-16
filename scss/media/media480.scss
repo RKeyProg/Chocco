@@ -1,0 +1,20 @@
+@media screen and (max-width: 480px) {
+    .container {
+        width: rem(300px);
+    }
+
+    .hero {
+
+        &__container {
+            background: url(../img/chocclate.png) center top 22%/100% auto no-repeat;
+        }
+        
+        &__subtitle {
+            width: 100%;
+        }
+
+        &::after {
+            background: url(../img/berries768.png) left 54% top 33%/90% auto no-repeat;
+        }
+    }
+}

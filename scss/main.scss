@@ -28,6 +28,7 @@ $gray: #f2f5f4;
 @import "layout/base";
 
 @import "blocks/header";
+@import "blocks/hamburger";
 @import "blocks/hero";
 @import "blocks/menu";
 @import "blocks/btn";
@@ -38,3 +39,6 @@ $gray: #f2f5f4;
 @import "blocks/reviews";
 @import "blocks/interactive-avatar";
 @import "blocks/form";
+@import "media/media992.scss";
+@import "media/media768.scss";
+@import "media/media480.scss";

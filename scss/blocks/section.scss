@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    min-height: 650px;
-    padding: 105px 0;
+    min-height: rem(650px);
+    padding: rem(105px) 0;
     position: relative;
     color: #000;
 
@@ -13,22 +13,22 @@
             content: "";
             display: block;
             background: url("../img/patternsheet.png") center center no-repeat;
-            width: 190px;
-            min-height: 315px;
+            width: rem(190px);
+            min-height: rem(315px);
             position: absolute;
             left: 0;
-            bottom: 140px;
+            bottom: rem(140px);
         }
     
         &::after {
             content: "";
             display: block;
             background: url("../img/cake.png") bottom left no-repeat;
-            width: 161px;
-            min-height: 225px;
+            width: rem(161px);
+            min-height: rem(225px);
             position: absolute;
             left: 0;
-            bottom: -105px;
+            bottom: rem(-105px);
         }
     }
 
@@ -37,19 +37,19 @@
             content: "";
             display: block;
             background: url("../img/strawberry.png") center center no-repeat;
-            width: 150px;
-            min-height: 85px;
+            width: rem(150px);
+            min-height: rem(85px);
             position: absolute;
-            top: 40px;
-            right: 12px;
+            top: rem(40px);
+            right: rem(12px);
         }
     
         &::after {
             content: "";
             display: block;
-            background: url("../img/berries2.png") 0 54px no-repeat, url("../img/patternsheet2.png") left top no-repeat;
-            width: 140px;
-            min-height: 285px;
+            background: url("../img/berries2.png") 0 rem(54px) no-repeat, url("../img/patternsheet2.png") left top no-repeat;
+            width: rem(140px);
+            min-height: rem(285px);
             position: absolute;
             z-index: 2;
             bottom: 0;
@@ -63,10 +63,10 @@
             content: "";
             display: block;
             background: url("../img/sheet6.png") left top no-repeat;
-            width: 138px;
-            min-height: 190px;
+            width: rem(138px);
+            min-height: rem(190px);
             position: absolute;
-            bottom: 85px;
+            bottom: rem(85px);
             right: 0;
         }
     
@@ -74,18 +74,18 @@
             content: "";
             display: block;
             background: url("../img/blueberries2.png") left top no-repeat;
-            width: 47px;
-            min-height: 50px;
+            width: rem(47px);
+            min-height: rem(50px);
             position: absolute;
-            left: 20px;
-            bottom: 85px;
+            left: rem(20px);
+            bottom: rem(85px);
         }
     }
 
     &__title {
-        font-size: 48px;
+        font-size: rem(48px);
         font-weight: 700;
-        margin-bottom: 60px;
+        margin-bottom: rem(60px);
         text-align: center;
         text-transform: uppercase;
         color: #000;
@@ -105,7 +105,7 @@
 }
 
 .headline {
-    margin-bottom: 50px;
+    margin-bottom: rem(50px);
     text-align: center;
 
     &__title {

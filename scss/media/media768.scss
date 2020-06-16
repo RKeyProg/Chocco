@@ -1,0 +1,106 @@
+@media screen and (max-width: 768px) {
+    .container {
+        width: rem(460px);
+    }
+
+    .hero {
+        padding-bottom: 12.5vh;
+        background: url(../img/palm.png) right top 18%/65% auto no-repeat;
+        background-color: #86c3d7;
+
+        &__container {
+            background: url(../img/chocclate.png) center top 22%/auto 50% no-repeat;
+        }
+
+        &__title {
+            font-size: rem(40px);
+            line-height: 1em;
+        }
+
+        &__subtitle {
+            font-size: $base-font-size;
+        }
+
+        &::after {
+            background: url(../img/berries768.png) left 54% top 33%/auto 30% no-repeat;
+        }
+    }
+
+    .benefits {
+        flex-direction: column;
+
+        &__item {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .benefit {
+        text-align: start;
+
+        &__image-wrapper {
+            margin: 0 rem(15px) 0 0;
+        }
+    }
+
+    .headline {
+        &__subtitle {
+            padding: 0;
+            font-size: $base-font-size;
+        }
+    }
+
+    .section {
+        &__title {
+            font-size: rem(40px);
+            margin-bottom: rem(43px);
+        }
+
+        &__why::before, &__why::after {
+            display: none;
+        }
+
+        &__reviews {
+            &::before {
+                top: 0;
+                right: rem(-25px);
+            }
+
+            &::after {
+                left: -30px;
+            }
+        }
+    }
+
+    .review {
+        &__photo {
+            width: rem(120px);
+            height: rem(120px);
+        }
+    }
+
+    .interactive-avatar {
+        width: rem(64px);
+        height: rem(64px);
+    }
+
+    .form {
+        &__input {
+            padding: rem(8px) rem(8px);
+        }
+
+        &__controls {
+            justify-content: center;
+        }
+
+        &__buttons {
+            width: auto;
+        }
+    }
+}

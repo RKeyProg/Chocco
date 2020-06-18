@@ -1,0 +1,37 @@
+.footer {
+    background-color: #fff;
+    padding: rem(30px) 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include phones {
+            flex-direction: column;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        color: #365a49;
+
+        @include phones {
+            margin-bottom: 7px;
+        }
+    }
+
+    &__address {
+        margin-bottom: 7px;
+        color: #000;
+        font-style: normal;
+        font-size: rem(20px);
+    }
+
+    &__phone-number {
+        @include phones {
+            justify-content: center;
+        }
+    }
+}

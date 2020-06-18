@@ -1,15 +1,26 @@
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
-    z-index: 5;
     color: #fff;
 
     &__logo {
-        width: rem(53px);
+        width: rem(52px);
         max-height: rem(40px);
-    }    
+        flex-shrink: 0;
+    }   
+    
+    &__phone-number.phone-number {
+        flex-shrink: 0;
+        @include tablets {
+            display: none;
+        }
+    }
+
+    @include tablets {
+        align-items: center;
+    }
 }
 
 .phone-number {

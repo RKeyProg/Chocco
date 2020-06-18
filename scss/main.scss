@@ -11,9 +11,17 @@ $base-font-size: 18px;
 $radio-and-check-size: rem(25px);
 $benefits-icon-width: rem(126px);
 
+// breackpoints
+
+$tablets: 768px;
+$phones: 480px;
+
 // z-index
 
 $z-pagenator: 100;
+$z-container: 5;
+$z-after: 2;
+$z-review: 1;
 
 // colors
 
@@ -22,6 +30,8 @@ $darkGreen: #365a49;
 $gray: #f2f5f4;
 
 // imports
+
+@import "media/media";
 
 @import "layout/reset.css";
 @import "layout/normalize.css";
@@ -39,6 +49,7 @@ $gray: #f2f5f4;
 @import "blocks/reviews";
 @import "blocks/interactive-avatar";
 @import "blocks/form";
-@import "media/media992.scss";
-@import "media/media768.scss";
-@import "media/media480.scss";
+@import "blocks/contacts";
+@import "blocks/map";
+@import "blocks/footer";
+@import "blocks/socials";

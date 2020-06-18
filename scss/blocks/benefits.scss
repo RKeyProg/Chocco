@@ -1,11 +1,20 @@
 .benefits {
     display: flex;
     justify-content: space-between;
+    
+    @include tablets {
+        flex-direction: column;
+    }
 
     &__item {
         flex: 1;
         padding: 0 3%;
         position: relative;
+
+        @include tablets {
+            padding: 0;
+            margin-bottom: rem(30px);
+        }
 
         &::after {
             content: url("../img/ellipse.png");
@@ -13,9 +22,10 @@
             right: 0;
             top: $benefits-icon-width / 2;
             transform: translate(50%, -50%);
-            width: rem(67px);
-            min-height: rem(21px);
-            max-height: rem(25px);
+
+            @include tablets {
+                display: none;
+            }
         }
 
         &:first-child {
@@ -35,20 +45,34 @@
 .benefit {
     text-align: center;
 
-    &__image-wrapper {
-        display: inline-flex;
-        justify-content: center;
+    @include phones {
+        display: flex;
         align-items: center;
-        width: $benefits-icon-width;
-        height: $benefits-icon-width;
-        border-radius: 50%;
-        overflow: hidden;
-        background-color: $gray;
-        margin-bottom: rem(30px);
+        text-align: left;
+    }
+
+    &__image {
+        margin-right: rem(20px);
+
+        &-wrapper {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: $benefits-icon-width;
+            height: $benefits-icon-width;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: $gray;
+            margin-bottom: rem(30px);
+    
+            @include phones {
+                margin: 0;
+            }
+        }
     }
 
     &__icon {
-        width: rem(75px);
-        height: rem(69px);
+        width: rem(74px);
+        height: rem(68px);
     } 
 }

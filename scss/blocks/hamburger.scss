@@ -1,27 +1,18 @@
-@mixin hamb-line {
-    width: rem(24px);
-    height: rem(4px);
-    background-color: #fff;
-    border-radius: 2px;
-    display: block;
-    position: relative;
-}
-
 .hamburger {
-    @include hamb-line;
-    
+    width: 24px;
+    height: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
 
-    &::before {
-        content: '';
-        @include hamb-line;
-        position: absolute;
-        top: rem(-7px);
+    @include tablets {
+        display: inline-flex;
     }
 
-    &::after {
-        content: '';
-        @include hamb-line;
-        position: absolute;
-        top: rem(7px);
+    &__line {
+        display: block;
+        background-color: #fff;
+        border-radius: 10px;
+        height: 4px;
     }
 }

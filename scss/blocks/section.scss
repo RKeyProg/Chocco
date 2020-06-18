@@ -8,80 +8,6 @@
     position: relative;
     color: #000;
 
-    &__why {
-        &::before {
-            content: "";
-            display: block;
-            background: url("../img/patternsheet.png") center center no-repeat;
-            width: rem(190px);
-            min-height: rem(315px);
-            position: absolute;
-            left: 0;
-            bottom: rem(140px);
-        }
-    
-        &::after {
-            content: "";
-            display: block;
-            background: url("../img/cake.png") bottom left no-repeat;
-            width: rem(161px);
-            min-height: rem(225px);
-            position: absolute;
-            left: 0;
-            bottom: rem(-105px);
-        }
-    }
-
-    &__reviews {
-        &::before {
-            content: "";
-            display: block;
-            background: url("../img/strawberry.png") center center no-repeat;
-            width: rem(150px);
-            min-height: rem(85px);
-            position: absolute;
-            top: rem(40px);
-            right: rem(12px);
-        }
-    
-        &::after {
-            content: "";
-            display: block;
-            background: url("../img/berries2.png") 0 rem(54px) no-repeat, url("../img/patternsheet2.png") left top no-repeat;
-            width: rem(140px);
-            min-height: rem(285px);
-            position: absolute;
-            z-index: 2;
-            bottom: 0;
-            left: 0;
-            transform: translateY(50%);
-        }
-    }
-
-    &__orders {
-        &::before {
-            content: "";
-            display: block;
-            background: url("../img/sheet6.png") left top no-repeat;
-            width: rem(138px);
-            min-height: rem(190px);
-            position: absolute;
-            bottom: rem(85px);
-            right: 0;
-        }
-    
-        &::after {
-            content: "";
-            display: block;
-            background: url("../img/blueberries2.png") left top no-repeat;
-            width: rem(47px);
-            min-height: rem(50px);
-            position: absolute;
-            left: rem(20px);
-            bottom: rem(85px);
-        }
-    }
-
     &__title {
         font-size: rem(48px);
         font-weight: 700;
@@ -89,6 +15,98 @@
         text-align: center;
         text-transform: uppercase;
         color: #000;
+    }
+
+    &__why {
+        &::before {
+            content: url("../img/patternsheet.png");
+            position: absolute;
+            left: 0;
+            top: 238px;
+
+            @include tablets {
+                top: 88px;
+            }
+        }
+    
+        &::after {
+            content: url("../img/cake.png");
+            position: absolute;
+            left: 0;
+            bottom: -105px;
+        }
+
+        &::before, &::after {
+            @include phones {
+                display: none;
+            }
+        }
+    }
+
+    &__reviews {
+        &::before {
+            content: url("../img/strawberry.png");
+            position: absolute;
+            top: 40px;
+            right: 12px;
+
+            @include tablets {
+                top: 0;
+                right: -38px;
+            }
+        }
+    
+        &::after {
+            content: "";
+            display: block;
+            background: url("../img/berries2.png") 0 rem(54px) no-repeat, url("../img/patternsheet2.png") left top no-repeat;
+            width: rem(156px);
+            min-height: rem(318px);
+            position: absolute;
+            z-index: $z-after;
+            bottom: 0;
+            left: 0;
+            transform: translateY(50%);
+
+            @include tablets {
+                background: url("../img/berries2.png") 0 rem(54px) / contain no-repeat, url("../img/patternsheet2.png") left top / contain no-repeat;
+                width: 20%;
+            }
+
+            @include phones {
+                bottom: -5%;
+            }
+        }
+    }
+
+    &__orders {
+        &::before {
+            content: url("../img/sheet6.png");
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+        }
+    
+        &::after {
+            content: url("../img/blueberries2.png");
+            position: absolute;
+            left: 20px;
+            bottom: 85px;
+        }
+
+        &::before, &::after {
+            @include tablets {
+                display: none;
+            }
+        }
+        
+        &-title {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__contacts {
+        padding: 0;
     }
 
     &__orders {
@@ -116,5 +134,13 @@
         padding: 0 26%;
         margin: 0 auto;
         line-height: 1.3em;
+
+        @include tablets {
+            padding: 0 20%;
+        }
+
+        @include phones {
+            padding: 0 5%;
+        }
     }
 }

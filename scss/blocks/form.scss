@@ -5,12 +5,30 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
+    @include tablets {
+        flex-direction: column;
+        padding: 0 19%;
+    }
+
+    @include phones {
+        padding: 0;
+    }
+
     &__column {
+        width: 100%;
         flex: 1;
         margin: 0 rem(20px) rem(44px) 0;
 
+        @include tablets {
+            margin: 0 0 rem(12px) 0;
+        }
+
         &:last-child {
             margin-right: 0;
+
+            @include tablets {
+                margin-bottom: rem(27px);
+            }
         }
     }
 
@@ -47,11 +65,6 @@
 
         &_size_auto {
             width: auto;
-            margin-right: rem(22px);
-
-            &:last-child {
-                margin-right: 0;
-            }
         }
     }
 
@@ -60,16 +73,17 @@
         justify-content: flex-start;
         flex-wrap: wrap;
         margin-bottom: rem(4px);
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-
+        
         &-label {
             display: flex;
             align-items: center;
             flex: none;
             margin-bottom: rem(7px);
+            user-select: none;
+        }
+
+        @include phones {
+            justify-content: center;
         }
     }
 
@@ -81,6 +95,10 @@
         &:focus {
             border: 3px solid #dee2bd;
             outline: none;
+        }
+
+        @include tablets {
+            padding: 5px 7px;
         }
     }
 
@@ -103,10 +121,13 @@
         padding: rem(11px);
         border: 3px solid transparent;
 
-
         &:focus {
             border: 3px solid #dee2bd;
             outline: none;
+        }
+
+        @include tablets {
+            height: 80px;
         }
     }
 
@@ -134,8 +155,8 @@
         &::after {
             content: "";
             display: none;
-            width: rem(13px);
-            height: rem(13px);
+            width: rem(12px);
+            height: rem(12px);
             border-radius: 50%;
             background-color: $darkGreen;
         }
@@ -162,8 +183,14 @@
     }
 
     &__buttons {
-        width: calc(50% - 0.875rem);
-        margin-left: auto;
+        padding-top: 30px;
+
+        @include tablets {
+            width: auto;
+            margin: 15px auto 0;
+            text-align: center;
+            padding-top: 15px;
+        }
     }
 
     &__button {

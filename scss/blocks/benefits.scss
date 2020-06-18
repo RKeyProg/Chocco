@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     
-    @include tablets {
+    @include phones {
         flex-direction: column;
     }
 

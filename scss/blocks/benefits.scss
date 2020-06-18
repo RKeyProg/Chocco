@@ -52,7 +52,6 @@
     }
 
     &__image {
-        margin-right: rem(20px);
 
         &-wrapper {
             display: inline-flex;
@@ -68,6 +67,10 @@
             @include phones {
                 margin: 0;
             }
+        }
+
+        @include phones {
+            margin-right: rem(20px);
         }
     }
 

@@ -537,9 +537,6 @@ h4 {
     text-align: left;
   }
 }
-.benefit__image {
-  margin-right: 1.1111111111rem;
-}
 .benefit__image-wrapper {
   display: inline-flex;
   justify-content: center;
@@ -554,6 +551,11 @@ h4 {
 @media screen and (max-width: 480px) {
   .benefit__image-wrapper {
     margin: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .benefit__image {
+    margin-right: 1.1111111111rem;
   }
 }
 .benefit__icon {

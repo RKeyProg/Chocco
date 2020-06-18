@@ -17,14 +17,14 @@
         }
 
         &::after {
-            content: url("../img/ellipse.png");
+            content: "";
             position: absolute;
             right: 0;
             top: $benefits-icon-width / 2;
             transform: translate(50%, -50%);
 
-            @include tablets {
-                display: none;
+            @media screen and (min-width: $tablets) {
+                content: url("../img/ellipse.png");
             }
         }
 

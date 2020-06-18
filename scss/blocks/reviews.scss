@@ -77,10 +77,6 @@
             height: rem(140px);
             margin: 0 0 28px;
         }
-
-        @include phones {
-            width: 25%;
-        }
     }
 
     &__title {
@@ -115,5 +111,9 @@
         position: absolute;
         right: 0;
         top: 0;
+
+        @include phones {
+            width: 25%;
+        }
     }
 }

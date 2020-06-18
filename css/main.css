@@ -144,11 +144,10 @@ h4 {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  background: url("../img/chocclate.png") right center/50% auto no-repeat;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .hero__container {
-    background: none;
+    background: url("../img/chocclate.png") right center/50% auto no-repeat;
   }
 }
 .hero__title-section {
@@ -203,23 +202,25 @@ h4 {
 }
 .hero::before {
   content: "";
-  background: url("../img/sheet3.png") center center no-repeat;
-  display: block;
-  width: 3.3333333333rem;
-  min-height: 6.1111111111rem;
   position: absolute;
   left: 2%;
   bottom: -2.2222222222rem;
 }
+@media screen and (min-width: 768px) {
+  .hero::before {
+    content: url("../img/sheet3.png");
+  }
+}
 .hero::after {
   content: "";
-  background: url("../img/berries.png") center center no-repeat;
-  display: block;
-  width: 25.7777777778rem;
-  min-height: 19.1111111111rem;
   position: absolute;
   right: 1%;
   bottom: -2.2222222222rem;
+}
+@media screen and (min-width: 768px) {
+  .hero::after {
+    content: url("../img/berries.png");
+  }
 }
 @media screen and (max-width: 768px) {
   .hero::before, .hero::after {
@@ -373,7 +374,7 @@ h4 {
   color: #000;
 }
 .section__why::before {
-  content: url("../img/patternsheet.png");
+  content: "";
   position: absolute;
   left: 0;
   top: 238px;
@@ -383,15 +384,20 @@ h4 {
     top: 88px;
   }
 }
+@media screen and (min-width: 480px) {
+  .section__why::before {
+    content: url("../img/patternsheet.png");
+  }
+}
 .section__why::after {
-  content: url("../img/cake.png");
+  content: "";
   position: absolute;
   left: 0;
   bottom: -105px;
 }
-@media screen and (max-width: 480px) {
-  .section__why::before, .section__why::after {
-    display: none;
+@media screen and (min-width: 480px) {
+  .section__why::after {
+    content: url("../img/cake.png");
   }
 }
 .section__reviews::before {
@@ -430,20 +436,25 @@ h4 {
   }
 }
 .section__orders::before {
-  content: url("../img/sheet6.png");
+  content: "";
   position: absolute;
   bottom: 85px;
   right: 0;
 }
+@media screen and (min-width: 768px) {
+  .section__orders::before {
+    content: url("../img/sheet6.png");
+  }
+}
 .section__orders::after {
-  content: url("../img/blueberries2.png");
+  content: "";
   position: absolute;
   left: 20px;
   bottom: 85px;
 }
-@media screen and (max-width: 768px) {
-  .section__orders::before, .section__orders::after {
-    display: none;
+@media screen and (min-width: 768px) {
+  .section__orders::after {
+    content: url("../img/blueberries2.png");
   }
 }
 .section__orders-title {
@@ -506,15 +517,15 @@ h4 {
   }
 }
 .benefits__item::after {
-  content: url("../img/ellipse.png");
+  content: "";
   position: absolute;
   right: 0;
   top: 3.5rem;
   transform: translate(50%, -50%);
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .benefits__item::after {
-    display: none;
+    content: url("../img/ellipse.png");
   }
 }
 .benefits__item:first-child {
@@ -637,11 +648,6 @@ h4 {
     margin: 0 0 28px;
   }
 }
-@media screen and (max-width: 480px) {
-  .review__photo {
-    width: 25%;
-  }
-}
 .review__title {
   font-size: 1.6666666667rem;
   font-weight: 700;
@@ -673,6 +679,11 @@ h4 {
   position: absolute;
   right: 0;
   top: 0;
+}
+@media screen and (max-width: 480px) {
+  .review__decor {
+    width: 25%;
+  }
 }
 
 .interactive-avatar {

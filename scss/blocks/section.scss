@@ -19,7 +19,7 @@
 
     &__why {
         &::before {
-            content: url("../img/patternsheet.png");
+            content: "";
             position: absolute;
             left: 0;
             top: 238px;
@@ -27,18 +27,20 @@
             @include tablets {
                 top: 88px;
             }
+
+            @media screen and (min-width: $phones) {
+                content: url("../img/patternsheet.png");
+            }
         }
     
         &::after {
-            content: url("../img/cake.png");
+            content: "";
             position: absolute;
             left: 0;
             bottom: -105px;
-        }
 
-        &::before, &::after {
-            @include phones {
-                display: none;
+            @media screen and (min-width: $phones) {
+                content: url("../img/cake.png");
             }
         }
     }
@@ -81,22 +83,24 @@
 
     &__orders {
         &::before {
-            content: url("../img/sheet6.png");
+            content: "";
             position: absolute;
             bottom: 85px;
             right: 0;
+
+            @media screen and (min-width: $tablets) {
+                content: url("../img/sheet6.png");
+            }
         }
     
         &::after {
-            content: url("../img/blueberries2.png");
+            content: "";
             position: absolute;
             left: 20px;
             bottom: 85px;
-        }
 
-        &::before, &::after {
-            @include tablets {
-                display: none;
+            @media screen and (min-width: $tablets) {
+                content: url("../img/blueberries2.png");
             }
         }
         

@@ -22,19 +22,3 @@
         align-items: center;
     }
 }
-
-.phone-number {
-    font-size: rem(24px);
-    display: flex;
-    align-items: center;
-
-    &__icon {
-        width: rem(12px);
-        height: rem(12px);
-        margin-right: rem(6px);
-    }
-
-    &:hover {
-        text-shadow: rem(0px) rem(0px) rem(10px) rgba(0, 0, 0, 0.2);
-    }
-}

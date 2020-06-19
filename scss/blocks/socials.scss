@@ -12,4 +12,15 @@
             margin-right: 0;
         }
     }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        fill: #b2b2b2;
+        transition: all .3s ease;
+
+        &:hover {
+            fill: #000;
+        }
+    }
 }

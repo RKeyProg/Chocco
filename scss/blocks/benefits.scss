@@ -77,5 +77,9 @@
     &__icon {
         width: rem(74px);
         height: rem(68px);
+
+        &_color_dark {
+            fill: #2e2e2d;
+        }
     } 
 }

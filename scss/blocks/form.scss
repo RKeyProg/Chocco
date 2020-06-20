@@ -3,7 +3,6 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 
     @include tablets {
         flex-direction: column;
@@ -16,11 +15,12 @@
 }
 
 .form__column {
-    width: 100%;
+    width: rem(394px);
     flex: 1;
     margin: 0 rem(20px) rem(44px) 0;
 
     @include tablets {
+        width: 100%;
         margin: 0 0 rem(12px) 0;
     }
 
@@ -52,7 +52,7 @@
     }
 
     &_mb_big {
-        margin-bottom: rem(22px);
+        margin-bottom: rem(21px);
 
         @include phones {
             margin-bottom: rem(17px);
@@ -89,7 +89,6 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-bottom: rem(4px);
 
     @include phones {
         justify-content: center;
@@ -100,7 +99,7 @@
     display: flex;
     align-items: center;
     flex: none;
-    margin-bottom: rem(7px);
+    margin-bottom: rem(13px);
     user-select: none;
 }
 

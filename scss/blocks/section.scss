@@ -8,143 +8,161 @@
     position: relative;
     color: #000;
 
-    &__title {
-        font-size: rem(48px);
-        font-weight: 700;
-        margin-bottom: rem(60px);
-        text-align: center;
-        text-transform: uppercase;
-        color: #000;
+    @include phones {
+        padding: rem(10px) 0;
     }
+}
 
-    &__why {
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 238px;
+.section__title {
+    font-size: rem(48px);
+    font-weight: 700;
+    margin-bottom: rem(60px);
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
 
-            @include tablets {
-                top: 88px;
-            }
-
-            @media screen and (min-width: $phones) {
-                content: url("../img/patternsheet.png");
-            }
-        }
-    
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -105px;
-
-            @media screen and (min-width: $phones) {
-                content: url("../img/cake.png");
-            }
-        }
+    @include phones {
+        font-size: rem(40px);
+        margin-bottom: rem(24px);
     }
+}
 
-    &__reviews {
-        &::before {
-            content: url("../img/strawberry.png");
-            position: absolute;
-            top: 40px;
-            right: 12px;
+.section__why {
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 238px;
 
-            @include tablets {
-                top: 0;
-                right: -38px;
-            }
+        @include tablets {
+            top: 88px;
         }
-    
-        &::after {
-            content: "";
-            display: block;
-            background: url("../img/berries2.png") 0 rem(54px) no-repeat, url("../img/patternsheet2.png") left top no-repeat;
-            width: rem(156px);
-            min-height: rem(318px);
-            position: absolute;
-            z-index: $z-after;
-            bottom: 0;
-            left: 0;
-            transform: translateY(50%);
 
-            @include tablets {
-                background: url("../img/berries2.png") 0 rem(54px) / contain no-repeat, url("../img/patternsheet2.png") left top / contain no-repeat;
-                width: 20%;
-            }
-
-            @include phones {
-                bottom: -5%;
-            }
+        @media screen and (min-width: $phones) {
+            content: url("../img/patternsheet.png");
         }
     }
 
-    &__orders {
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 85px;
-            right: 0;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -105px;
 
-            @media screen and (min-width: $tablets) {
-                content: url("../img/sheet6.png");
-            }
+        @media screen and (min-width: $phones) {
+            content: url("../img/cake.png");
         }
-    
-        &::after {
-            content: "";
-            position: absolute;
-            left: 20px;
-            bottom: 85px;
+    }
+}
 
-            @media screen and (min-width: $tablets) {
-                content: url("../img/blueberries2.png");
-            }
+.section__reviews {
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        background: url("../img/strawberry.png") center center / 100% auto no-repeat;
+        width: rem(169px);
+        min-height: rem(94px);
+        top: 40px;
+        right: 12px;
+
+        @include tablets {
+            top: 0;
+            right: -38px;
         }
-        
-        &-title {
-            margin-bottom: 30px;
+
+        @include phones {
+            width: 40%;
         }
     }
 
-    &__contacts {
-        padding: 0;
-    }
+    &::after {
+        content: "";
+        display: block;
+        background: url("../img/berries2.png") 0 rem(54px) no-repeat, url("../img/patternsheet2.png") left top no-repeat;
+        width: rem(156px);
+        min-height: rem(318px);
+        position: absolute;
+        z-index: $z-after;
+        bottom: 0;
+        left: 0;
+        transform: translateY(50%);
 
-    &__orders {
-        background: url("../img/berriesBG.jpg") center top / cover;
-    }
-
-    &_font-color_green {
-        color: $darkGreen;
-
-        .section__title {
-            color: inherit;
+        @include tablets {
+            background: url("../img/berries2.png") 0 rem(54px) / contain no-repeat, url("../img/patternsheet2.png") left top / contain no-repeat;
+            width: 20%;
         }
+
+        @include phones {
+            bottom: -5%;
+        }
+    }
+}
+
+.section__orders {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 85px;
+        right: 0;
+
+        @media screen and (min-width: $tablets) {
+            content: url("../img/sheet6.png");
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        bottom: 85px;
+
+        @media screen and (min-width: $tablets) {
+            content: url("../img/blueberries2.png");
+        }
+    }
+}
+
+.section__orders-title {
+    margin-bottom: rem(10px);
+}
+
+.section__contacts {
+    padding: 0;
+}
+
+.section__orders {
+    background: url("../img/berriesBG.jpg") center top / cover;
+}
+
+.section_font-color_green {
+    color: $darkGreen;
+
+    .section__title {
+        color: inherit;
     }
 }
 
 .headline {
     margin-bottom: rem(50px);
     text-align: center;
+}
 
-    &__title {
-        margin-bottom: 7px;
+
+.headline__title {
+    margin-bottom: 7px;
+}
+
+.headline__subtitle {
+    padding: 0 26%;
+    margin: 0 auto;
+    line-height: 1.3em;
+
+    @include tablets {
+        padding: 0 20%;
     }
 
-    &__subtitle {
-        padding: 0 26%;
-        margin: 0 auto;
-        line-height: 1.3em;
-
-        @include tablets {
-            padding: 0 20%;
-        }
-
-        @include phones {
-            padding: 0 5%;
-        }
+    @include phones {
+        padding: 0 5%;
     }
 }

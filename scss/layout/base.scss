@@ -55,6 +55,10 @@ a {
 h1 {
     font-size: rem(48px);
     text-transform: uppercase;
+
+    @include phones {
+        font-size: rem(40px);
+    }
 }
 
 h4 {

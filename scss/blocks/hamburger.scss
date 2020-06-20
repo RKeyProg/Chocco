@@ -8,11 +8,11 @@
     @include tablets {
         display: inline-flex;
     }
+}
 
-    &__line {
-        display: block;
-        background-color: #fff;
-        border-radius: 10px;
-        height: 4px;
-    }
+.hamburger__line {
+    display: block;
+    background-color: #fff;
+    border-radius: 10px;
+    height: 4px;
 }

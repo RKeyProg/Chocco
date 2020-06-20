@@ -27,6 +27,49 @@
     }
 }
 
+.section__hero {
+    background: url("../img/palm.png") right bottom 65% no-repeat;
+    background-color: $blue;
+    padding: rem(24px) 0 rem(45px);
+    position: relative;
+    height: 100vh;
+    min-height: rem(650px);
+    color: #fff;
+
+    @include tablets {
+        background-position: right bottom 90%;
+        background-size: 60%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 2%;
+        bottom: rem(-40px);
+    
+        @media screen and (min-width: $tablets+1) {
+            content: url("../img/sheet3.png");      
+        }
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        right: 1%;
+        bottom: rem(-40px);
+    
+        @media screen and (min-width: $tablets+1) {
+            content: url("../img/berries.png");
+        }
+    }
+    
+    &::before, &::after {
+        @include tablets {
+            display: none;
+        }
+    }
+}
+
 .section__why {
     &::before {
         content: "";

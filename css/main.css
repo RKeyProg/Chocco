@@ -160,7 +160,7 @@ h4 {
   left: 2%;
   bottom: -2.2222222222rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .hero::before {
     content: url("../img/sheet3.png");
   }
@@ -171,7 +171,7 @@ h4 {
   right: 1%;
   bottom: -2.2222222222rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .hero::after {
     content: url("../img/berries.png");
   }
@@ -427,7 +427,7 @@ h4 {
     top: 88px;
   }
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) {
   .section__why::before {
     content: url("../img/patternsheet.png");
   }
@@ -438,7 +438,7 @@ h4 {
   left: 0;
   bottom: -105px;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) {
   .section__why::after {
     content: url("../img/cake.png");
   }
@@ -495,7 +495,7 @@ h4 {
   bottom: 85px;
   right: 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .section__orders::before {
     content: url("../img/sheet6.png");
   }
@@ -506,7 +506,7 @@ h4 {
   left: 20px;
   bottom: 85px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .section__orders::after {
     content: url("../img/blueberries2.png");
   }

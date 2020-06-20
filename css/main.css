@@ -188,7 +188,7 @@ h4 {
   justify-content: space-between;
   height: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .hero__container {
     background: url("../img/chocclate.png") right center/50% auto no-repeat;
   }

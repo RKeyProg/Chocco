@@ -1,55 +1,59 @@
-.hero {
-    background: url("../img/palm.png") right bottom / contain no-repeat;
-    background-color: $blue;
-    padding: rem(24px) 0 rem(45px);
-    position: relative;
-    height: 100vh;
-    color: #fff;
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
+    @media screen and (min-width: $tablets+1) {
         background: url("../img/chocclate.png") right center / 50% auto no-repeat;
     }
+}
 
-    &__title-section {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+.hero__title-section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include tablets {
+        width: 100%;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &::before {
+            content: "";
+            width: rem(280px);
+            height: rem(280px);
+            background: url("../img/berries768.png") center center / contain no-repeat;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.hero__title {
+    line-height: 1.2em;
+    margin-bottom: rem(7px);
+
+    @include tablets {
+        line-height: 1.3em;
     }
 
-    &__title {
-        line-height: 1.2em;
-        margin-bottom: rem(7px);
+    @include phones {
+        line-height: 1;
+    }
+}
+
+.hero__subtitle {
+    font-size: rem(21px);
+    margin-bottom: rem(26px);
+
+    @include tablets {
+        padding: 0 25%;
     }
 
-    &__subtitle {
-        font-size: rem(21px);
-        margin-bottom: rem(31px);
-    }
-
-    &::before {
-        content: "";
-        background: url("../img/sheet3.png") center center no-repeat;
-        display: block;
-        width: rem(60px);
-        min-height: rem(110px);
-        position: absolute;
-        left: 2%;
-        bottom: rem(-40px);
-    }
-
-    &::after {
-        content: "";
-        background: url("../img/berries.png") center center no-repeat;
-        display: block;
-        width: rem(465px);
-        min-height: rem(345px);
-        position: absolute;
-        right: 1%;
-        bottom: rem(-40px);
+    @include phones {
+        padding: 0 6%;
     }
 }

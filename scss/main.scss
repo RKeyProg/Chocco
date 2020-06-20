@@ -9,11 +9,25 @@
 $container-width: 940px;
 $base-font-size: 18px;
 $radio-and-check-size: rem(25px);
+<<<<<<< HEAD
 $benefits-icon-width: rem(126px);
+=======
+
+// breackpoints
+
+$tablets: 768px;
+$phones: 480px;
+>>>>>>> second_week
 
 // z-index
 
 $z-pagenator: 100;
+<<<<<<< HEAD
+=======
+$z-container: 5;
+$z-after: 2;
+$z-review: 1;
+>>>>>>> second_week
 
 // colors
 
@@ -23,11 +37,15 @@ $gray: #f2f5f4;
 
 // imports
 
+@import "media/media";
+
 @import "layout/reset.css";
 @import "layout/normalize.css";
 @import "layout/base";
 
 @import "blocks/header";
+@import "blocks/phone";
+@import "blocks/hamburger";
 @import "blocks/hero";
 @import "blocks/menu";
 @import "blocks/btn";
@@ -38,3 +56,7 @@ $gray: #f2f5f4;
 @import "blocks/reviews";
 @import "blocks/interactive-avatar";
 @import "blocks/form";
+@import "blocks/contacts";
+@import "blocks/map";
+@import "blocks/footer";
+@import "blocks/socials";

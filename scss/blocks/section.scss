@@ -3,118 +3,208 @@
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    min-height: 650px;
-    padding: 105px 0;
+    min-height: rem(650px);
+    padding: rem(105px) 0;
     position: relative;
     color: #000;
 
-    &__why {
-        &::before {
-            content: "";
-            display: block;
-            background: url("../img/patternsheet.png") center center no-repeat;
-            width: 190px;
-            min-height: 315px;
-            position: absolute;
-            left: 0;
-            bottom: 140px;
-        }
+    @include phones {
+        padding: rem(10px) 0;
+    }
+}
+
+.section__title {
+    font-size: rem(48px);
+    font-weight: 700;
+    margin-bottom: rem(60px);
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+
+    @include phones {
+        font-size: rem(40px);
+        margin-bottom: rem(24px);
+    }
+}
+
+.section__hero {
+    background: url("../img/palm.png") right bottom 65% no-repeat;
+    background-color: $blue;
+    padding: rem(24px) 0 rem(45px);
+    position: relative;
+    height: 100vh;
+    min-height: rem(650px);
+    color: #fff;
+
+    @include tablets {
+        background-position: right bottom 90%;
+        background-size: 60%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 2%;
+        bottom: rem(-40px);
     
-        &::after {
-            content: "";
-            display: block;
-            background: url("../img/cake.png") bottom left no-repeat;
-            width: 161px;
-            min-height: 225px;
-            position: absolute;
-            left: 0;
-            bottom: -105px;
+        @media screen and (min-width: $tablets+1) {
+            content: url("../img/sheet3.png");      
         }
     }
-
-    &__reviews {
-        &::before {
-            content: "";
-            display: block;
-            background: url("../img/strawberry.png") center center no-repeat;
-            width: 150px;
-            min-height: 85px;
-            position: absolute;
-            top: 40px;
-            right: 12px;
-        }
     
-        &::after {
-            content: "";
-            display: block;
-            background: url("../img/berries2.png") 0 54px no-repeat, url("../img/patternsheet2.png") left top no-repeat;
-            width: 140px;
-            min-height: 285px;
-            position: absolute;
-            z-index: 2;
-            bottom: 0;
-            left: 0;
-            transform: translateY(50%);
-        }
-    }
-
-    &__orders {
-        &::before {
-            content: "";
-            display: block;
-            background: url("../img/sheet6.png") left top no-repeat;
-            width: 138px;
-            min-height: 190px;
-            position: absolute;
-            bottom: 85px;
-            right: 0;
-        }
+    &::after {
+        content: "";
+        position: absolute;
+        right: 1%;
+        bottom: rem(-40px);
     
-        &::after {
-            content: "";
-            display: block;
-            background: url("../img/blueberries2.png") left top no-repeat;
-            width: 47px;
-            min-height: 50px;
-            position: absolute;
-            left: 20px;
-            bottom: 85px;
+        @media screen and (min-width: $tablets+1) {
+            content: url("../img/berries.png");
+        }
+    }
+    
+    &::before, &::after {
+        @include tablets {
+            display: none;
+        }
+    }
+}
+
+.section__why {
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 238px;
+
+        @include tablets {
+            top: 88px;
+        }
+
+        @media screen and (min-width: $phones+1) {
+            content: url("../img/patternsheet.png");
         }
     }
 
-    &__title {
-        font-size: 48px;
-        font-weight: 700;
-        margin-bottom: 60px;
-        text-align: center;
-        text-transform: uppercase;
-        color: #000;
-    }
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -105px;
 
-    &__orders {
-        background: url("../img/berriesBG.jpg") center top / cover;
-    }
-
-    &_font-color_green {
-        color: $darkGreen;
-
-        .section__title {
-            color: inherit;
+        @media screen and (min-width: $phones+1) {
+            content: url("../img/cake.png");
         }
+    }
+}
+
+.section__reviews {
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        background: url("../img/strawberry.png") center center / 100% auto no-repeat;
+        width: rem(169px);
+        min-height: rem(94px);
+        top: 40px;
+        right: 12px;
+
+        @include tablets {
+            top: 0;
+            right: -38px;
+        }
+
+        @include phones {
+            width: 40%;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        background: url("../img/berries2.png") 0 rem(54px) no-repeat, url("../img/patternsheet2.png") left top no-repeat;
+        width: rem(156px);
+        min-height: rem(318px);
+        position: absolute;
+        z-index: $z-after;
+        bottom: 0;
+        left: 0;
+        transform: translateY(50%);
+
+        @include tablets {
+            background: url("../img/berries2.png") 0 rem(54px) / contain no-repeat, url("../img/patternsheet2.png") left top / contain no-repeat;
+            width: 20%;
+        }
+
+        @include phones {
+            bottom: -5%;
+        }
+    }
+}
+
+.section__orders {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 85px;
+        right: 0;
+
+        @media screen and (min-width: $tablets+1) {
+            content: url("../img/sheet6.png");
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        bottom: 85px;
+
+        @media screen and (min-width: $tablets+1) {
+            content: url("../img/blueberries2.png");
+        }
+    }
+}
+
+.section__orders-title {
+    margin-bottom: rem(10px);
+}
+
+.section__contacts {
+    padding: 0;
+}
+
+.section__orders {
+    background: url("../img/berriesBG.jpg") center top / cover;
+}
+
+.section_font-color_green {
+    color: $darkGreen;
+
+    .section__title {
+        color: inherit;
     }
 }
 
 .headline {
-    margin-bottom: 50px;
+    margin-bottom: rem(50px);
     text-align: center;
-
-    &__title {
-        margin-bottom: 7px;
-    }
-
-    &__subtitle {
-        padding: 0 26%;
-        margin: 0 auto;
-        line-height: 1.3em;
-    }
 }
+
+
+.headline__title {
+    margin-bottom: 7px;
+}
+
+.headline__subtitle {
+    padding: 0 26%;
+    margin: 0 auto;
+    line-height: 1.3em;
+
+    @include tablets {
+        padding: 0 20%;
+    }
+
+    @include phones {
+        padding: 0 5%;
+em;

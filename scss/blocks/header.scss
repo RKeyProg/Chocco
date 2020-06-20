@@ -1,29 +1,24 @@
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
-    z-index: 5;
     color: #fff;
 
-    &__logo {
-        width: rem(53px);
-        max-height: rem(40px);
-    }    
+    @include tablets {
+        align-items: center;
+    }
 }
 
-.phone-number {
-    font-size: rem(24px);
-    display: flex;
-    align-items: center;
+.header__logo {
+    width: rem(52px);
+    max-height: rem(40px);
+    flex-shrink: 0;
+}   
 
-    &__icon {
-        width: rem(12px);
-        height: rem(12px);
-        margin-right: rem(6px);
-    }
-
-    &:hover {
-        text-shadow: rem(0px) rem(0px) rem(10px) rgba(0, 0, 0, 0.2);
+.header__phone-number.phone-number {
+    flex-shrink: 0;
+    @include tablets {
+        display: none;
     }
 }

@@ -1,0 +1,24 @@
+.socials__list {
+    display: flex;
+}
+
+.socials__item {
+    width: rem(24px);
+    height: rem(24px);
+    margin-right: rem(20px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.socials__img {
+    width: 100%;
+    height: 100%;
+    fill: #b2b2b2;
+    transition: all .3s ease;
+
+    &:hover {
+        fill: #000;
+    }
+}

@@ -1,0 +1,38 @@
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(48, 48, 48, 0.99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+.overlay__container {
+    width: rem(300px);
+    background-color: #fff;
+    padding: rem(35px) rem(25px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overlay__text {
+    font-size: rem($base-font-size);
+    color: #000;
+    margin-bottom: rem(20px);
+}
+
+.overlay__btn {
+    border: 0;
+    transition: all .3s ease;
+}
+
+.overlay__btn:hover {
+    cursor: pointer;
+    background-color: #2d4b3c;
+    color: #fff;
+}

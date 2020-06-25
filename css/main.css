@@ -20,7 +20,6 @@ html {
 
 html, body {
   height: 100%;
-  font-size: 18px;
 }
 
 body {
@@ -34,13 +33,17 @@ body {
 
 .wrapper {
   width: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
-  width: 940px;
+  width: 95%;
+  max-width: 940px;
   margin: 0 auto;
   position: relative;
-  z-index: 10;
+  z-index: 5;
 }
 
 img {

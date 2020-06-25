@@ -16,7 +16,6 @@ html {
 
 html, body {
     height: 100%;
-    font-size: $base-font-size;
 }
 
 body {
@@ -30,14 +29,17 @@ body {
 
 .wrapper {
     width: 100%;
-    // overflow: hidden;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .container {
-    width: $container-width;
+    width: 95%;
+    max-width: $container-width;
     margin: 0 auto;
     position: relative;
-    z-index: 10;
+    z-index: $z-container;
 }
 
 img {

@@ -8,7 +8,8 @@
 
 $container-width: 940px;
 $base-font-size: 18px;
-$radio-and-check-size: rem(25px);
+$radio-and-check-size: rem(22px);
+$benefits-icon-width: rem(126px);
 
 // breackpoints
 
@@ -49,7 +50,6 @@ $gray: #f2f5f4;
 @import "blocks/reviews";
 @import "blocks/interactive-avatar";
 @import "blocks/form";
-@import "blocks/contacts";
 @import "blocks/map";
 @import "blocks/footer";
 @import "blocks/socials";

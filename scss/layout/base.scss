@@ -10,7 +10,7 @@ html {
     }
 
     @include phones {
-        font-size: $base-font-size - 2px;
+        font-size: 4vmin;
     }
 }
 
@@ -21,6 +21,7 @@ html, body {
 body {
     font-family: 'Alegreya Sans', sans-serif;
     font-weight: 400;
+    font-size: rem($base-font-size);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #666;
@@ -55,10 +56,6 @@ a {
 h1 {
     font-size: rem(48px);
     text-transform: uppercase;
-
-    @include phones {
-        font-size: rem(40px);
-    }
 }
 
 h4 {

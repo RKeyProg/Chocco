@@ -3,9 +3,4 @@
     height: rem(78px);
     border-radius: 50%;
     overflow: hidden;
-
-    @include phones {
-        width: rem(60px);
-        height: rem(60px);
-    }
 }

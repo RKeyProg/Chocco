@@ -30,7 +30,7 @@
     &_theme_transparent {
         background-color: transparent;
         color: $darkGreen;
-        font-size: $base-font-size;
+        font-size: rem($base-font-size);
         font-weight: 400;
         padding: 0;
         text-transform: none;

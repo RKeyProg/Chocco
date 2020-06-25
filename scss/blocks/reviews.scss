@@ -37,11 +37,6 @@
         margin-bottom: rem(30px);
     }
 
-    @include phones {
-        padding: rem(58px) rem(30px) rem(27px);
-        margin-bottom: rem(20px);
-    }
-
     &::before {
         content: "";
         width: rem(90px);
@@ -74,16 +69,15 @@
     @include tablets {
         width: rem(140px);
         height: rem(140px);
-        margin: 0 0 rem(25px);
-    }
-
-    @include phones {
-        width: rem(130px);
-        height: rem(130px);
+        margin: 0 0 rem(28px);
     }
 }
 
 .review__photo-img {
+    object-fit: cover;
+}
+
+.review-img {
     object-fit: cover;
     object-position: center rem(-50px);
 }
@@ -111,7 +105,7 @@
 
 .review__author {
     font-weight: 700;
-    font-size: $base-font-size;
+    font-size: rem(18px);
 }
 
 .review__decor {

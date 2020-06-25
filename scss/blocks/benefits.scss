@@ -1,5 +1,3 @@
-$benefits-icon-width: rem(126px);
-
 .benefits {
     display: flex;
     justify-content: space-between;
@@ -54,10 +52,9 @@ $benefits-icon-width: rem(126px);
     }
 }
 
-
 .benefit__image {
     @include phones {
-        margin-right: rem(10px);
+        margin-right: rem(20px);
     }
 }
 

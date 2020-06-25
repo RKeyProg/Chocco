@@ -1,16 +1,60 @@
+.hero {
+    background: url("../img/palm.png") right bottom 65% no-repeat;
+    background-color: $blue;
+    padding: rem(24px) 0 rem(45px);
+    position: relative;
+    height: 100vh;
+    min-height: rem(650px);
+    color: #fff;
+
+    @include tablets {
+        background-position: right bottom 90%;
+        background-size: 60%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 2%;
+        bottom: rem(-40px);
+    
+        @media screen and (min-width: $tablets) {
+            content: url("../img/sheet3.png");      
+        }
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        right: 1%;
+        bottom: rem(-40px);
+    
+        @media screen and (min-width: $tablets) {
+            content: url("../img/berries.png");
+        }
+    }
+    
+    &::before, &::after {
+        @include tablets {
+            display: none;
+        }
+    }
+}
+
+
 .hero__container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 
-    @media screen and (min-width: $tablets+1) {
+    @media screen and (min-width: $tablets) {
         background: url("../img/chocclate.png") right center / 50% auto no-repeat;
     }
 }
 
 .hero__title-section {
-    width: 40%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -24,8 +68,8 @@
 
         &::before {
             content: "";
-            width: rem(280px);
-            height: rem(280px);
+            width: rem(316px);
+            height: rem(330px);
             background: url("../img/berries768.png") center center / contain no-repeat;
             margin-bottom: 5px;
         }
@@ -41,19 +85,19 @@
     }
 
     @include phones {
-        line-height: 1;
+        line-height: 1.1em;
     }
 }
 
 .hero__subtitle {
     font-size: rem(21px);
-    margin-bottom: rem(26px);
+    margin-bottom: rem(31px);
 
     @include tablets {
         padding: 0 25%;
     }
 
     @include phones {
-        padding: 0 6%;
+        padding: 0 14%;
     }
 }

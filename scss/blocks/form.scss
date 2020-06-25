@@ -137,14 +137,12 @@
     }
 }
 
-$radio-and-check-size: rem(22px);
-
 .form__radio, .form__check {
     display: none;
 
     &-picture {
-        width: $radio-and-check-size;
-        height: $radio-and-check-size;
+        width: rem(22px);
+        height: rem(22px);
         background-color: #fff;
         margin-right: rem(10px);
         display: flex;
@@ -180,8 +178,8 @@ $radio-and-check-size: rem(22px);
     content: "";
     display: none;
     background: url("../img/icons/checkmark.svg") center center no-repeat;
-    width: $radio-and-check-size - rem(14px);
-    height: $radio-and-check-size - rem(16px);
+    width: rem(11px);
+    height: rem(9px);
 }
 
 .form__check:checked {

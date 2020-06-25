@@ -372,9 +372,11 @@ h4 {
   width: 0.3333333333rem;
   height: 0.3333333333rem;
   background-color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 .pagenator__item_active {
   border-color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 .section {
@@ -983,8 +985,8 @@ h4 {
   content: "";
   display: none;
   background: url("../img/icons/checkmark.svg") center center no-repeat;
-  width: 0.4444444444rem;
-  height: 0.3333333333rem;
+  width: 0.6111111111rem;
+  height: 0.5rem;
 }
 
 .form__check:checked ~ .form__check-picture::after {

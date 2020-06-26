@@ -4,25 +4,42 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+
+    @include tablets {
+        align-items: flex-start;
+    }
 }
 
 .slider__control {
     width: rem(17px);
+    height: rem(28px);
     position: absolute;
+    z-index: $z-control;
     fill: #151515;
 
     &_left {
-        left: -85px;
         transform: rotateY(180deg);
+
+        @include tablets {
+            left: rem(50px);
+        }
     }
 
     &_right {
         right: 33px;
         margin-left: rem(70px);
+
+        @include tablets {
+            right: rem(50px);
+        }
     }
 
     &:hover {
         cursor: pointer;
+    }
+
+    @include tablets {
+        top: 18%;
     }
 }
 
@@ -31,24 +48,60 @@
     display: flex;
 }
 
+.slider__item {
+    align-items: center;
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .slide__photo {
-    width: rem(392px);
-    height: rem(400px);
+    width: 40%;
+    height: 40%;
     margin-right: rem(90px);
     position: relative;
+    margin-left: rem(60px);
 
     &::before {
-        content: url('../img/sheet4.png');
+        content: '';
+        width: rem(75px);
+        height: rem(92px);
+        display: block;
+        background: url('../img/sheet4.png') center center / cover no-repeat;
         position: absolute;
         top: rem(85px);
         left: rem(-60px);
+
+        @include phones {
+            top: 10%;
+            background-size: 70%;
+        }
     }
 
     &::after {
-        content: url('../img/sheet5.png');
+        content: '';
+        width: rem(99px);
+        height: rem(73px);
+        display: block;
+        background: url('../img/sheet5.png') center center / cover no-repeat;
         position: absolute;
         bottom: rem(-30px);
         right: rem(-23px);
+
+        @include phones {
+            background-size: 70%;
+        }
+    }
+    
+    @include tablets {
+        margin: 0 0 rem(50px);
+    }
+
+    @include phones {
+        width: 50%;
+        height: 50%;
     }
 }
 
@@ -57,6 +110,12 @@
     flex-direction: column;
     flex: 1;
     position: relative;
+    padding-top: rem(80px);
+
+    @include tablets {
+        padding-top: 0;
+        text-align: center;
+    }
 }
 
 .slide__struct {
@@ -78,6 +137,10 @@
         cursor: pointer;
         background-color: #60aacc;
     }
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .slide__struct-icon {
@@ -93,10 +156,13 @@
 }
 
 .slide__text {
-    margin-top: rem(80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include tablets {
+        align-items: center;
+    }
 }
 
 .slide__title {
@@ -112,6 +178,10 @@
     font-size: rem($base-font-size);
     color: #666;
     margin-bottom: rem(17px);
+
+    @include tablets {
+        padding: 0 13%;
+    }
 }
 
 .slide__params {
@@ -119,6 +189,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @include tablets {
+        margin-right: rem(-50px);
+    }
 }
 
 .slide__params-item {
@@ -139,7 +213,12 @@
 .slide__order {
     width: fit-content;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+
+    @include tablets {
+        margin:  0 auto;
+    }
 }
 
 .slide__price {

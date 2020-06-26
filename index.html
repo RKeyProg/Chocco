@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
     <title>Chocco</title>
 </head>
 
@@ -138,6 +138,68 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- slider -->
+
+        <section class="section section__slider">
+            <div class="container">
+                <div class="slider">
+                    <svg class="slider__control slider__control_left">
+                        <use xlink:href="./img/sprite.svg#sliderArrow"></use>
+                    </svg>
+                    <ul class="slider__list">
+                        <li class="slider__item slide">
+                            <div class="slide__photo">
+                                <img src="img/candybar1.png" alt="candybar" class="slide_photo-img">
+                            </div>
+                            <div class="slide__right-column">
+                                <div class="slide__struct">
+                                    <svg class="slide__struct-icon">
+                                        <use xlink:href="./img/sprite.svg#choccoStuct"></use>
+                                    </svg>
+                                    <div class="slide__struct-text">
+                                        состав
+                                    </div>
+                                </div>
+                                <div class="slide__text">
+                                    <h3 class="slide__title">
+                                        Батончик “Морские водоросли”
+                                    </h3>
+                                    <div class="slide__desc">
+                                        Гранола из морских водорослей с овсом, миндалем и тыквенными семечками. В состав также входят: сухое молоко, заменитель сахара и какао бобы.
+                                    </div>
+                                    <ul class="slide__params">
+                                        <li class="slide__params-item">
+                                            <div class="slide__params-title">
+                                                Калорийность
+                                            </div>
+                                            <div class="slide__params-value">
+                                                120 ккал
+                                            </div>
+                                        </li>
+                                        <li class="slide__params-item">
+                                            <div class="slide__params-title">
+                                                Вес
+                                            </div>
+                                            <div class="slide__params-value">
+                                                98 грамм
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slide__order">
+                                    <div class="slide__price">140 ₽</div>
+                                    <button class="slide__btn btn btn_theme_green">заказать</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <svg class="slider__control slider__control_right">
+                        <use xlink:href="./img/sprite.svg#sliderArrow"></use>
+                    </svg>
+                </div>
             </div>
         </section>
 

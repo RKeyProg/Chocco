@@ -1,0 +1,160 @@
+.slider {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.slider__control {
+    width: rem(17px);
+    position: absolute;
+    fill: #151515;
+
+    &_left {
+        left: -85px;
+        transform: rotateY(180deg);
+    }
+
+    &_right {
+        right: 33px;
+        margin-left: rem(70px);
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+.slide {
+    display: flex;
+}
+
+.slide__photo {
+    width: rem(392px);
+    height: rem(400px);
+    margin-right: rem(90px);
+    position: relative;
+
+    &::before {
+        content: url('../img/sheet4.png');
+        position: absolute;
+        top: rem(85px);
+        left: rem(-60px);
+    }
+
+    &::after {
+        content: url('../img/sheet5.png');
+        position: absolute;
+        bottom: rem(-30px);
+        right: rem(-23px);
+    }
+}
+
+.slide__right-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+}
+
+.slide__struct {
+    width: rem(90px);
+    height: rem(90px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #86c3d7;
+    user-select: none;
+    transition: all .3s ease;
+    position: absolute;
+    top: rem(-42px);
+    left: 0;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #60aacc;
+    }
+}
+
+.slide__struct-icon {
+    width: 60%;
+    height: 70%;
+    fill: #fff;
+}
+
+.slide__struct-text {
+    text-transform: uppercase;
+    font-size: rem(14px);
+    color: #fff;
+}
+
+.slide__text {
+    margin-top: rem(80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide__title {
+    font-size: rem(36px);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: rem(10px);
+}
+
+.slide__desc {
+    padding-right: 25%;
+    font-size: rem($base-font-size);
+    color: #666;
+    margin-bottom: rem(17px);
+}
+
+.slide__params {
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.slide__params-item {
+    margin: 0 rem(50px) rem(25px) 0;
+}
+
+.slide__params-title {
+    font-size: rem($base-font-size);
+    color: #666;
+}
+
+.slide__params-value {
+    font-size: rem($base-font-size);
+    font-weight: bold;
+    color: #000;
+}
+
+.slide__order {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.slide__price {
+    font-size: rem(60px);
+    margin-right: rem(30px);
+    color: #151515;
+}
+
+.slide__btn {
+    border: 0;
+    transition: all .3s ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #2d4b3c;
+        color: #fff;
+    }
+}

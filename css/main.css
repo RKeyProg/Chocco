@@ -182,7 +182,7 @@ h4 {
   justify-content: space-between;
   height: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .hero__container {
     background: url("../img/chocclate.png") right center/50% auto no-repeat;
   }
@@ -505,7 +505,7 @@ h4 {
 }
 @media screen and (max-width: 480px) {
   .section__reviews::before {
-    width: 40%;
+    width: 30%;
   }
 }
 .section__reviews::after {
@@ -615,23 +615,24 @@ h4 {
   }
 }
 
-.slider__control-btn {
+.slider__control-img {
+  width: 0.9444444444rem;
+  height: 1.5555555556rem;
+  fill: #151515;
+}
+
+.slider__control {
+  position: absolute;
+  z-index: 90;
   background: transparent;
   padding: 0;
   border: 0;
 }
-.slider__control-btn:focus {
+.slider__control:focus {
   outline: none;
 }
-
-.slider__control {
-  width: 0.9444444444rem;
-  height: 1.5555555556rem;
-  position: absolute;
-  z-index: 90;
-  fill: #151515;
-}
 .slider__control_left {
+  left: 0;
   transform: rotateY(180deg);
 }
 @media screen and (max-width: 768px) {
@@ -640,8 +641,7 @@ h4 {
   }
 }
 .slider__control_right {
-  right: 33px;
-  margin-left: 3.8888888889rem;
+  right: 30px;
 }
 @media screen and (max-width: 768px) {
   .slider__control_right {
@@ -653,7 +653,7 @@ h4 {
 }
 @media screen and (max-width: 768px) {
   .slider__control {
-    top: 18%;
+    top: 24vmin;
   }
 }
 
@@ -663,19 +663,19 @@ h4 {
 
 .slider__item {
   align-items: center;
-  padding: 0 3.3333333333rem;
+  padding: 0 6%;
 }
 @media screen and (max-width: 768px) {
   .slider__item {
+    padding: 0;
     flex-direction: column;
     align-items: center;
   }
 }
 
 .slide__photo {
-  width: 40%;
-  height: 40%;
-  margin-right: 5rem;
+  width: 45%;
+  margin-right: 5vmax;
   position: relative;
 }
 .slide__photo::before {
@@ -838,14 +838,14 @@ h4 {
 }
 
 .slide__desc {
-  padding-right: 25%;
+  padding-right: 5%;
   font-size: 1rem;
   color: #666;
   margin-bottom: 0.9444444444rem;
 }
 @media screen and (max-width: 768px) {
   .slide__desc {
-    padding: 0 13%;
+    padding: 0 12%;
   }
 }
 

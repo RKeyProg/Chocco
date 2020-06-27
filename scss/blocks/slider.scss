@@ -10,7 +10,16 @@
     }
 }
 
-.slider__control-btn {
+.slider__control-img {
+    width: rem(17px);
+    height: rem(28px);
+    fill: #151515;
+}
+
+.slider__control {
+    position: absolute;
+    z-index: $z-control;
+    
     background: transparent;
     padding: 0;
     border: 0;
@@ -18,16 +27,9 @@
     &:focus {
         outline: none;
     }
-}
-
-.slider__control {
-    width: rem(17px);
-    height: rem(28px);
-    position: absolute;
-    z-index: $z-control;
-    fill: #151515;
 
     &_left {
+        left: 0;
         transform: rotateY(180deg);
 
         @include tablets {
@@ -36,8 +38,7 @@
     }
 
     &_right {
-        right: 33px;
-        margin-left: rem(70px);
+        right: 30px;
 
         @include tablets {
             right: rem(50px);
@@ -49,7 +50,7 @@
     }
 
     @include tablets {
-        top: 18%;
+        top: 24vmin;
     }
 }
 
@@ -60,18 +61,18 @@
 
 .slider__item {
     align-items: center;
-    padding: 0 rem(60px);
+    padding: 0 6%;
 
     @include tablets {
+        padding: 0;
         flex-direction: column;
         align-items: center;
     }
 }
 
 .slide__photo {
-    width: 40%;
-    height: 40%;
-    margin-right: rem(90px);
+    width: 45%;
+    margin-right: 5vmax;
     position: relative;
 
     &::before {
@@ -231,13 +232,13 @@
 }
 
 .slide__desc {
-    padding-right: 25%;
+    padding-right: 5%;
     font-size: rem($base-font-size);
     color: #666;
     margin-bottom: rem(17px);
 
     @include tablets {
-        padding: 0 13%;
+        padding: 0 12%;
     }
 }
 

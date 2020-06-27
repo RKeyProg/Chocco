@@ -10,6 +10,16 @@
     }
 }
 
+.slider__control-btn {
+    background: transparent;
+    padding: 0;
+    border: 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
 .slider__control {
     width: rem(17px);
     height: rem(28px);

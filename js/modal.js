@@ -1,5 +1,4 @@
 const submitBtn = document.querySelector('#submit');
-const body = document.body;
 const messege = 'Сообщение отправлено';
 
 submitBtn.addEventListener('click', e => {
@@ -32,7 +31,7 @@ function modal(content) {
 
     overlay.addEventListener('click', e => {
         if (e.target == overlay) {
-            button.click();
+            body.removeChild(overlay);
         }
     })
 }

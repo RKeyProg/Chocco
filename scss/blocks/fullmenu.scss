@@ -21,13 +21,23 @@
     margin-bottom: rem(30px);
 }
 
+.full-menu__btn {
+    background-color: transparent;
+    position: absolute;
+    top: 30px;
+    right: 27px;
+    padding: 0;
+    border: 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
 .full-menu__close {
     width: rem(18px);
     height: rem(18px);
     fill: #c2c3c4;
-    position: absolute;
-    top: 30px;
-    right: 27px;
 
     &:hover {
         cursor: pointer;

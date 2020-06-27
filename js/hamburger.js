@@ -40,7 +40,7 @@ function menu(arr) {
 
     full.addEventListener('click', e => {
         if (e.target == full) {
-            closeBtn.click();
+            body.removeChild(full);
         }
     })
 }

@@ -3,7 +3,6 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 
     @include tablets {
         flex-direction: column;
@@ -16,12 +15,17 @@
 }
 
 .form__column {
-    width: 100%;
+    width: rem(355px);
     flex: 1;
     margin: 0 rem(20px) rem(44px) 0;
 
     @include tablets {
+        width: 100%;
         margin: 0 0 rem(12px) 0;
+    }
+
+    @include phones {
+        margin: 0 0 rem(10px) 0;
     }
 
     &:last-child {
@@ -29,6 +33,10 @@
 
         @include tablets {
             margin-bottom: rem(27px);
+        }
+
+        @include phones {
+            margin-bottom: 0;
         }
     }
 }
@@ -44,7 +52,11 @@
     }
 
     &_mb_big {
-        margin-bottom: rem(22px);
+        margin-bottom: rem(21px);
+
+        @include phones {
+            margin-bottom: rem(17px);
+        }
     }
 }
 
@@ -54,10 +66,6 @@
 
     &:last-child {
         margin-right: 0;
-    }
-
-    @include phones {
-        margin-right: rem(10px);
     }
 
     &_size_half {
@@ -70,6 +78,10 @@
 
     &_size_auto {
         width: auto;
+
+        @include phones {
+            margin-right: rem(5px);
+        }
     }
 }
 
@@ -77,7 +89,6 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-bottom: rem(4px);
 
     @include phones {
         justify-content: center;
@@ -88,7 +99,7 @@
     display: flex;
     align-items: center;
     flex: none;
-    margin-bottom: rem(7px);
+    margin-bottom: rem(13px);
     user-select: none;
 }
 
@@ -108,9 +119,8 @@
 }
 
 .form__inputname {
-    font-size: rem($base-font-size);
+    font-size: $base-font-size;
     margin-bottom: rem(5px);
-
 
     &_mb_none {
         margin-bottom: 0;
@@ -137,12 +147,14 @@
     }
 }
 
+$radio-and-check-size: rem(25px);
+
 .form__radio, .form__check {
     display: none;
 
     &-picture {
-        width: rem(22px);
-        height: rem(22px);
+        width: $radio-and-check-size;
+        height: $radio-and-check-size;
         background-color: #fff;
         margin-right: rem(10px);
         display: flex;
@@ -151,6 +163,11 @@
 
         &:hover {
             cursor: pointer;
+        }
+
+        @include phones {
+            width: $radio-and-check-size - rem(5px);
+            height: $radio-and-check-size - rem(5px);
         }
     }
 }
@@ -166,6 +183,10 @@
         border-radius: 50%;
         background-color: $darkGreen;
     }
+
+    @include phones {
+        margin-right: rem(6px);
+    }
 }
 
 .form__radio:checked {
@@ -178,8 +199,8 @@
     content: "";
     display: none;
     background: url("../img/icons/checkmark.svg") center center no-repeat;
-    width: rem(11px);
-    height: rem(9px);
+    width: $radio-and-check-size - rem(14px);
+    height: $radio-and-check-size - rem(16px);
 }
 
 .form__check:checked {
@@ -193,7 +214,7 @@
 
     @include tablets {
         width: auto;
-        margin: rem(15px) auto 0;
+        margin: 0 auto;
         text-align: center;
         padding-top: rem(15px);
     }

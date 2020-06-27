@@ -654,6 +654,7 @@ h4 {
 
 .slider__item {
   align-items: center;
+  padding: 0 3.3333333333rem;
 }
 @media screen and (max-width: 768px) {
   .slider__item {
@@ -667,7 +668,6 @@ h4 {
   height: 40%;
   margin-right: 5rem;
   position: relative;
-  margin-left: 3.3333333333rem;
 }
 .slide__photo::before {
   content: "";
@@ -727,6 +727,17 @@ h4 {
 }
 
 .slide__struct {
+  position: absolute;
+  top: -2.3333333333rem;
+  left: 0;
+}
+@media screen and (max-width: 768px) {
+  .slide__struct {
+    display: none;
+  }
+}
+
+.slide__struct-btn {
   width: 5rem;
   height: 5rem;
   border-radius: 5px;
@@ -738,18 +749,14 @@ h4 {
   -webkit-user-select: none;
           user-select: none;
   transition: all 0.3s ease;
-  position: absolute;
-  top: -2.3333333333rem;
-  left: 0;
 }
-.slide__struct:hover {
+.slide__struct-btn:hover {
   cursor: pointer;
   background-color: #60aacc;
 }
-@media screen and (max-width: 768px) {
-  .slide__struct {
-    display: none;
-  }
+.slide__struct-btn:hover ~ .slide__struct-content {
+  left: 5rem;
+  opacity: 1;
 }
 
 .slide__struct-icon {
@@ -762,6 +769,44 @@ h4 {
   text-transform: uppercase;
   font-size: 0.7777777778rem;
   color: #fff;
+}
+
+.slide__struct-content {
+  width: 15rem;
+  padding: 1.3888888889rem 1.6666666667rem 0.5555555556rem;
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.slide__struct-content:hover {
+  left: 5rem;
+  opacity: 1;
+}
+
+.chocco-struct__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8333333333rem;
+}
+
+.chocco-struct__column {
+  display: flex;
+  align-items: center;
+}
+
+.chocco-struct__img {
+  width: 1.9444444444rem;
+  height: 1.9444444444rem;
+  margin-right: 1.4444444444rem;
+}
+
+.chocco-struct__title {
+  flex: 1;
+  font-size: 0.8888888889rem;
 }
 
 .slide__text {
@@ -850,7 +895,7 @@ h4 {
 }
 .slide__btn:hover {
   cursor: pointer;
-  background-color: #2d4b3c;
+  background-color: #2e4e3f;
   color: #fff;
 }
 
@@ -1378,7 +1423,7 @@ h4 {
 
 .overlay__btn:hover {
   cursor: pointer;
-  background-color: #2d4b3c;
+  background-color: #2e4e3f;
   color: #fff;
 }
 

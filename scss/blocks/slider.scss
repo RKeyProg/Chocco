@@ -50,6 +50,7 @@
 
 .slider__item {
     align-items: center;
+    padding: 0 rem(60px);
 
     @include tablets {
         flex-direction: column;
@@ -62,7 +63,6 @@
     height: 40%;
     margin-right: rem(90px);
     position: relative;
-    margin-left: rem(60px);
 
     &::before {
         content: '';
@@ -119,6 +119,16 @@
 }
 
 .slide__struct {
+    position: absolute;
+    top: rem(-42px);
+    left: 0;
+
+    @include tablets {
+        display: none;
+    }
+}
+
+.slide__struct-btn {
     width: rem(90px);
     height: rem(90px);
     border-radius: 5px;
@@ -129,17 +139,15 @@
     background-color: #86c3d7;
     user-select: none;
     transition: all .3s ease;
-    position: absolute;
-    top: rem(-42px);
-    left: 0;
-
+    
     &:hover {
         cursor: pointer;
         background-color: #60aacc;
-    }
 
-    @include tablets {
-        display: none;
+        &~.slide__struct-content {
+            left: rem(90px);
+            opacity: 1;
+        }
     }
 }
 
@@ -153,6 +161,45 @@
     text-transform: uppercase;
     font-size: rem(14px);
     color: #fff;
+}
+
+.slide__struct-content {
+    width: rem(270px);
+    padding: rem(25px) rem(30px) rem(10px);
+    position: absolute;
+    left: -10000px;
+    top: 0;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,.95);
+    opacity: 0;
+    transition: opacity .3s ease;
+
+    &:hover {
+        left: rem(90px);
+        opacity: 1;
+    }
+}
+
+.chocco-struct__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(15px);
+}
+
+.chocco-struct__column {
+    display: flex;
+    align-items: center;
+}
+
+.chocco-struct__img {
+    width: rem(35px);
+    height: rem(35px);
+    margin-right: rem(26px);
+}
+
+.chocco-struct__title {
+    flex: 1;
+    font-size: rem(16px);
 }
 
 .slide__text {
@@ -233,7 +280,7 @@
 
     &:hover {
         cursor: pointer;
-        background-color: #2d4b3c;
+        background-color: #2e4e3f;
         color: #fff;
     }
 }

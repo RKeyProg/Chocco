@@ -155,7 +155,7 @@
         bottom: 85px;
         right: 0;
 
-        @media screen and (min-width: $tablets+1) {
+        @media screen and (min-width: $tablets + 1px) {
             content: url("../img/sheet6.png");
         }
     }
@@ -166,7 +166,7 @@
         left: 20px;
         bottom: 85px;
 
-        @media screen and (min-width: $tablets+1) {
+        @media screen and (min-width: $tablets + 1px) {
             content: url("../img/blueberries2.png");
         }
     }

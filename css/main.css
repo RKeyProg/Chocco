@@ -1381,4 +1381,39 @@ h4 {
   background-color: #2d4b3c;
   color: #fff;
 }
+
+.full {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(48, 48, 48, 0.99);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+}
+
+.full-menu__list {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.full-menu__item {
+  margin-bottom: 1.6666666667rem;
+}
+
+.full-menu__close {
+  width: 1rem;
+  height: 1rem;
+  fill: #c2c3c4;
+  position: absolute;
+  top: 30px;
+  right: 27px;
+}
+.full-menu__close:hover {
+  cursor: pointer;
+}
 /*# sourceMappingURL=main.css.map */

@@ -34,11 +34,11 @@
                     </nav>
                     <a href="tel: +88009039090" class="phone-number header__phone-number">
                         <svg class="phone-number__icon phone-number__icon_color_white">
-                            <use xlink:href="./img/sprite.svg#phone"/>
+                            <use xlink:href="./img/sprite.svg#phone" />
                         </svg>
                         <span class="phone-number__text">8 800 903 90 90</span>
                     </a>
-                    <a href="#" class="hamburger">
+                    <a href="#" class="hamburger" id="hamburger">
                         <span class="hamburger__line"></span>
                         <span class="hamburger__line"></span>
                         <span class="hamburger__line"></span>
@@ -54,7 +54,7 @@
                     <li class="dignitieslist__item dignitiesitem">
                         <div class="dignitieslist__icon">
                             <svg class="dignitieslist__icon dignitieslist__icon_color_light">
-                                <use xlink:href="./img/sprite.svg#sheet"/>
+                                <use xlink:href="./img/sprite.svg#sheet" />
                             </svg>
                         </div>
                         <div class="dignitieslist__text">100% натуральный продукт</div>
@@ -62,7 +62,7 @@
                     <li class="dignitieslist__item dignitiesitem">
                         <div class="dignitieslist__icon">
                             <svg class="dignitieslist__icon dignitieslist__icon_color_light">
-                                <use xlink:href="./img/sprite.svg#bus"/>
+                                <use xlink:href="./img/sprite.svg#bus" />
                             </svg>
                         </div>
                         <div class="dignitieslist__text">3-5 дней доставка по РФ</div>
@@ -70,7 +70,7 @@
                     <li class="dignitieslist__item dignitiesitem">
                         <div class="dignitieslist__icon">
                             <svg class="dignitieslist__icon dignitieslist__icon_color_light">
-                                <use xlink:href="./img/sprite.svg#paper"/>
+                                <use xlink:href="./img/sprite.svg#paper" />
                             </svg>
                         </div>
                         <div class="dignitieslist__text">Не портит фигуру</div>
@@ -93,7 +93,7 @@
                         <div class="benefit__image benefit__image_decor_is">
                             <div class="benefit__image-wrapper">
                                 <svg class="benefit__icon benefit__icon_color_dark">
-                                    <use xlink:href="./img/sprite.svg#health"/>
+                                    <use xlink:href="./img/sprite.svg#health" />
                                 </svg>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                         <div class="benefit__image benefit__image_decor_is">
                             <div class="benefit__image-wrapper">
                                 <svg class="benefit__icon benefit__icon_color_dark">
-                                    <use xlink:href="./img/sprite.svg#smile"/>
+                                    <use xlink:href="./img/sprite.svg#smile" />
                                 </svg>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                         <div class="benefit__image">
                             <div class="benefit__image-wrapper">
                                 <svg class="benefit__icon benefit__icon_color_dark">
-                                    <use xlink:href="./img/sprite.svg#power"/>
+                                    <use xlink:href="./img/sprite.svg#power" />
                                 </svg>
                             </div>
                         </div>
@@ -138,6 +138,156 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- slider -->
+
+        <section class="section section__slider">
+            <div class="container">
+                <div class="slider">
+                    <button class="slider__control slider__control_left">
+                        <svg class="slider__control-img">
+                            <use xlink:href="./img/sprite.svg#sliderArrow"></use>
+                        </svg>
+                    </button>
+                    <ul class="slider__list">
+                        <li class="slider__item slide">
+                            <div class="slide__photo">
+                                <img src="img/candybar1.png" alt="candybar" class="slide_photo-img">
+                            </div>
+                            <div class="slide__right-column">
+                                <div class="slide__struct">
+                                    <div class="slide__struct-btn">
+                                        <svg class="slide__struct-icon">
+                                            <use xlink:href="./img/sprite.svg#choccoStuct"></use>
+                                        </svg>
+                                        <div class="slide__struct-text">
+                                            состав
+                                        </div>
+                                    </div>
+                                    <div class="slide__struct-content" id="slide__struct">
+                                        <ul class="chocco-struct__list">
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#oat'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Овёс</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">25г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#seaweed'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Мор. водоросли</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">15г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#almond'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Миндаль</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">20г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#powder'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Сухое молоко</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">10г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#seeds'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Тыкв. семечки</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">20г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#apitherapy'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Зам. сахара</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">4г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#nut'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Какао бобы</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">4г</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="slide__text">
+                                    <h3 class="slide__title">
+                                        Батончик “Морские водоросли”
+                                    </h3>
+                                    <div class="slide__desc">
+                                        Гранола из морских водорослей с овсом, миндалем и тыквенными семечками. В состав
+                                        также входят: сухое молоко, заменитель сахара и какао бобы.
+                                    </div>
+                                    <ul class="slide__params">
+                                        <li class="slide__params-item">
+                                            <div class="slide__params-title">
+                                                Калорийность
+                                            </div>
+                                            <div class="slide__params-value">
+                                                120 ккал
+                                            </div>
+                                        </li>
+                                        <li class="slide__params-item">
+                                            <div class="slide__params-title">
+                                                Вес
+                                            </div>
+                                            <div class="slide__params-value">
+                                                98 грамм
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slide__order">
+                                    <div class="slide__price">140 ₽</div>
+                                    <button class="slide__btn btn btn_theme_green">заказать</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="slider__control slider__control_right">
+                        <svg class="slider__control-img">
+                            <use xlink:href="./img/sprite.svg#sliderArrow"></use>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -283,32 +433,40 @@
                         <address class="footer__address address">Москва, ул.Новый Арбат, д.31/12</address>
                         <a href="tel: +88009039090" class="phone-number footer__phone-number">
                             <svg class="phone-number__icon phone-number__icon_color_green">
-                                <use xlink:href="./img/sprite.svg#phone"/>
+                                <use xlink:href="./img/sprite.svg#phone" />
                             </svg>
                             <span class="phone-number__text">8 800 903 90 90</span>
                         </a>
                     </div>
                     <ul class="socials__list">
-                        <li class="socials__item"><a href="#" class="socials__link">
+                        <li class="socials__item">
+                            <a href="#" class="socials__link">
                                 <svg class="socials__img">
                                     <use xlink:href="./img/sprite.svg#vk"></use>
                                 </svg>
-                            </a></li>
-                        <li class="socials__item"><a href="#" class="socials__link">
-                            <svg class="socials__img">
-                                <use xlink:href="./img/sprite.svg#facebook"></use>
-                            </svg>
-                            </a></li>
-                        <li class="socials__item"><a href="#" class="socials__link">
-                            <svg class="socials__img">
-                                <use xlink:href="./img/sprite.svg#inst"></use>
-                            </svg>
-                            </a></li>
-                        <li class="socials__item"><a href="#" class="socials__link">
-                            <svg class="socials__img">
-                                <use xlink:href="./img/sprite.svg#twit"></use>
-                            </svg>   
-                            </a></li>
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a href="#" class="socials__link">
+                                <svg class="socials__img">
+                                    <use xlink:href="./img/sprite.svg#facebook"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a href="#" class="socials__link">
+                                <svg class="socials__img">
+                                    <use xlink:href="./img/sprite.svg#inst"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="socials__item">
+                            <a href="#" class="socials__link">
+                                <svg class="socials__img">
+                                    <use xlink:href="./img/sprite.svg#twit"></use>
+                                </svg>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </footer>
@@ -331,6 +489,14 @@
         </nav>
 
     </div>
+    <script type="html/template" id="svgTemplate">
+        <button class="full-menu__btn">
+            <svg class="full-menu__close" id="full-menu__close">
+                <use xlink:href="./img/sprite.svg#close"></use>
+            </svg>
+        </button>
+    </script>
+    <script src="js/hamburger.js"></script>
     <script src="js/modal.js"></script>
 </body>
 

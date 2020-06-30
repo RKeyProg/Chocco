@@ -17,7 +17,7 @@
 .footer__text {
     display: flex;
     flex-direction: column;
-    color: #365a49;
+    color: $darkGreen;
 
     @include phones {
         margin-bottom: 7px;

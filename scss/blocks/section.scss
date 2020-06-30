@@ -104,6 +104,34 @@
     padding-top: rem(67px);
 }
 
+.section__team {
+    background-color: #fafafa;
+    padding: rem(73px) 0;
+    justify-content: normal;
+
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background: url("../img/blueberries.png") top 195px right 15px/68% no-repeat, url("../img/patternpalm.png") center center/cover no-repeat;
+        width: rem(196px);
+        min-height: rem(450px);
+        top: -225px;
+        right: 0px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background: url("../img/raspberry.png") center center / cover no-repeat;
+        width: rem(104px);
+        min-height: rem(114px);
+        bottom: -43px;
+        left: 33px;
+    }
+}
+
 .section__reviews {
     &::before {
         content: "";

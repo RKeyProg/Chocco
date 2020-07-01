@@ -4,10 +4,18 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    overflow: hidden;
 
     @include tablets {
         align-items: flex-start;
     }
+}
+
+.slider__list {
+    max-width: 100%;
+    display: flex;
+    position: relative;
+    left: 0;
 }
 
 .slider__control-img {
@@ -60,8 +68,10 @@
 }
 
 .slider__item {
+    flex-shrink: 0;
+    width: 100%;
     align-items: center;
-    padding: 0 6%;
+    padding: rem(150px) 8%;
 
     @include tablets {
         padding: 0;

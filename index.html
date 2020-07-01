@@ -281,6 +281,124 @@
                                 </div>
                             </div>
                         </li>
+                        <li class="slider__item slide">
+                            <div class="slide__photo">
+                                <img src="img/candybar2.png" alt="candybar" class="slide_photo-img">
+                            </div>
+                            <div class="slide__right-column">
+                                <div class="slide__struct">
+                                    <div class="slide__struct-btn">
+                                        <svg class="slide__struct-icon">
+                                            <use xlink:href="./img/sprite.svg#choccoStuct"></use>
+                                        </svg>
+                                        <div class="slide__struct-text">
+                                            состав
+                                        </div>
+                                    </div>
+                                    <div class="slide__struct-content" id="slide__struct">
+                                        <ul class="chocco-struct__list">
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#grape'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Виноград</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">25г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#nut'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Грецкий орех</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">32г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#almond'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Кунжутное семя</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">20г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#powder'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Сухое молоко</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">10г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#apitherapy'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Зам. сахара</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">4г</div>
+                                                </div>
+                                            </li>
+                                            <li class="chocco-struct__item">
+                                                <div class="chocco-struct__column">
+                                                    <svg class="chocco-struct__img">
+                                                        <use xlink:href='./img/sprite.svg#nut'></use>
+                                                    </svg>
+                                                    <div class="chocco-struct__title">Какао бобы</div>
+                                                </div>
+                                                <div class="chocco-struct__column">
+                                                    <div class="chocco-struct__quantity">4г</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="slide__text">
+                                    <h3 class="slide__title">
+                                        Батончик “Морские водоросли”
+                                    </h3>
+                                    <div class="slide__desc">
+                                        Гранола из морских водорослей с овсом, миндалем и тыквенными семечками. В состав
+                                        также входят: сухое молоко, заменитель сахара и какао бобы.
+                                    </div>
+                                    <ul class="slide__params">
+                                        <li class="slide__params-item">
+                                            <div class="slide__params-title">
+                                                Калорийность
+                                            </div>
+                                            <div class="slide__params-value">
+                                                120 ккал
+                                            </div>
+                                        </li>
+                                        <li class="slide__params-item">
+                                            <div class="slide__params-title">
+                                                Вес
+                                            </div>
+                                            <div class="slide__params-value">
+                                                98 грамм
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="slide__order">
+                                    <div class="slide__price">140 ₽</div>
+                                    <button class="slide__btn btn btn_theme_green">заказать</button>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                     <button class="slider__control slider__control_right">
                         <svg class="slider__control-img">
@@ -570,6 +688,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+    
     <script type="html/template" id="svgTemplate">
         <button class="full-menu__btn">
             <svg class="full-menu__close" id="full-menu__close">
@@ -577,6 +696,7 @@
             </svg>
         </button>
     </script>
+    <script src="js/slider.js"></script>
     <script src="js/hamburger.js"></script>
     <script src="js/accordion.js"></script>
     <script src="js/modal.js"></script>

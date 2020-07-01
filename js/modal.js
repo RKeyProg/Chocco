@@ -1,8 +1,7 @@
-const btn = document.querySelector('#submit');
-const body = document.body;
+const submitBtn = document.querySelector('#submit');
 const messege = 'Сообщение отправлено';
 
-btn.addEventListener('click', e => {
+submitBtn.addEventListener('click', e => {
     e.preventDefault();
     modal(messege);
 })
@@ -11,28 +10,28 @@ function modal(content) {
     const overlay = document.createElement('div');
     const container = document.createElement('div');
     const text = document.createElement('div');
-    const btn = document.createElement('button');
+    const button = document.createElement('button');
 
     overlay.classList.add('overlay');
     container.classList.add('overlay__container');
     text.classList.add('overlay__text');
-    btn.classList.add('overlay__btn', 'btn', 'btn_theme_green');
+    button.classList.add('overlay__btn', 'btn', 'btn_theme_green');
 
     text.textContent = content;
-    btn.textContent = 'закрыть';
+    button.textContent = 'закрыть';
 
     container.appendChild(text);
-    container.appendChild(btn);
+    container.appendChild(button);
     overlay.appendChild(container);
     body.appendChild(overlay);
 
-    btn.addEventListener('click', e => {
+    button.addEventListener('click', e => {
         body.removeChild(overlay);
     })
 
     overlay.addEventListener('click', e => {
         if (e.target == overlay) {
-            btn.click();
+            body.removeChild(overlay);
         }
     })
 }

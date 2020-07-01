@@ -1,0 +1,45 @@
+.full {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(48, 48, 48, 0.99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-modal;
+}
+
+.full-menu__list {
+    text-align: center;
+    font-size: rem(36px);
+    color: #fff;
+}
+
+.full-menu__item {
+    margin-bottom: rem(30px);
+}
+
+.full-menu__btn {
+    background-color: transparent;
+    position: absolute;
+    top: 30px;
+    right: 27px;
+    padding: 0;
+    border: 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.full-menu__close {
+    width: rem(18px);
+    height: rem(18px);
+    fill: #c2c3c4;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

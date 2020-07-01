@@ -91,11 +91,17 @@
         position: absolute;
         left: 0;
         bottom: -105px;
+        z-index: $z-after;
 
         @media screen and (min-width: $phones+1) {
             content: url("../img/cake.png");
         }
     }
+}
+
+.section__slider {
+    background-color: #f8faf9;
+    padding-top: rem(67px);
 }
 
 .section__reviews {
@@ -115,7 +121,7 @@
         }
 
         @include phones {
-            width: 40%;
+            width: 30%;
         }
     }
 
@@ -149,7 +155,7 @@
         bottom: 85px;
         right: 0;
 
-        @media screen and (min-width: $tablets+1) {
+        @media screen and (min-width: $tablets + 1px) {
             content: url("../img/sheet6.png");
         }
     }
@@ -160,7 +166,7 @@
         left: 20px;
         bottom: 85px;
 
-        @media screen and (min-width: $tablets+1) {
+        @media screen and (min-width: $tablets + 1px) {
             content: url("../img/blueberries2.png");
         }
     }

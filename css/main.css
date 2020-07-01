@@ -487,6 +487,32 @@ h4 {
   padding-top: 3.7222222222rem;
 }
 
+.section__team {
+  background-color: #fafafa;
+  padding: 4.0555555556rem 0;
+  justify-content: normal;
+}
+.section__team::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background: url("../img/blueberries.png") top 195px right 15px/68% no-repeat, url("../img/patternpalm.png") center center/cover no-repeat;
+  width: 10.8888888889rem;
+  min-height: 25rem;
+  top: -225px;
+  right: 0px;
+}
+.section__team::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: url("../img/raspberry.png") center center/cover no-repeat;
+  width: 5.7777777778rem;
+  min-height: 6.3333333333rem;
+  bottom: -43px;
+  left: 33px;
+}
+
 .section__reviews::before {
   content: "";
   position: absolute;
@@ -991,6 +1017,114 @@ h4 {
 }
 .benefit__icon_color_dark {
   fill: #2e2e2d;
+}
+
+.team__list {
+  display: flex;
+  justify-content: space-between;
+  min-height: 430px;
+}
+@media screen and (max-width: 768px) {
+  .team__list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+  }
+}
+
+.team__item {
+  width: calc(100% / 4 - 20px);
+  text-align: center;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .team__item {
+    width: 29%;
+    margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .team__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+  }
+}
+
+.team__photo {
+  width: 100%;
+  height: 16rem;
+  overflow: hidden;
+  margin-bottom: 1.1111111111rem;
+  transition: height 0.5s;
+}
+@media screen and (max-width: 768px) {
+  .team__photo {
+    height: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .team__photo {
+    width: 7.8888888889rem;
+  }
+}
+
+.team__photo-img {
+  object-fit: none;
+}
+.team__photo-img_position_left {
+  object-position: -125px center;
+}
+
+.team__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5555555556rem;
+}
+.team__title:hover {
+  cursor: pointer;
+}
+
+.team__name {
+  font-size: 1.1666666667rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.team__btn {
+  padding: 0;
+  display: inline-block;
+  border: 7px solid transparent;
+  border-bottom: 0;
+  border-top: 7px solid #365a49;
+  margin-left: 5px;
+  background: transparent;
+  transition: transform 0.3s;
+}
+.team__btn:hover {
+  cursor: pointer;
+}
+.team__btn:focus {
+  outline: none;
+}
+
+.team__about {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.team__profession {
+  margin-bottom: 5px;
+}
+
+.team__desc {
+  font-size: 0.9444444444rem;
+  font-weight: 300;
+  color: #666;
 }
 
 .reviews__swither {

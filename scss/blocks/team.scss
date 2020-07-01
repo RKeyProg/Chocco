@@ -1,0 +1,107 @@
+.team__list {
+    display: flex;
+    justify-content: space-between;
+    min-height: 430px;
+
+    @include tablets {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: auto;
+    }
+}
+
+.team__item {
+    width: calc(100% / 4 - 20px);
+    text-align: center;
+    height: 100%;
+
+    @include tablets {
+        width: 29%;
+        margin-bottom: 5px;
+    }
+
+    @include phones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 55%;
+    }
+}
+
+.team__photo {
+    width: 100%;
+    height: rem(288px);
+    overflow: hidden;
+    margin-bottom: rem(20px);
+    transition: height .5s;
+
+    @include tablets {
+        height: 0;
+    }
+
+    @include phones {
+        width: rem(142px);
+    }
+}
+
+.team__photo-img {
+    object-fit: none;
+
+    &_position_left {
+        object-position: -125px center;
+    }
+}
+
+.team__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: rem(10px);
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.team__name {
+    font-size: rem(21px);
+    font-weight: bold;
+    color: #000;
+   
+}
+
+.team__btn {
+    padding: 0;
+    display: inline-block;
+    border: 7px solid transparent;
+    border-bottom: 0;
+    border-top: 7px solid $darkGreen;
+    margin-left: 5px;
+    background: transparent;
+    transition: transform .3s;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.team__about {
+    height: 0;
+    overflow: hidden;
+    transition: height .5s;
+}
+
+.team__profession {
+    margin-bottom: 5px;
+}
+
+.team__desc {
+    font-size: rem(17px);
+    font-weight: 300;
+    color: #666;
+}

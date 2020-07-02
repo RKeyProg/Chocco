@@ -499,6 +499,7 @@ h4 {
   min-height: 25rem;
   top: -225px;
   right: 0px;
+  z-index: 2;
 }
 .section__team::after {
   content: "";
@@ -509,6 +510,7 @@ h4 {
   min-height: 6.3333333333rem;
   bottom: -43px;
   left: 33px;
+  z-index: 2;
 }
 
 .section__reviews::before {
@@ -520,6 +522,7 @@ h4 {
   min-height: 5.2222222222rem;
   top: 40px;
   right: 12px;
+  z-index: 2;
 }
 @media screen and (max-width: 768px) {
   .section__reviews::before {
@@ -632,11 +635,10 @@ h4 {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .slider {
-    align-items: flex-start;
+    justify-content: center;
   }
 }
 
@@ -654,38 +656,28 @@ h4 {
 }
 
 .slider__control {
+  width: 95%;
   position: absolute;
+  display: flex;
+  justify-content: space-between;
   z-index: 90;
   background: transparent;
-  padding: 0;
+  padding: 2.5rem 0 0;
   border: 0;
 }
-.slider__control:focus {
-  outline: none;
-}
 .slider__control_left {
-  left: 0;
   transform: rotateY(180deg);
 }
 @media screen and (max-width: 768px) {
-  .slider__control_left {
-    left: 2.7777777778rem;
-  }
-}
-.slider__control_right {
-  right: 30px;
-}
-@media screen and (max-width: 768px) {
-  .slider__control_right {
-    right: 2.7777777778rem;
-  }
-}
-.slider__control:hover {
-  cursor: pointer;
-}
-@media screen and (max-width: 768px) {
   .slider__control {
-    top: 24vmin;
+    top: 22vmin;
+    width: 72%;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .slider__control {
+    top: 26vmin;
   }
 }
 
@@ -697,7 +689,7 @@ h4 {
   flex-shrink: 0;
   width: 100%;
   align-items: center;
-  padding: 8.3333333333rem 8%;
+  padding: 2.5rem 8% 0;
 }
 @media screen and (max-width: 768px) {
   .slider__item {
@@ -705,6 +697,18 @@ h4 {
     flex-direction: column;
     align-items: center;
   }
+}
+
+.bx-wrapper {
+  box-shadow: none;
+  border: 0;
+  background: transparent;
+  margin-bottom: 0;
+}
+
+.bx-viewport {
+  display: flex;
+  align-items: center;
 }
 
 .slide__photo {
@@ -751,7 +755,7 @@ h4 {
 @media screen and (max-width: 480px) {
   .slide__photo {
     width: 50%;
-    height: 50%;
+    height: auto;
   }
 }
 

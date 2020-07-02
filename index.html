@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Chocco</title>
 </head>
@@ -146,11 +147,18 @@
         <section class="section section__slider">
             <div class="container">
                 <div class="slider">
-                    <button class="slider__control slider__control_left">
-                        <svg class="slider__control-img">
-                            <use xlink:href="./img/sprite.svg#sliderArrow"></use>
-                        </svg>
-                    </button>
+                    <div class="slider__control">
+                        <a href="#" class="slider__control-left-arrow">
+                            <svg class="slider__control-img slider__control_left">
+                                <use xlink:href="./img/sprite.svg#sliderArrow"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="slider__control-right-arrow">
+                            <svg class="slider__control-img">
+                                <use xlink:href="./img/sprite.svg#sliderArrow"></use>
+                            </svg>
+                        </a>
+                    </div>
                     <ul class="slider__list">
                         <li class="slider__item slide">
                             <div class="slide__photo">
@@ -400,11 +408,6 @@
                             </div>
                         </li>
                     </ul>
-                    <button class="slider__control slider__control_right">
-                        <svg class="slider__control-img">
-                            <use xlink:href="./img/sprite.svg#sliderArrow"></use>
-                        </svg>
-                    </button>
                 </div>
             </div>
         </section>
@@ -807,7 +810,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
     <script type="html/template" id="svgTemplate">
         <button class="full-menu__btn">

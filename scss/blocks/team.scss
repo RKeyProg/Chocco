@@ -1,30 +1,39 @@
 .team__list {
     display: flex;
     justify-content: space-between;
-    min-height: 430px;
+    min-height: rem(435px);
 
     @include tablets {
+        display: none;
+    }
+
+    &_mobile {
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         min-height: auto;
+
+        @include tablets {
+            display: flex;
+        }
     }
 }
 
+
 .team__item {
+    display: flex;
+    flex-direction: column;
     width: calc(100% / 4 - 20px);
     text-align: center;
     height: 100%;
 
     @include tablets {
-        width: 29%;
+        width: 44%;
         margin-bottom: 5px;
     }
 
     @include phones {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         width: 55%;
     }
 }
@@ -36,21 +45,16 @@
     margin-bottom: rem(20px);
     transition: height .5s;
 
-    @include tablets {
-        height: 0;
-    }
-
     @include phones {
         width: rem(142px);
+        height: rem(184px);
+        margin: 0 auto rem(20px);
     }
 }
 
 .team__photo-img {
-    object-fit: none;
-
-    &_position_left {
-        object-position: -125px center;
-    }
+    object-fit: cover;
+    object-position: center;
 }
 
 .team__title {
@@ -58,10 +62,27 @@
     align-items: center;
     justify-content: center;
     margin-bottom: rem(10px);
+    background-color: transparent;
+    border: 0;
+
+    &:focus {
+        outline: none;
+    }
 
     &:hover {
         cursor: pointer;
     }
+}
+
+.team__triangle {
+    padding: 0;
+    display: inline-block;
+    border: 7px solid transparent;
+    border-bottom: 0;
+    border-top: 7px solid $darkGreen;
+    margin-left: 5px;
+    background: transparent;
+    transition: transform .3s;
 }
 
 .team__name {
@@ -71,26 +92,7 @@
    
 }
 
-.team__btn {
-    padding: 0;
-    display: inline-block;
-    border: 7px solid transparent;
-    border-bottom: 0;
-    border-top: 7px solid $darkGreen;
-    margin-left: 5px;
-    background: transparent;
-    transition: transform .3s;
-
-    &:hover {
-        cursor: pointer;
-    }
-
-    &:focus {
-        outline: none;
-    }
-}
-
-.team__about {
+.team__content {
     height: 0;
     overflow: hidden;
     transition: height .5s;

@@ -14,28 +14,23 @@
     &_active {
         border-color: $darkGreen;
     }
+
+    &:hover {
+        border-color: $darkGreen;
+    }
 }
 
 .reviews__swither-item-img {
     object-fit: cover;
 }
 
-.review {
+.review__list {
+    width: 100%;
+    min-height: rem(345px);
     background-color: #f8faf9;
-    padding: rem(50px) rem(44px) rem(36px);
     overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
     margin: 0 auto rem(20px);
-    color: #000;
-
-    @include tablets {
-        padding: rem(62px) rem(12px) rem(32px);
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: rem(30px);
-    }
+    position: relative;
 
     &::before {
         content: "";
@@ -48,6 +43,48 @@
         left: 50%;
         transform: translate(-50%, -70%);
     }
+
+    &::after {
+        content: '';
+        display: block;
+        background: url('../img/raspberrypencil.png');
+        width: rem(130px);
+        max-height: rem(160px);
+        position: absolute;
+        right: 0;
+        top: 0;
+    
+        @include phones {
+            width: 25%;
+        }
+    }
+}
+
+.review {
+    display: flex;
+    color: #000;
+
+    @include tablets {
+        align-items: center;
+        padding: rem(62px) rem(12px) rem(32px);
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: rem(30px);
+    }
+}
+
+.review__item {
+    padding: rem(50px) rem(44px) rem(36px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.review__item_active {
+    position: static;
+    opacity: 1;
 }
 
 .review__content {
@@ -62,7 +99,7 @@
 
 .review__photo {
     width: rem(252px);
-    max-height: rem(260px);
+    height: rem(260px);
     overflow: hidden;
     margin-right: rem(20px);
 
@@ -75,6 +112,7 @@
 
 .review__photo-img {
     object-fit: cover;
+    object-position: center center;
 }
 
 .review-img {
@@ -106,16 +144,4 @@
 .review__author {
     font-weight: 700;
     font-size: rem(18px);
-}
-
-.review__decor {
-    width: rem(130px);
-    max-height: rem(160px);
-    position: absolute;
-    right: 0;
-    top: 0;
-
-    @include phones {
-        width: 25%;
-    }
 }

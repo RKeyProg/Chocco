@@ -489,7 +489,6 @@ h4 {
 
 .section__team {
   padding: 4.0555555556rem 0;
-  justify-content: normal;
 }
 .section__team::before {
   content: "";
@@ -1031,33 +1030,41 @@ h4 {
 .team__list {
   display: flex;
   justify-content: space-between;
-  min-height: 430px;
+  min-height: 24.1666666667rem;
 }
 @media screen and (max-width: 768px) {
   .team__list {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: auto;
+    display: none;
+  }
+}
+.team__list_mobile {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: auto;
+}
+@media screen and (max-width: 768px) {
+  .team__list_mobile {
+    display: flex;
   }
 }
 
 .team__item {
+  display: flex;
+  flex-direction: column;
   width: calc(100% / 4 - 20px);
   text-align: center;
   height: 100%;
 }
 @media screen and (max-width: 768px) {
   .team__item {
-    width: 29%;
+    width: 44%;
     margin-bottom: 5px;
   }
 }
 @media screen and (max-width: 480px) {
   .team__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 55%;
   }
 }
@@ -1069,22 +1076,17 @@ h4 {
   margin-bottom: 1.1111111111rem;
   transition: height 0.5s;
 }
-@media screen and (max-width: 768px) {
-  .team__photo {
-    height: 0;
-  }
-}
 @media screen and (max-width: 480px) {
   .team__photo {
     width: 7.8888888889rem;
+    height: 10.2222222222rem;
+    margin: 0 auto 1.1111111111rem;
   }
 }
 
 .team__photo-img {
-  object-fit: none;
-}
-.team__photo-img_position_left {
-  object-position: -125px center;
+  object-fit: cover;
+  object-position: center;
 }
 
 .team__title {
@@ -1092,18 +1094,17 @@ h4 {
   align-items: center;
   justify-content: center;
   margin-bottom: 0.5555555556rem;
+  background-color: transparent;
+  border: 0;
+}
+.team__title:focus {
+  outline: none;
 }
 .team__title:hover {
   cursor: pointer;
 }
 
-.team__name {
-  font-size: 1.1666666667rem;
-  font-weight: bold;
-  color: #000;
-}
-
-.team__btn {
+.team__triangle {
   padding: 0;
   display: inline-block;
   border: 7px solid transparent;
@@ -1113,14 +1114,14 @@ h4 {
   background: transparent;
   transition: transform 0.3s;
 }
-.team__btn:hover {
-  cursor: pointer;
-}
-.team__btn:focus {
-  outline: none;
+
+.team__name {
+  font-size: 1.1666666667rem;
+  font-weight: bold;
+  color: #000;
 }
 
-.team__about {
+.team__content {
   height: 0;
   overflow: hidden;
   transition: height 0.5s;
@@ -1151,30 +1152,23 @@ h4 {
 .reviews__swither-item_active {
   border-color: #365a49;
 }
+.reviews__swither-item:hover {
+  border-color: #365a49;
+}
 
 .reviews__swither-item-img {
   object-fit: cover;
 }
 
-.review {
+.review__list {
+  width: 100%;
+  min-height: 19.1666666667rem;
   background-color: #f8faf9;
-  padding: 2.7777777778rem 2.4444444444rem 2rem;
   overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
   margin: 0 auto 1.1111111111rem;
-  color: #000;
+  position: relative;
 }
-@media screen and (max-width: 768px) {
-  .review {
-    padding: 3.4444444444rem 0.6666666667rem 1.7777777778rem;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 1.6666666667rem;
-  }
-}
-.review::before {
+.review__list::before {
   content: "";
   width: 5rem;
   height: 5rem;
@@ -1184,6 +1178,49 @@ h4 {
   top: 0;
   left: 50%;
   transform: translate(-50%, -70%);
+}
+.review__list::after {
+  content: "";
+  display: block;
+  background: url("../img/raspberrypencil.png");
+  width: 7.2222222222rem;
+  max-height: 8.8888888889rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media screen and (max-width: 480px) {
+  .review__list::after {
+    width: 25%;
+  }
+}
+
+.review {
+  display: flex;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .review {
+    align-items: center;
+    padding: 3.4444444444rem 0.6666666667rem 1.7777777778rem;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1.6666666667rem;
+  }
+}
+
+.review__item {
+  padding: 2.7777777778rem 2.4444444444rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.review__item_active {
+  position: static;
+  opacity: 1;
 }
 
 .review__content {
@@ -1199,7 +1236,7 @@ h4 {
 
 .review__photo {
   width: 14rem;
-  max-height: 14.4444444444rem;
+  height: 14.4444444444rem;
   overflow: hidden;
   margin-right: 1.1111111111rem;
 }
@@ -1213,6 +1250,7 @@ h4 {
 
 .review__photo-img {
   object-fit: cover;
+  object-position: center center;
 }
 
 .review-img {
@@ -1246,19 +1284,6 @@ h4 {
 .review__author {
   font-weight: 700;
   font-size: 1rem;
-}
-
-.review__decor {
-  width: 7.2222222222rem;
-  max-height: 8.8888888889rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-@media screen and (max-width: 480px) {
-  .review__decor {
-    width: 25%;
-  }
 }
 
 .interactive-avatar {

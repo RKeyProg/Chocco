@@ -277,6 +277,8 @@ h4 {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1em;
+  border: 0;
+  transition: all 0.3s ease;
 }
 .btn_theme_white {
   background-color: #fff;
@@ -304,6 +306,12 @@ h4 {
 }
 .btn_theme_transparent:hover {
   color: #000;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:hover {
+  cursor: pointer;
 }
 
 .dignitieslist {
@@ -1447,6 +1455,10 @@ h4 {
   }
 }
 
+.input-error {
+  border: 3px solid hotpink;
+}
+
 .form__radio, .form__check {
   display: none;
 }
@@ -1525,6 +1537,9 @@ h4 {
 .form__button:hover {
   cursor: pointer;
 }
+.form__button:focus {
+  outline: none;
+}
 
 .map {
   width: 100vw;
@@ -1595,25 +1610,10 @@ h4 {
 }
 
 .overlay {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(48, 48, 48, 0.99);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10000;
-}
-
-.overlay__container {
-  width: 16.6666666667rem;
   background-color: #fff;
   padding: 1.9444444444rem 1.3888888889rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: none;
+  text-align: center;
 }
 
 .overlay__text {
@@ -1622,12 +1622,11 @@ h4 {
   margin-bottom: 1.1111111111rem;
 }
 
-.overlay__btn {
-  border: 0;
-  transition: all 0.3s ease;
+.error-message .overlay__text {
+  color: red;
 }
 
-.overlay__btn:hover {
+.app-supmit-btn:hover {
   cursor: pointer;
   background-color: #2e4e3f;
   color: #fff;

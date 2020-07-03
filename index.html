@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Chocco</title>
@@ -664,16 +665,17 @@
         <section class="section section__orders section_font-color_green">
             <div class="container">
                 <h2 class="section__title section__orders-title">Закажите доставку</h2>
-                <form action="" class="form">
+                <form action="" class="form" id="myForm">
+                    <input type="hidden" name="to" value="radkevich@mail.ru">
                     <div class="form__column">
                         <div class="form__string">
                             <label class="form__label form__label_size_half">
                                 <div class="form__inputname">Имя</div>
-                                <input type="text" name="name" class="form__input">
+                                <input type="text" name="name" class="form__input" required>
                             </label>
                             <label class="form__label form__label_size_half">
                                 <div class="form__inputname">Телефон</div>
-                                <input type="tel" name="phone" class="form__input">
+                                <input type="tel" name="phone" class="form__input" required>
                             </label>
                         </div>
                         <div class="form__string">
@@ -706,17 +708,17 @@
                             <label class="form__label">
                                 <div class="form__inputname">Комментарий</div>
                                 <textarea name="message" class="form__input form__textarea" id="" cols="30"
-                                    rows="10"></textarea>
+                                    rows="10" required></textarea>
                             </label>
                         </div>
                         <div class="form__controls form__string_mb_none">
                             <label class="form__label form__controls-label form__label_size_auto">
-                                <input type="radio" name="paytype" class="form__radio">
+                                <input type="radio" name="paytype" class="form__radio" required>
                                 <div class="form__radio-picture"></div>
                                 <div class="form__inputname form__inputname_mb_none">Потребуется сдача</div>
                             </label>
                             <label class="form__label form__controls-label form__label_size_auto">
-                                <input type="radio" name="paytype" class="form__radio">
+                                <input type="radio" name="paytype" class="form__radio" required>
                                 <div class="form__radio-picture"></div>
                                 <div class="form__inputname form__inputname_mb_none">Оплата по карте</div>
                             </label>
@@ -729,7 +731,7 @@
                             </label>
                         </div>
                         <div class="form__buttons">
-                            <input type="submit" value="Заказать" id="submit" class="form__button btn btn_theme_green">
+                            <input type="submit" value="Заказать" class="form__button btn btn_theme_green">
                             <input type="reset" value="Очистить" class="form__button btn btn_theme_transparent">
                         </div>
                     </div>
@@ -807,10 +809,20 @@
             </ul>
         </nav>
 
+        <!-- Modal -->
+
+        <div class="overlay" id="modal">
+            <div class="overlay__text">
+                Сообщение отправлено
+            </div>
+            <button class="app-supmit-btn btn btn_theme_green">закрыть</button>
+        </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
     <script type="html/template" id="svgTemplate">
         <button class="full-menu__btn">

@@ -1,23 +1,8 @@
 .overlay {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(48, 48, 48, 0.99);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: $z-modal;
-}
-
-.overlay__container {
-    width: rem(300px);
     background-color: #fff;
     padding: rem(35px) rem(25px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: none;
+    text-align: center;
 }
 
 .overlay__text {
@@ -26,12 +11,11 @@
     margin-bottom: rem(20px);
 }
 
-.overlay__btn {
-    border: 0;
-    transition: all .3s ease;
+.error-message .overlay__text {
+    color: red;
 }
 
-.overlay__btn:hover {
+.app-supmit-btn:hover {
     cursor: pointer;
     background-color: #2e4e3f;
     color: #fff;

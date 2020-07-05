@@ -277,6 +277,8 @@ h4 {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1em;
+  border: 0;
+  transition: all 0.3s ease;
 }
 .btn_theme_white {
   background-color: #fff;
@@ -304,6 +306,12 @@ h4 {
 }
 .btn_theme_transparent:hover {
   color: #000;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:hover {
+  cursor: pointer;
 }
 
 .dignitieslist {
@@ -488,9 +496,7 @@ h4 {
 }
 
 .section__team {
-  background-color: #fafafa;
   padding: 4.0555555556rem 0;
-  justify-content: normal;
 }
 .section__team::before {
   content: "";
@@ -501,6 +507,7 @@ h4 {
   min-height: 25rem;
   top: -225px;
   right: 0px;
+  z-index: 2;
 }
 .section__team::after {
   content: "";
@@ -511,6 +518,7 @@ h4 {
   min-height: 6.3333333333rem;
   bottom: -43px;
   left: 33px;
+  z-index: 2;
 }
 
 .section__reviews::before {
@@ -522,6 +530,7 @@ h4 {
   min-height: 5.2222222222rem;
   top: 40px;
   right: 12px;
+  z-index: 2;
 }
 @media screen and (max-width: 768px) {
   .section__reviews::before {
@@ -637,8 +646,15 @@ h4 {
 }
 @media screen and (max-width: 768px) {
   .slider {
-    align-items: flex-start;
+    justify-content: center;
   }
+}
+
+.slider__list {
+  max-width: 100%;
+  display: flex;
+  position: relative;
+  left: 0;
 }
 
 .slider__control-img {
@@ -648,38 +664,28 @@ h4 {
 }
 
 .slider__control {
+  width: 95%;
   position: absolute;
+  display: flex;
+  justify-content: space-between;
   z-index: 90;
   background: transparent;
-  padding: 0;
+  padding: 2.5rem 0 0;
   border: 0;
 }
-.slider__control:focus {
-  outline: none;
-}
 .slider__control_left {
-  left: 0;
   transform: rotateY(180deg);
 }
 @media screen and (max-width: 768px) {
-  .slider__control_left {
-    left: 2.7777777778rem;
-  }
-}
-.slider__control_right {
-  right: 30px;
-}
-@media screen and (max-width: 768px) {
-  .slider__control_right {
-    right: 2.7777777778rem;
-  }
-}
-.slider__control:hover {
-  cursor: pointer;
-}
-@media screen and (max-width: 768px) {
   .slider__control {
-    top: 24vmin;
+    top: 22vmin;
+    width: 72%;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .slider__control {
+    top: 26vmin;
   }
 }
 
@@ -688,8 +694,10 @@ h4 {
 }
 
 .slider__item {
+  flex-shrink: 0;
+  width: 100%;
   align-items: center;
-  padding: 0 6%;
+  padding: 2.5rem 8% 0;
 }
 @media screen and (max-width: 768px) {
   .slider__item {
@@ -697,6 +705,18 @@ h4 {
     flex-direction: column;
     align-items: center;
   }
+}
+
+.bx-wrapper {
+  box-shadow: none;
+  border: 0;
+  background: transparent;
+  margin-bottom: 0;
+}
+
+.bx-viewport {
+  display: flex;
+  align-items: center;
 }
 
 .slide__photo {
@@ -743,7 +763,7 @@ h4 {
 @media screen and (max-width: 480px) {
   .slide__photo {
     width: 50%;
-    height: 50%;
+    height: auto;
   }
 }
 
@@ -1022,33 +1042,41 @@ h4 {
 .team__list {
   display: flex;
   justify-content: space-between;
-  min-height: 430px;
+  min-height: 24.1666666667rem;
 }
 @media screen and (max-width: 768px) {
   .team__list {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: auto;
+    display: none;
+  }
+}
+.team__list_mobile {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: auto;
+}
+@media screen and (max-width: 768px) {
+  .team__list_mobile {
+    display: flex;
   }
 }
 
 .team__item {
+  display: flex;
+  flex-direction: column;
   width: calc(100% / 4 - 20px);
   text-align: center;
   height: 100%;
 }
 @media screen and (max-width: 768px) {
   .team__item {
-    width: 29%;
+    width: 44%;
     margin-bottom: 5px;
   }
 }
 @media screen and (max-width: 480px) {
   .team__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 55%;
   }
 }
@@ -1060,22 +1088,17 @@ h4 {
   margin-bottom: 1.1111111111rem;
   transition: height 0.5s;
 }
-@media screen and (max-width: 768px) {
-  .team__photo {
-    height: 0;
-  }
-}
 @media screen and (max-width: 480px) {
   .team__photo {
     width: 7.8888888889rem;
+    height: 10.2222222222rem;
+    margin: 0 auto 1.1111111111rem;
   }
 }
 
 .team__photo-img {
-  object-fit: none;
-}
-.team__photo-img_position_left {
-  object-position: -125px center;
+  object-fit: cover;
+  object-position: center;
 }
 
 .team__title {
@@ -1083,18 +1106,17 @@ h4 {
   align-items: center;
   justify-content: center;
   margin-bottom: 0.5555555556rem;
+  background-color: transparent;
+  border: 0;
+}
+.team__title:focus {
+  outline: none;
 }
 .team__title:hover {
   cursor: pointer;
 }
 
-.team__name {
-  font-size: 1.1666666667rem;
-  font-weight: bold;
-  color: #000;
-}
-
-.team__btn {
+.team__triangle {
   padding: 0;
   display: inline-block;
   border: 7px solid transparent;
@@ -1104,14 +1126,14 @@ h4 {
   background: transparent;
   transition: transform 0.3s;
 }
-.team__btn:hover {
-  cursor: pointer;
-}
-.team__btn:focus {
-  outline: none;
+
+.team__name {
+  font-size: 1.1666666667rem;
+  font-weight: bold;
+  color: #000;
 }
 
-.team__about {
+.team__content {
   height: 0;
   overflow: hidden;
   transition: height 0.5s;
@@ -1142,30 +1164,23 @@ h4 {
 .reviews__swither-item_active {
   border-color: #365a49;
 }
+.reviews__swither-item:hover {
+  border-color: #365a49;
+}
 
 .reviews__swither-item-img {
   object-fit: cover;
 }
 
-.review {
+.review__list {
+  width: 100%;
+  min-height: 19.1666666667rem;
   background-color: #f8faf9;
-  padding: 2.7777777778rem 2.4444444444rem 2rem;
   overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
   margin: 0 auto 1.1111111111rem;
-  color: #000;
+  position: relative;
 }
-@media screen and (max-width: 768px) {
-  .review {
-    padding: 3.4444444444rem 0.6666666667rem 1.7777777778rem;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 1.6666666667rem;
-  }
-}
-.review::before {
+.review__list::before {
   content: "";
   width: 5rem;
   height: 5rem;
@@ -1175,6 +1190,49 @@ h4 {
   top: 0;
   left: 50%;
   transform: translate(-50%, -70%);
+}
+.review__list::after {
+  content: "";
+  display: block;
+  background: url("../img/raspberrypencil.png");
+  width: 7.2222222222rem;
+  max-height: 8.8888888889rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media screen and (max-width: 480px) {
+  .review__list::after {
+    width: 25%;
+  }
+}
+
+.review {
+  display: flex;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .review {
+    align-items: center;
+    padding: 3.4444444444rem 0.6666666667rem 1.7777777778rem;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1.6666666667rem;
+  }
+}
+
+.review__item {
+  padding: 2.7777777778rem 2.4444444444rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.review__item_active {
+  position: static;
+  opacity: 1;
 }
 
 .review__content {
@@ -1190,7 +1248,7 @@ h4 {
 
 .review__photo {
   width: 14rem;
-  max-height: 14.4444444444rem;
+  height: 14.4444444444rem;
   overflow: hidden;
   margin-right: 1.1111111111rem;
 }
@@ -1204,6 +1262,7 @@ h4 {
 
 .review__photo-img {
   object-fit: cover;
+  object-position: center center;
 }
 
 .review-img {
@@ -1237,19 +1296,6 @@ h4 {
 .review__author {
   font-weight: 700;
   font-size: 1rem;
-}
-
-.review__decor {
-  width: 7.2222222222rem;
-  max-height: 8.8888888889rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-@media screen and (max-width: 480px) {
-  .review__decor {
-    width: 25%;
-  }
 }
 
 .interactive-avatar {
@@ -1409,6 +1455,10 @@ h4 {
   }
 }
 
+.input-error {
+  border: 3px solid hotpink;
+}
+
 .form__radio, .form__check {
   display: none;
 }
@@ -1487,6 +1537,9 @@ h4 {
 .form__button:hover {
   cursor: pointer;
 }
+.form__button:focus {
+  outline: none;
+}
 
 .map {
   width: 100vw;
@@ -1557,25 +1610,10 @@ h4 {
 }
 
 .overlay {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(48, 48, 48, 0.99);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10000;
-}
-
-.overlay__container {
-  width: 16.6666666667rem;
   background-color: #fff;
   padding: 1.9444444444rem 1.3888888889rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: none;
+  text-align: center;
 }
 
 .overlay__text {
@@ -1584,12 +1622,11 @@ h4 {
   margin-bottom: 1.1111111111rem;
 }
 
-.overlay__btn {
-  border: 0;
-  transition: all 0.3s ease;
+.error-message .overlay__text {
+  color: red;
 }
 
-.overlay__btn:hover {
+.app-supmit-btn:hover {
   cursor: pointer;
   background-color: #2e4e3f;
   color: #fff;

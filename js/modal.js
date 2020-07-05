@@ -1,37 +1,66 @@
-const submitBtn = document.querySelector('#submit');
-const messege = 'Сообщение отправлено';
 
-submitBtn.addEventListener('click', e => {
-    e.preventDefault();
-    modal(messege);
-})
 
-function modal(content) {
-    const overlay = document.createElement('div');
-    const container = document.createElement('div');
-    const text = document.createElement('div');
-    const button = document.createElement('button');
-
-    overlay.classList.add('overlay');
-    container.classList.add('overlay__container');
-    text.classList.add('overlay__text');
-    button.classList.add('overlay__btn', 'btn', 'btn_theme_green');
-
-    text.textContent = content;
-    button.textContent = 'закрыть';
-
-    container.appendChild(text);
-    container.appendChild(button);
-    overlay.appendChild(container);
-    body.appendChild(overlay);
-
-    button.addEventListener('click', e => {
-        body.removeChild(overlay);
-    })
-
-    overlay.addEventListener('click', e => {
-        if (e.target == overlay) {
-            body.removeChild(overlay);
+const validateFields = (form, fieldsArray) => {
+    fieldsArray.forEach((field) => {
+        field.removeClass("input-error");
+        if (field.val().trim() === "") {
+            field.addClass("input-error");
         }
-    })
+    });
+
+    const errorsField = form.find(".input-error");
+    
+    return errorsField.length === 0;
 }
+
+$('#myForm').submit(e => {
+    e.preventDefault();
+
+    const form = $(e.currentTarget);
+    const name = form.find("[name = 'name']");
+    const phone = form.find("[name = 'phone']");
+    const comment = form.find("[name = 'message']");
+    const to = form.find("[name = 'to']");    
+
+    const modal = $('#modal');
+    const content = modal.find('.overlay__text');
+
+    modal.removeClass("error-message");
+
+    if (validateFields(form, [name, phone, comment, to])) {
+        const request = $.ajax({
+            url: "https://webdev-api.loftschool.com/sendmail",
+            method: "post",
+            data: {
+                name: name.val(),
+                phone: phone.val(),
+                comment: comment.val(),
+                to: to.val()
+            }
+        });
+
+        request.done(data => {
+            content.text(data.message);   
+        });
+
+        request.fail(data => {
+            content.text(data.responseJSON.message)
+            modal.addClass("error-message");
+        });
+
+        request.always(() => {
+            $('body').css('overflow', 'hidden');
+            $.fancybox.open({
+                src: "#modal",
+                type: "inline"
+            }) 
+        })
+    }
+});
+
+$('.app-supmit-btn').on('click', e => {
+    e.preventDefault();
+
+    $.fancybox.close();
+    $('body').css('overflow', 'auto');
+})

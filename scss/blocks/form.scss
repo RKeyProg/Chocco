@@ -147,6 +147,10 @@
     }
 }
 
+.input-error {
+    border: 3px solid hotpink;
+}
+
 $radio-and-check-size: rem(25px);
 
 .form__radio, .form__check {
@@ -231,5 +235,9 @@ $radio-and-check-size: rem(25px);
 
     &:hover {
         cursor: pointer;
+    }
+    
+    &:focus {
+        outline: none;
     }
 }

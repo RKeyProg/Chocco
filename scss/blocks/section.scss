@@ -105,9 +105,7 @@
 }
 
 .section__team {
-    background-color: #fafafa;
     padding: rem(73px) 0;
-    justify-content: normal;
 
     &::before {
         content: '';
@@ -118,6 +116,7 @@
         min-height: rem(450px);
         top: -225px;
         right: 0px;
+        z-index: $z-after;
     }
 
     &::after {
@@ -129,6 +128,7 @@
         min-height: rem(114px);
         bottom: -43px;
         left: 33px;
+        z-index: $z-after;
     }
 }
 
@@ -142,6 +142,7 @@
         min-height: rem(94px);
         top: 40px;
         right: 12px;
+        z-index: $z-after;
 
         @include tablets {
             top: 0;

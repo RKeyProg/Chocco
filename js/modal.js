@@ -1,3 +1,5 @@
+
+
 const validateFields = (form, fieldsArray) => {
     fieldsArray.forEach((field) => {
         field.removeClass("input-error");
@@ -47,6 +49,7 @@ $('#myForm').submit(e => {
         });
 
         request.always(() => {
+            $('body').css('overflow', 'hidden');
             $.fancybox.open({
                 src: "#modal",
                 type: "inline"
@@ -59,4 +62,5 @@ $('.app-supmit-btn').on('click', e => {
     e.preventDefault();
 
     $.fancybox.close();
+    $('body').css('overflow', 'auto');
 })

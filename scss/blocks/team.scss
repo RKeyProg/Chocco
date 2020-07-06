@@ -45,6 +45,11 @@
     margin-bottom: rem(20px);
     transition: height .5s;
 
+    @include tablets {
+        width: rem(223px);
+        margin: 0 auto rem(20px);
+    }
+
     @include phones {
         width: rem(142px);
         height: rem(184px);

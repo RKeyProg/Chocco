@@ -521,6 +521,26 @@ h4 {
   z-index: 2;
 }
 
+.section__menu-accordion {
+  padding: 0;
+  position: relative;
+  display: flex;
+  background: url("../img/menuBG.jpg") center center/cover no-repeat;
+}
+.section__menu-accordion::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.section__menu-accordion .container {
+  position: static;
+}
+
 .section__reviews::before {
   content: "";
   position: absolute;
@@ -1088,6 +1108,12 @@ h4 {
   margin-bottom: 1.1111111111rem;
   transition: height 0.5s;
 }
+@media screen and (max-width: 768px) {
+  .team__photo {
+    width: 12.3888888889rem;
+    margin: 0 auto 1.1111111111rem;
+  }
+}
 @media screen and (max-width: 480px) {
   .team__photo {
     width: 7.8888888889rem;
@@ -1147,6 +1173,176 @@ h4 {
   font-size: 0.9444444444rem;
   font-weight: 300;
   color: #666;
+}
+
+.menu-accordion__title {
+  text-align: left;
+  margin-bottom: 0;
+  position: absolute;
+  top: 5.5555555556rem;
+  left: 4.3888888889rem;
+  color: #fff;
+}
+@media screen and (max-width: 480px) {
+  .menu-accordion__title {
+    top: 4.4444444444rem;
+    left: 3.3333333333rem;
+  }
+}
+
+.menu-accordion__list {
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media screen and (max-width: 480px) {
+  .menu-accordion__list {
+    width: 100%;
+  }
+}
+
+.menu-accordion__item {
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+
+@keyframes contentPhones {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+.menu-accordion__item_phones_active {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.menu-accordion__item_phones_active .menu-accordion__content {
+  animation: contentPhones 1s forwards;
+}
+
+.menu-accordion__btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  width: 5.5555555556rem;
+  height: 100%;
+  background-position: bottom left -125px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.menu-accordion__btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.menu-accordion__btn_fake {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media screen and (max-width: 480px) {
+  .menu-accordion__btn_fake {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu-accordion__btn {
+    width: 4.4444444444rem;
+  }
+}
+
+.menu-accordion__btn-title {
+  transform: rotate(-90deg) translateX(50%);
+  white-space: nowrap;
+  font-size: 2.6666666667rem;
+  font-weight: 700;
+}
+@media screen and (max-width: 480px) {
+  .menu-accordion__btn-title {
+    font-size: 2rem;
+  }
+}
+
+.menu-accordion__btn, .menu-accordion__close-content {
+  padding: 0;
+  color: #fff;
+  background-color: transparent;
+  border: 0;
+}
+.menu-accordion__btn:hover, .menu-accordion__close-content:hover {
+  cursor: pointer;
+}
+
+.menu-accordion__content {
+  width: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(51, 53, 55, 0.93);
+  transition: all 1s;
+  z-index: 5;
+}
+
+.menu-accordion__item.active .menu-accordion__content {
+  width: 45vmax;
+}
+@media screen and (max-width: 768px) {
+  .menu-accordion__item.active .menu-accordion__content {
+    width: calc(100vw - 16.666rem);
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu-accordion__item.active .menu-accordion__content {
+    width: 100%;
+  }
+}
+
+.menu-accordion__close-content {
+  position: absolute;
+  top: 1.4444444444rem;
+  right: 1.7777777778rem;
+}
+.menu-accordion__close-content:focus {
+  outline: none;
+}
+@media screen and (max-width: 768px) {
+  .menu-accordion__close-content {
+    right: 1.6666666667rem;
+  }
+}
+
+.menu-accordion__text {
+  min-width: 45vmax;
+  height: 100%;
+  padding: 2.7777777778rem 7.0555555556rem 2.7777777778rem 1.5rem;
+  color: #fff;
+  overflow-y: auto;
+  font-size: 16px;
+  line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .menu-accordion__text {
+    min-width: 25rem;
+  }
+}
+
+.menu-accordion__close {
+  width: 1rem;
+  height: 1rem;
+  fill: #fff;
 }
 
 .reviews__swither {

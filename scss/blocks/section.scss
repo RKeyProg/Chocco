@@ -132,6 +132,22 @@
     }
 }
 
+.section__menu-accordion {
+    padding: 0;
+    position: relative;
+    display: flex;
+    background: url('../img/menuBG.jpg') center center / cover no-repeat;
+
+    &::before {
+        @include darkening;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    & .container {
+        position: static;
+    }
+}
+
 .section__reviews {
     &::before {
         content: "";

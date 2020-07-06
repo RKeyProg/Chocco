@@ -1,4 +1,6 @@
-const openItem = (item, triang) => {
+"use strict";
+
+const openItem = item => {
     const container = item.closest('.team__item');
     const content = container.find('.team__content');
     const about = container.find('.team__about');

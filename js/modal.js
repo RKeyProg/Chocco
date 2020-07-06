@@ -1,4 +1,4 @@
-
+"use strict";
 
 const validateFields = (form, fieldsArray) => {
     fieldsArray.forEach((field) => {

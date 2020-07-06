@@ -1,3 +1,5 @@
+"use strict";
+
 const slider = $('.slider__list').bxSlider({
     pager: false,
     controls: false

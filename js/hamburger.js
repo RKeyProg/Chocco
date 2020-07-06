@@ -1,3 +1,5 @@
+"use strict";
+
 const btn = document.querySelector('#hamburger'); // кнопка гамбургер
 const array = document.querySelectorAll('.menu__link'); // список элементов меню
 const body = document.body;

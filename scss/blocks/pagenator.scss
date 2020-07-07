@@ -14,13 +14,23 @@
 
 .pagenator__item {
     margin-bottom: rem(5px);
+    border-radius: 50%;
+    border: rem(1px) solid transparent;
+    width: rem(16px);
+    height: rem(16px);
+    display: flex;
+    justify-content: center;
+
+    &_active {
+        border-color: #fff;
+        box-shadow: 0 0 2px rgba(0,0,0,.5);
+    }
+}
+
+.pagenator__link {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: rem(16px);
-    height: rem(16px);
-    border-radius: 50%;
-    border: rem(1px) solid transparent;
 
     &::after {
         content: '';
@@ -29,11 +39,6 @@
         width: rem(6px);
         height: rem(6px);
         background-color: #fff;
-        box-shadow: 0 0 2px rgba(0,0,0,.5);
-    }
-
-    &_active {
-        border-color: #fff;
         box-shadow: 0 0 2px rgba(0,0,0,.5);
     }
 }

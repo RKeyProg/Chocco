@@ -193,6 +193,14 @@
     }
 }
 
+.section__how-we-work {
+    background-color: #f8faf9;
+
+    & .section__title {
+        margin-bottom: rem(50px);
+    }
+}
+
 .section__orders {
     &::before {
         content: "";

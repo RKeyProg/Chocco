@@ -29,7 +29,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #666;
-  overflow: hidden;
 }
 
 .wrapper {
@@ -593,6 +592,13 @@ h4 {
   .section__reviews::after {
     bottom: -5%;
   }
+}
+
+.section__how-we-work {
+  background-color: #f8faf9;
+}
+.section__how-we-work .section__title {
+  margin-bottom: 2.7777777778rem;
 }
 
 .section__orders::before {
@@ -1500,6 +1506,203 @@ h4 {
 .review__author {
   font-weight: 700;
   font-size: 1rem;
+}
+
+.player__container {
+  width: 36.6666666667rem;
+  height: 22.5rem;
+  margin: 0 auto;
+}
+
+.player__wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.player__elem {
+  width: 100%;
+  height: 100%;
+}
+
+.player__splash {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.player__splash::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../img/playerPreview.jpg") center center/cover no-repeat;
+}
+.player__splash:hover {
+  cursor: pointer;
+}
+.player__splash:hover .player__splash-play {
+  opacity: 1;
+}
+
+.player__splash-play {
+  width: 4.5555555556rem;
+  height: 6.5555555556rem;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  fill: #fff;
+  transition: all 0.3s ease;
+}
+
+.player__controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.9444444444rem;
+  background-color: #3e3e3e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.3888888889rem;
+}
+
+.player__start {
+  padding: 0;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  width: 0.8888888889rem;
+  height: 1.2222222222rem;
+}
+.player__start:hover {
+  cursor: pointer;
+}
+.player__start:focus {
+  outline: none;
+}
+
+.player__start-play {
+  width: 100%;
+  height: 100%;
+  fill: #626262;
+}
+
+.player__playback, .player__volume {
+  position: relative;
+}
+.player__playback::before, .player__volume::before {
+  content: "";
+  height: 4px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #626262;
+}
+.player__playback:hover, .player__volume:hover {
+  cursor: pointer;
+}
+
+.player__playback-button, .player__volume-button {
+  position: absolute;
+  top: 50%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  background-color: #626262;
+  width: 0.7222222222rem;
+  height: 0.7222222222rem;
+  transform: translate(-50%, -50%);
+}
+.player__playback-button:hover, .player__volume-button:hover {
+  cursor: pointer;
+}
+.player__playback-button:focus, .player__volume-button:focus {
+  outline: none;
+}
+
+.player__playback {
+  width: 24.6666666667rem;
+}
+
+.player__playback-button {
+  left: 0;
+}
+
+.player__speaker {
+  height: 1.2222222222rem;
+  display: flex;
+}
+
+.player__speaker-btn {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+.player__speaker-btn:hover {
+  cursor: pointer;
+}
+.player__speaker-btn:focus {
+  outline: none;
+}
+
+.player__speaker-img {
+  width: 1rem;
+  height: 100%;
+  fill: #626262;
+  margin-right: 1.0555555556rem;
+}
+
+.player__volume {
+  width: 3.2222222222rem;
+}
+
+.player__volume-button {
+  left: 100%;
+}
+
+.player {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+  background-color: #000;
+}
+.player.paused .player__start {
+  border: none;
+  border-radius: 0;
+  width: 0.7777777778rem;
+  height: 1.2222222222rem;
+}
+.player.paused .player__start::after, .player.paused .player__start::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 5px;
+  top: 0;
+  bottom: 0;
+  background: #626262;
+}
+.player.paused .player__start::after {
+  right: 0;
+}
+.player.paused .player__start::before {
+  left: 0;
+}
+.player.paused .player__start-play {
+  fill: transparent;
+}
+.player.active .player__splash {
+  display: none;
 }
 
 .interactive-avatar {

@@ -30,12 +30,14 @@ let eventsInit = () => {
     $('.player__volume').on('click', e => {
         const volumeBar = $(e.currentTarget);
         const volumeBarclickedPosition = e.originalEvent.layerX;
-        const newVolumePositionPercent = (volumeBarclickedPosition / volumeBar.width()) * 100;
+        let newVolumePositionPercent = (volumeBarclickedPosition / volumeBar.width()) * 100;
 
+        if (newVolumePositionPercent < 0) newVolumePositionPercent = 0;
+        
         $('.player__volume-button').css({
             left: `${newVolumePositionPercent}%`
         });
-
+        
         player.volume = newVolumePositionPercent/100;
     })
 

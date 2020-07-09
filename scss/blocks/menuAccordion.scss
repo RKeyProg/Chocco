@@ -6,9 +6,13 @@
     left: rem(79px);
     color: #fff;
 
+    @include tablets {
+        top: rem(90px);
+        left: rem(60px);
+    }
+
     @include phones {
         top: rem(80px);
-        left: rem(60px); 
     }
 }
 
@@ -32,23 +36,10 @@
     height: 100%;
 }
 
-@keyframes contentPhones {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 70%;
-    }
-}
-
 .menu-accordion__item_phones_active {
     position: absolute;
     left: 0;
     top: 0;
-    
-    & .menu-accordion__content {
-        animation: contentPhones 1s forwards;
-    }
 }
 
 .menu-accordion__btn {
@@ -115,14 +106,6 @@
 
 .menu-accordion__item.active .menu-accordion__content {
     width: 45vmax;
-
-    @include tablets {
-        width: calc(100vw - 16.666rem);
-    }
-
-    @include phones {
-        width: 100%;
-    }
 }
 
 .menu-accordion__close-content {
@@ -149,12 +132,12 @@
     line-height: 1.5;
 
     @include tablets {
-        min-width: rem(450px);
+        min-width: 65vmin;
     }
 
-    // @include phones {
-    //     min-width: rem(270px);
-    // }
+    @include phones {
+        min-width: 100vmin;
+    }
 }
 
 .menu-accordion__close {

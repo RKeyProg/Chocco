@@ -2,6 +2,11 @@
     width: rem(660px);
     height: rem(405px);
     margin: 0 auto;
+
+    @include tablets {
+        width: 77.5vw;
+        height: 53vmin;
+    }
 }
 
 
@@ -51,6 +56,16 @@
     opacity: .9;
     fill: #fff;
     transition: all .3s ease;
+
+    @include tablets {
+        width: rem(73px);
+        height: rem(106px);
+    }
+
+    @include phones {
+        width: rem(49px);
+        height: rem(71px);
+    }
 }
 
 .player__controls {
@@ -64,6 +79,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 rem(25px);
+
+    @include tablets {
+        padding: 0 rem(21px);
+    }
+
+    @include phones {
+        padding: 0 rem(12px);
+    }
 }
 
 .player__start {
@@ -80,6 +103,16 @@
 
     &:focus {
         outline: none;
+    }
+
+    @include tablets {
+        width: rem(14px);
+        height: rem(20px);
+    }
+
+    @include phones {
+        width: rem(10px);
+        height: rem(13px);
     }
 }
 
@@ -102,6 +135,10 @@
         right: 0;
         transform: translateY(-50%);
         background-color: #626262;
+
+        @include phones {
+            height: 3px;
+        }
     }
 
     &:hover {
@@ -128,10 +165,24 @@
     &:focus {
         outline: none;
     }
+
+    @include tablets {
+        width: rem(11px);
+        height: rem(11px);
+    }
+
+    @include tablets {
+        width: rem(8px);
+        height: rem(8px);
+    }
 }
 
 .player__playback {
     width: rem(444px);
+
+    @include tablets {
+        width: 66.9%;
+    }
 }
 
 .player__playback-button {
@@ -141,12 +192,22 @@
 .player__speaker {
     height: rem(22px);
     display: flex;
+
+    @include tablets {
+        height: rem(20px);
+    }
+
+    @include phones {
+        height: rem(13px);
+    }
 }
 
 .player__speaker-btn {
+    padding: 0;
     height: 100%;
     background-color: transparent;
     border: none;
+    margin-right: rem(19px);
 
     &:hover {
         cursor: pointer;
@@ -155,17 +216,32 @@
     &:focus {
         outline: none;
     }
+
+    @include tablets {
+        margin-right: rem(16px);
+    }
+
+    @include tablets {
+        margin-right: rem(11px);
+    }
 }
 
 .player__speaker-img {
     width: rem(18px);
     height: 100%;
     fill: #626262;
-    margin-right: rem(19px);
 }
 
 .player__volume {
     width: rem(58px);
+
+    @include tablets {
+        width: rem(53px);
+    }
+
+    @include phones {
+        width: rem(36px);
+    }
 }
 
 .player__volume-button {

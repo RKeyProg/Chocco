@@ -1,41 +1,147 @@
 "use strict"
 
-const sections = [...document.getElementsByTagName('section')];
-const sectionWrapper = $('.wrapper');
-const pagenator = document.querySelector('.pagenator');
+const sections = $('section');
+const display = $('.maincontent');
+const sideMenu = $('.pagenator');
+const menuItems = sideMenu.find('.pagenator__item');
 
-let currentSection = 0;
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
 
-sections.forEach(e => {
-    if (e.getBoundingClientRect().y === 0) {
-        e.classList.add('active-section');
+
+let inScroll = false;
+
+sections.first().addClass('active');
+
+const countSectionPosition = sectionEq => {
+    const position = sectionEq * -100;
+
+    if (isNaN(position)) {
+        console.error('передано не верное значение в countSectionPosition');
+        return 0;
     }
 
-    if (e.classList.contains('active-section')) {
-        currentSection = sections.indexOf(e);
+    return position;
+}
+
+const changeMenuThemeForPagenator = sectionEq => {
+    const currentSection = sections.eq(sectionEq);
+    const menuTheme = currentSection.attr('data-sidemenu-theme');
+    const activeClass = 'pagenator_bg_dark';
+
+    if (menuTheme === "black") {
+        sideMenu.addClass(activeClass);
+    } else {
+        sideMenu.removeClass(activeClass);
     }
-})
+}
 
-// sectionWrapper.css('transform', `translateY(${-currentSection * 100}vh)`)
+const resetActiveClassForItem = (items, itemEq, activeClass) => {
+    items.eq(itemEq).addClass(activeClass).siblings().removeClass(activeClass);
+}
 
-window.addEventListener('wheel', e => {
+const perfomTransition = sectionEq => {
+    if (inScroll) return;
 
-    (e.deltaY < 0) ? --currentSection: ++currentSection;
+    const transitionOver = 1000;
+    const mouseInertionOver = 300;
 
-    if (currentSection < 0) currentSection = 0;
-    else if (currentSection > (sections.length - 1)) currentSection = (sections.length - 1);
-    
-    sections.forEach(e => {
-        e.classList.remove('active-section');
+    inScroll = true;
+
+    const position = countSectionPosition(sectionEq);
+
+    changeMenuThemeForPagenator(sectionEq);
+
+    display.css({
+        transform: `translateY(${position}%)`
     })
-    sections[currentSection].classList.add('active-section');
 
-    scrollToSection(currentSection);
+    resetActiveClassForItem(sections, sectionEq, 'active');
+
+    setTimeout(() => {     
+        resetActiveClassForItem(menuItems, sectionEq, 'pagenator__item_active');  
+    }, transitionOver / 3);
+
+    setTimeout(() => {       
+        inScroll = false;
+    }, transitionOver + mouseInertionOver);
+}
+
+const viewportScroller = () => {
+    const activeSection = sections.filter('.active');
+    const nextSection = activeSection.next('section');
+    const prevSection = activeSection.prev('section');    
+
+    return {
+        next() {
+            if (nextSection.length) {
+                perfomTransition(nextSection.index());
+            }
+        },
+        prev() {
+            if (prevSection.length) {
+                perfomTransition(prevSection.index());
+            }
+        }
+    };
+}
+
+$(window).on('wheel', e => {
+    const deltaY = e.originalEvent.deltaY;
+    const scroller = viewportScroller();
+    
+    if (deltaY > 0) {
+        scroller.next();
+    }
+
+    if (deltaY < 0) {
+        scroller.prev();
+    }
 })
 
-function scrollToSection(currentSection) {
-    sectionWrapper.stop(true, true).animate({
-        top: `${-currentSection * 100}vh`
-    }, 300);
-    // pagenator.style.transform = `translateY(${-currentSection * 100}vh) translateY(-50%)`;
+$(window).on('keydown', e => {
+    const tagName = e.target.tagName.toLowerCase();
+    const userTypingInputs = tagName === 'input' || tagName === 'textarea';
+    const scroller = viewportScroller();
+
+    if (userTypingInputs) return;
+
+    switch (e.keyCode) {
+        case 38:
+            scroller.prev();
+            break;
+        
+        case 40:
+            scroller.next();
+            break;
+    }
+})
+
+$('.wrapper').on('touchmove', e => e.preventDefault());
+
+$('[data-scroll-to]').on('click', e => {    
+    e.preventDefault();
+
+    const $this = $(e.currentTarget);
+    
+    const target = $this.attr('data-scroll-to');
+    const reqSection = $(`[data-section-id=${target}]`);
+
+    perfomTransition(reqSection.index());
+})
+
+if (isMobile) {
+    // https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
+
+    $("body").swipe({
+        swipe: function (event, direction) {
+            const scroller = viewportScroller();
+            let scrollDirection;
+
+            if (direction === "up") scrollDirection = 'next';
+            if (direction === "down") scrollDirection = 'prev';
+
+            scroller[scrollDirection]();
+        }
+    });
 }

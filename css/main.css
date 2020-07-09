@@ -33,11 +33,17 @@ body {
 
 .wrapper {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   position: relative;
   overflow: hidden;
-  transition: all 1s ease;
+  transition: all 1s;
   top: 0;
+}
+
+.maincontent {
+  height: 100%;
+  transition: transform 1s;
+  will-change: transform;
 }
 
 .container {
@@ -66,6 +72,10 @@ h1 {
 
 h4 {
   font-size: 1.5rem;
+}
+
+button {
+  line-height: 0;
 }
 
 .header {
@@ -140,7 +150,7 @@ h4 {
   background-color: #86c3d7;
   padding: 1.3333333333rem 0 2.5rem;
   position: relative;
-  height: 100vh;
+  height: 100%;
   min-height: 36.1111111111rem;
   color: #fff;
 }
@@ -365,6 +375,13 @@ h4 {
   }
 }
 
+.pagenator_bg_dark .pagenator__item_active {
+  border-color: #000;
+}
+.pagenator_bg_dark .pagenator__link::after {
+  background-color: #000;
+}
+
 .pagenator__item {
   margin-bottom: 0.2777777778rem;
   border-radius: 50%;
@@ -376,7 +393,6 @@ h4 {
 }
 .pagenator__item_active {
   border-color: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 .pagenator__link {
@@ -391,14 +407,13 @@ h4 {
   width: 0.3333333333rem;
   height: 0.3333333333rem;
   background-color: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 .section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   min-height: 36.1111111111rem;
   padding: 5.8333333333rem 0;
   position: relative;
@@ -1197,10 +1212,15 @@ h4 {
   left: 4.3888888889rem;
   color: #fff;
 }
+@media screen and (max-width: 768px) {
+  .menu-accordion__title {
+    top: 5rem;
+    left: 3.3333333333rem;
+  }
+}
 @media screen and (max-width: 480px) {
   .menu-accordion__title {
     top: 4.4444444444rem;
-    left: 3.3333333333rem;
   }
 }
 
@@ -1225,21 +1245,10 @@ h4 {
   height: 100%;
 }
 
-@keyframes contentPhones {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 70%;
-  }
-}
 .menu-accordion__item_phones_active {
   position: absolute;
   left: 0;
   top: 0;
-}
-.menu-accordion__item_phones_active .menu-accordion__content {
-  animation: contentPhones 1s forwards;
 }
 
 .menu-accordion__btn {
@@ -1313,16 +1322,6 @@ h4 {
 .menu-accordion__item.active .menu-accordion__content {
   width: 45vmax;
 }
-@media screen and (max-width: 768px) {
-  .menu-accordion__item.active .menu-accordion__content {
-    width: calc(100vw - 16.666rem);
-  }
-}
-@media screen and (max-width: 480px) {
-  .menu-accordion__item.active .menu-accordion__content {
-    width: 100%;
-  }
-}
 
 .menu-accordion__close-content {
   position: absolute;
@@ -1349,7 +1348,12 @@ h4 {
 }
 @media screen and (max-width: 768px) {
   .menu-accordion__text {
-    min-width: 25rem;
+    min-width: 65vmin;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu-accordion__text {
+    min-width: 100vmin;
   }
 }
 
@@ -1513,6 +1517,12 @@ h4 {
   height: 22.5rem;
   margin: 0 auto;
 }
+@media screen and (max-width: 768px) {
+  .player__container {
+    width: 77.5vw;
+    height: 53vmin;
+  }
+}
 
 .player__wrapper {
   width: 100%;
@@ -1558,6 +1568,18 @@ h4 {
   fill: #fff;
   transition: all 0.3s ease;
 }
+@media screen and (max-width: 768px) {
+  .player__splash-play {
+    width: 4.0555555556rem;
+    height: 5.8888888889rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .player__splash-play {
+    width: 2.7222222222rem;
+    height: 3.9444444444rem;
+  }
+}
 
 .player__controls {
   position: absolute;
@@ -1570,6 +1592,16 @@ h4 {
   justify-content: space-between;
   align-items: center;
   padding: 0 1.3888888889rem;
+}
+@media screen and (max-width: 768px) {
+  .player__controls {
+    padding: 0 1.1666666667rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .player__controls {
+    padding: 0 0.6666666667rem;
+  }
 }
 
 .player__start {
@@ -1585,6 +1617,18 @@ h4 {
 }
 .player__start:focus {
   outline: none;
+}
+@media screen and (max-width: 768px) {
+  .player__start {
+    width: 0.7777777778rem;
+    height: 1.1111111111rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .player__start {
+    width: 0.5555555556rem;
+    height: 0.7222222222rem;
+  }
 }
 
 .player__start-play {
@@ -1606,6 +1650,11 @@ h4 {
   right: 0;
   transform: translateY(-50%);
   background-color: #626262;
+}
+@media screen and (max-width: 480px) {
+  .player__playback::before, .player__volume::before {
+    height: 3px;
+  }
 }
 .player__playback:hover, .player__volume:hover {
   cursor: pointer;
@@ -1629,9 +1678,26 @@ h4 {
 .player__playback-button:focus, .player__volume-button:focus {
   outline: none;
 }
+@media screen and (max-width: 768px) {
+  .player__playback-button, .player__volume-button {
+    width: 0.6111111111rem;
+    height: 0.6111111111rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .player__playback-button, .player__volume-button {
+    width: 0.4444444444rem;
+    height: 0.4444444444rem;
+  }
+}
 
 .player__playback {
   width: 24.6666666667rem;
+}
+@media screen and (max-width: 768px) {
+  .player__playback {
+    width: 66.9%;
+  }
 }
 
 .player__playback-button {
@@ -1642,11 +1708,23 @@ h4 {
   height: 1.2222222222rem;
   display: flex;
 }
+@media screen and (max-width: 768px) {
+  .player__speaker {
+    height: 1.1111111111rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .player__speaker {
+    height: 0.7222222222rem;
+  }
+}
 
 .player__speaker-btn {
+  padding: 0;
   height: 100%;
   background-color: transparent;
   border: none;
+  margin-right: 1.0555555556rem;
 }
 .player__speaker-btn:hover {
   cursor: pointer;
@@ -1654,16 +1732,35 @@ h4 {
 .player__speaker-btn:focus {
   outline: none;
 }
+@media screen and (max-width: 768px) {
+  .player__speaker-btn {
+    margin-right: 0.8888888889rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .player__speaker-btn {
+    margin-right: 0.6111111111rem;
+  }
+}
 
 .player__speaker-img {
   width: 1rem;
   height: 100%;
   fill: #626262;
-  margin-right: 1.0555555556rem;
 }
 
 .player__volume {
   width: 3.2222222222rem;
+}
+@media screen and (max-width: 768px) {
+  .player__volume {
+    width: 2.9444444444rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .player__volume {
+    width: 2rem;
+  }
 }
 
 .player__volume-button {
@@ -1952,7 +2049,6 @@ h4 {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: url("../img/map.jpg") center center/cover no-repeat;
 }
 
 .footer {

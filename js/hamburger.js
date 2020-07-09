@@ -20,6 +20,7 @@ function menu(arr) {
         const link = document.createElement('a');
         item.classList.add('full-menu__item');
         link.classList.add('full-menu__link');
+        link.setAttribute('data-scroll-to', e.getAttribute('data-scroll-to'));
         link.href = '#';
         link.textContent = e.textContent;
 
@@ -28,7 +29,12 @@ function menu(arr) {
 
         link.addEventListener('click', e => { // если клик по элементу списка
             e.preventDefault();
-
+                   
+            // Тупо перенос из ScrollPager
+            const $this = $(e.currentTarget);
+            const target = $this.attr('data-scroll-to');
+            const reqSection = $(`[data-section-id=${target}]`);
+            perfomTransition(reqSection.index());
             body.removeChild(full);
         })
     });

@@ -1,5 +1,3 @@
-"use strict";
-
 const btn = document.querySelector('#hamburger'); // кнопка гамбургер
 const array = document.querySelectorAll('.menu__link'); // список элементов меню
 const body = document.body;
@@ -29,7 +27,7 @@ function menu(arr) {
 
         link.addEventListener('click', e => { // если клик по элементу списка
             e.preventDefault();
-                   
+
             // Тупо перенос из ScrollPager
             const $this = $(e.currentTarget);
             const target = $this.attr('data-scroll-to');

@@ -1,5 +1,3 @@
-"use strict";
-
 const validateFields = (form, fieldsArray) => {
     fieldsArray.forEach((field) => {
         field.removeClass("input-error");
@@ -9,7 +7,7 @@ const validateFields = (form, fieldsArray) => {
     });
 
     const errorsField = form.find(".input-error");
-    
+
     return errorsField.length === 0;
 }
 
@@ -20,7 +18,7 @@ $('#myForm').submit(e => {
     const name = form.find("[name = 'name']");
     const phone = form.find("[name = 'phone']");
     const comment = form.find("[name = 'message']");
-    const to = form.find("[name = 'to']");    
+    const to = form.find("[name = 'to']");
 
     const modal = $('#modal');
     const content = modal.find('.overlay__text');
@@ -40,7 +38,7 @@ $('#myForm').submit(e => {
         });
 
         request.done(data => {
-            content.text(data.message);   
+            content.text(data.message);
         });
 
         request.fail(data => {
@@ -53,7 +51,7 @@ $('#myForm').submit(e => {
             $.fancybox.open({
                 src: "#modal",
                 type: "inline"
-            }) 
+            })
         })
     }
 });

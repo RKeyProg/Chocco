@@ -1,12 +1,9 @@
-"use strict";
-
 const HorizontAccord = document.querySelector('.menu-accordion__list'); // поиск списка
-
 
 const mesureWidth = item => {
     let containerWidth = 0;
     const screenWidth = window.innerWidth;
-    const itemContainer = item.closest('.menu-accordion__list');    
+    const itemContainer = item.closest('.menu-accordion__list');
     const titleBlocks = itemContainer.querySelectorAll(".menu-accordion__btn");
     if (window.innerWidth <= 480) {
         containerWidth = screenWidth - titleBlocks[1].offsetWidth;
@@ -19,19 +16,19 @@ const mesureWidth = item => {
 
 HorizontAccord.addEventListener('click', e => {
     e.preventDefault();
-    
+
     const HorizontAccordTarget = e.target;
 
     if (window.innerWidth <= 480) { // если сайт открыли на телефоне
-        const phonesActive = HorizontAccord.querySelector('.menu-accordion__item_phones_active');  // ищем активный элемент
-        
+        const phonesActive = HorizontAccord.querySelector('.menu-accordion__item_phones_active'); // ищем активный элемент
+
         if (phonesActive && (HorizontAccordTarget.closest('.menu-accordion__btn') || HorizontAccordTarget.closest('.menu-accordion__close-content'))) { // если нашли и клик произошел по кнопке или по крестику
             HorizontAccordTarget.closest('.menu-accordion__item_phones_active').remove(); // удаляем активный элемент
         } else if (!phonesActive && HorizontAccordTarget.closest('.menu-accordion__btn')) { // если активного нету и клик произошел по кнопке
             const newItem = HorizontAccordTarget.closest('.menu-accordion__item').cloneNode(true); // создаем клон элемента списка, по которому произошел клик
             HorizontAccord.appendChild(newItem).classList.add('menu-accordion__item_phones_active'); // всатвляем клон в конец списка
             console.log(HorizontAccordTarget);
-            
+
             newItem.querySelector('.menu-accordion__content').style.width = `${mesureWidth(HorizontAccordTarget)}px`;
         }
     } else { // если другие устройства

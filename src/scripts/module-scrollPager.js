@@ -1,5 +1,3 @@
-"use strict"
-
 const sections = $('section');
 const display = $('.maincontent');
 const sideMenu = $('.pagenator');
@@ -58,11 +56,11 @@ const perfomTransition = sectionEq => {
 
     resetActiveClassForItem(sections, sectionEq, 'active');
 
-    setTimeout(() => {     
-        resetActiveClassForItem(menuItems, sectionEq, 'pagenator__item_active');  
+    setTimeout(() => {
+        resetActiveClassForItem(menuItems, sectionEq, 'pagenator__item_active');
     }, transitionOver / 3);
 
-    setTimeout(() => {       
+    setTimeout(() => {
         inScroll = false;
     }, transitionOver + mouseInertionOver);
 }
@@ -70,7 +68,7 @@ const perfomTransition = sectionEq => {
 const viewportScroller = () => {
     const activeSection = sections.filter('.active');
     const nextSection = activeSection.next('section');
-    const prevSection = activeSection.prev('section');    
+    const prevSection = activeSection.prev('section');
 
     return {
         next() {
@@ -89,7 +87,7 @@ const viewportScroller = () => {
 $(window).on('wheel', e => {
     const deltaY = e.originalEvent.deltaY;
     const scroller = viewportScroller();
-    
+
     if (deltaY > 0) {
         scroller.next();
     }
@@ -110,7 +108,7 @@ $(window).on('keydown', e => {
         case 38:
             scroller.prev();
             break;
-        
+
         case 40:
             scroller.next();
             break;
@@ -119,11 +117,11 @@ $(window).on('keydown', e => {
 
 $('.wrapper').on('touchmove', e => e.preventDefault());
 
-$('[data-scroll-to]').on('click', e => {    
+$('[data-scroll-to]').on('click', e => {
     e.preventDefault();
 
     const $this = $(e.currentTarget);
-    
+
     const target = $this.attr('data-scroll-to');
     const reqSection = $(`[data-section-id=${target}]`);
 

@@ -1,5 +1,3 @@
-"use strict";
-
 const findBlockByAlias = alias => {
     return $(".review__item").filter((ndx, item) => {
         return $(item).attr('data-linked-with') == alias;

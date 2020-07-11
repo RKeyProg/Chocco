@@ -1,5 +1,3 @@
-'use strict'
-
 const playerContainer = $('.player');
 const player = $('.player__elem')[0];
 
@@ -7,7 +5,7 @@ let eventsInit = () => {
     $('.player__start').on('click', e => {
         e.preventDefault();
 
-        if (playerContainer.hasClass('paused')){
+        if (playerContainer.hasClass('paused')) {
             player.pause();
         } else {
             player.play();
@@ -16,7 +14,7 @@ let eventsInit = () => {
 
     $('.player__playback').on('click', e => {
         const playbackBar = $(e.currentTarget);
-        const playbackBarClickedPosition = e.originalEvent.layerX;        
+        const playbackBarClickedPosition = e.originalEvent.layerX;
         const newButtonPositionPercent = (playbackBarClickedPosition / playbackBar.width()) * 100;
         const newPlaybackPositionSec = (player.duration / 100) * newButtonPositionPercent;
 
@@ -33,12 +31,12 @@ let eventsInit = () => {
         let newVolumePositionPercent = (volumeBarclickedPosition / volumeBar.width()) * 100;
 
         if (newVolumePositionPercent < 0) newVolumePositionPercent = 0;
-        
+
         $('.player__volume-button').css({
             left: `${newVolumePositionPercent}%`
         });
-        
-        player.volume = newVolumePositionPercent/100;
+
+        player.volume = newVolumePositionPercent / 100;
     })
 
     let playerVolumeNow = player.volume;
@@ -70,42 +68,10 @@ player.onpause = () => {
     playerContainer.removeClass('paused');
 }
 
-player.onplay = () =>  {
+player.onplay = () => {
     playerContainer.addClass('active');
     playerContainer.addClass('paused')
-
-    // let interval;
-    // const durationSec = player.duration;
-
-    // $('.player__duraction-estimate').text(formatTime(durationSec));
-
-    // if (typeof interval !== 'undefined') {
-    //     clearInterval(interval);
-    // }
-
-    // interval = setInterval(() => {
-    //     const completedSec = player.currentTime;
-    //     const completedPercent = (completedSec / durationSec) * 100;
-
-    //     $('.player__playback-button').css({
-    //         left: `${completedPercent}%`
-    //     })
-    //     $('.player__duraction-completed').text(formatTime(completedSec))
-    // }, 1000);
 }
-
-// const formatTime = timeSec => {
-//     const roundTime = Math.round(timeSec);
-
-//     const minutes = addZero(Math.floor(roundTime / 60));
-//     const seconds = addZero(roundTime - minutes * 60);
-
-//     function addZero(num) {
-//         return num < 10 ? `0${num}` : num;
-//     }
-
-//     return `${minutes}:${seconds}`;
-// }
 
 eventsInit();
 

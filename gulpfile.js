@@ -3,7 +3,8 @@ const {
     dest,
     task,
     series,
-    watch
+    watch,
+    parallel
 } = require('gulp');
 const rm = require('gulp-rm');
 const sass = require('gulp-sass');
@@ -16,52 +17,121 @@ const px2rem = require('gulp-smile-px2rem');
 const gcmq = require('gulp-group-css-media-queries');
 const cssmin = require('gulp-cssmin');
 const sourcemaps = require('gulp-sourcemaps');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const svgo = require('gulp-svgo');
+const svgoSprite = require('gulp-svg-sprite');
+const svgSprite = require('gulp-svg-sprite');
+const gulpif = require('gulp-if');
 
+const env = process.env.NODE_ENV;
+
+const {
+    DIST_PATH,
+    SRC_PATH,
+    STYLES_LIBS,
+    JS_LIBS
+} = require('./gulp.config');
 sass.compiler = require('node-sass');
 
+
 task('clean', () => {
-    return src('dist/**/*', {
+    return src(`${DIST_PATH}/**/*`, {
         read: false
     }).pipe(rm());
 })
 
 task('copy:html', () => {
-    return src('src/*.html').pipe(dest('dist')).pipe(reload({
+    return src(`${SRC_PATH}/*.html`).pipe(dest(`${DIST_PATH}`)).pipe(reload({
         stream: true
     }));
 });
 
-const styles = [
-    'node_modules/normalize.css/normalize.css',
-    'src/styles/main.scss'
-]
+task('copy:img', () => {
+    return src([`!${SRC_PATH}/img/icons`, `${SRC_PATH}/img/*`, `${SRC_PATH}/img/icons/marker.svg`]).pipe(dest(`${DIST_PATH}/img`)).pipe(reload({
+        stream: true
+    }));
+});
+
+task('copy:video', () => {
+    return src([`${SRC_PATH}/video/*`]).pipe(dest(`${DIST_PATH}/video`)).pipe(reload({
+        stream: true
+    }));
+});
 
 task('styles', () => {
-    return src(styles)
-        .pipe(sourcemaps.init())
-        .pipe(concat('main.scss'))
+    return src([...STYLES_LIBS, `${SRC_PATH}/styles/main.scss`])
+        .pipe(gulpif(env === 'dev', sourcemaps.init()))
+        .pipe(concat('main.min.scss'))
         .pipe(sassGlob())
         .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({
+        .pipe(gulpif(env === 'dev', autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
-        }))
-        .pipe(gcmq())
-        .pipe(cssmin())
-        .pipe(sourcemaps.write())
-        .pipe(dest('dist'));
+        })))
+        .pipe(gulpif(env === 'prod', gcmq()))
+        .pipe(gulpif(env === 'prod', cssmin()))
+        .pipe(gulpif(env === 'dev', sourcemaps.write()))
+        .pipe(dest(`${DIST_PATH}`))
+        .pipe(reload({
+            stream: true
+        }));
 });
+
+task('scripts', () => {
+    return src([...JS_LIBS, `${SRC_PATH}/scripts/*.js`])
+        .pipe(gulpif(env === 'dev', sourcemaps.init()))
+        .pipe(concat('main.min.js'))
+        .pipe(gulpif(env === 'dev', babel({
+            presets: ['@babel/env']
+        })))
+        .pipe(gulpif(env === 'prod', uglify()))
+        .pipe(gulpif(env === 'dev', sourcemaps.write()))
+        .pipe(dest(`${DIST_PATH}`))
+        .pipe(reload({
+            stream: true
+        }));
+})
+
+task('icons', () => {
+    return src(`${SRC_PATH}/img/icons/*.svg`)
+        .pipe(svgo({
+            plugins: [{
+                removeAttrs: {
+                    attrs: "(fill|stroke|style|width|height|data.*)"
+                }
+            }]
+        }))
+        .pipe(svgSprite({
+            mode: {
+                symbol: {
+                    sprite: "../sprite.svg"
+                }
+            }
+        }))
+        .pipe(dest(`${DIST_PATH}/img/icons`));
+})
 
 task('server', () => {
     browserSync.init({
         server: {
-            baseDir: "./dist"
+            baseDir: `./${DIST_PATH}`
         },
         open: false
     });
 });
 
-watch('./src/styles/**/*.scss', series('styles'));
-watch('./src/*.html', series('copy:html'));
+task('watch', () => {
+    watch(`./${SRC_PATH}/styles/**/*.scss`, series('styles'));
+    watch(`./${SRC_PATH}/*.html`, series('copy:html'));
+    watch(`./${SRC_PATH}/scripts/**/*.js`, series('scripts'));
+    watch(`./${SRC_PATH}/img/icons/**/*.svg`, series('icons'));
+})
 
-task('default', series('clean', 'copy:html', 'styles', 'server'));
+task('default', series('clean',
+    parallel('copy:html', 'copy:img', 'copy:video', 'styles', 'scripts', 'icons'), parallel('watch', 'server'))
+);
+
+task('build', series('clean',
+    parallel('copy:html', 'copy:img', 'copy:video', 'styles', 'scripts', 'icons'))
+);

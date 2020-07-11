@@ -1,5 +1,3 @@
-'use strict'
-
 let myMap;
 
 const init = () => {
@@ -19,7 +17,7 @@ const init = () => {
     const myCollection = new ymaps.GeoObjectCollection({}, {
         draggable: false,
         iconLayout: 'default#image',
-        iconImageHref: "../img/icons/marker.svg",
+        iconImageHref: "./img/marker.svg",
         iconImageSize: [46, 57],
         iconImageOffset: [-35, -52]
     })
@@ -31,6 +29,6 @@ const init = () => {
     myMap.geoObjects.add(myCollection);
 
     myMap.behaviors.disable('scrollZoom');
-} 
+}
 
 ymaps.ready(init);

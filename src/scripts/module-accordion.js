@@ -1,5 +1,3 @@
-"use strict";
-
 const openItem = item => {
     const container = item.closest('.team__item');
     const content = container.find('.team__content');
@@ -23,14 +21,14 @@ const closeEveryItem = container => {
 }
 
 $('.team__title').on('click', e => {
-   const $this = $(e.currentTarget);
-   const container = $this.closest('.team__list');
-   const elemContainer = $this.closest('.team__item');
+    const $this = $(e.currentTarget);
+    const container = $this.closest('.team__list');
+    const elemContainer = $this.closest('.team__item');
 
-   if (elemContainer.hasClass('team__item_active')) {
-       closeEveryItem(container);
-   } else {    
-       closeEveryItem(container);
-       openItem($this);
-   }
+    if (elemContainer.hasClass('team__item_active')) {
+        closeEveryItem(container);
+    } else {
+        closeEveryItem(container);
+        openItem($this);
+    }
 })

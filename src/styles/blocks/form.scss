@@ -202,7 +202,7 @@ $radio-and-check-size: rem(25px);
 .form__check-picture::after {
     content: "";
     display: none;
-    background: url("../img/icons/checkmark.svg") center center no-repeat;
+    background: url("./img/icons/checkmark.svg") center center no-repeat;
     width: $radio-and-check-size - rem(14px);
     height: $radio-and-check-size - rem(16px);
 }

@@ -199,16 +199,15 @@ $radio-and-check-size: rem(25px);
     }
 }
 
-.form__check-picture::after {
-    content: "";
+.form__check-picture_active {
     display: none;
-    background: url("./img/icons/checkmark.svg") center center no-repeat;
+    fill: $darkGreen;
     width: $radio-and-check-size - rem(14px);
     height: $radio-and-check-size - rem(16px);
 }
 
 .form__check:checked {
-    ~ .form__check-picture::after {
+    ~ .form__check-picture .form__check-picture_active {
         display: block;
     }
 }

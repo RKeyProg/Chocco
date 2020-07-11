@@ -3,6 +3,45 @@
     height: rem(405px);
     margin: 0 auto;
 
+    &::before {
+        content: '';
+        display: block;
+        background: url('./img/sheet7.png') center center/ cover no-repeat;
+        position: absolute;
+        left: 0;
+        bottom: -50px;
+        width: 9%;
+        height: 27%;
+
+        @include tablets {
+            bottom: 85px;
+            width: 7%;
+            height: 18%;
+        }
+
+        @include phones {
+            bottom: -50px;
+            width: 10%;
+            height: 24%;
+        }
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        background: url('./img/sheet8.png') center center/ cover no-repeat;
+        position: absolute;
+        right: 35px;
+        top: 45px;
+        width: 10%;
+        height: 13%;
+
+        @include tablets {
+            right: 5px;
+            top: 45px;
+        }
+    }
+
     @include tablets {
         width: 77.5vw;
         height: 53vmin;
@@ -122,9 +161,10 @@
     fill: #626262;
 }
 
-.player__playback, .player__volume {
+.player__playback,
+.player__volume {
     position: relative;
-    
+
     &::before {
         content: '';
         height: 4px;
@@ -146,7 +186,8 @@
     }
 }
 
-.player__playback-button, .player__volume-button {
+.player__playback-button,
+.player__volume-button {
     position: absolute;
     top: 50%;
     padding: 0;
@@ -248,11 +289,6 @@
     left: 100%;
 }
 
-// .player__duraction {
-//     color: #626262;
-//     font-weight: 700;
-// }
-
 .player {
     width: 100%;
     height: 100%;
@@ -268,15 +304,13 @@
         .player__start {
             border: none;
             border-radius: 0;
-            width: rem(14px);
-            height: rem(22px);
 
             &::after,
             &::before {
                 content: '';
                 display: block;
                 position: absolute;
-                width: 5px;
+                width: 35%;
                 top: 0;
                 bottom: 0;
                 background: #626262;

@@ -203,6 +203,30 @@
     & .section__title {
         margin-bottom: rem(50px);
     }
+
+    &::after {
+        content: '';
+        display: block;
+        width: rem(200px);
+        min-height: rem(280px);
+        background: url('./img/blackberriSheet.png') center center / 100% auto no-repeat;
+        position: absolute;
+        right: 0;
+        bottom: -110px;
+        z-index: $z-after;
+
+        @include tablets {
+            min-height: 35%;
+            width: 26%;
+            bottom: -90px;
+        }
+
+        @include phones {
+            min-height: 30%;
+            width: 35%;
+            bottom: -90px;
+        }
+    }
 }
 
 .section__orders {

@@ -48,7 +48,13 @@ task('copy:html', () => {
 });
 
 task('copy:img', () => {
-    return src([`!${SRC_PATH}/img/icons`, `${SRC_PATH}/img/*`, `${SRC_PATH}/img/icons/marker.svg`]).pipe(dest(`${DIST_PATH}/img`)).pipe(reload({
+    return src([`!${SRC_PATH}/img/icons`, `${SRC_PATH}/img/*`]).pipe(dest(`${DIST_PATH}/img`)).pipe(reload({
+        stream: true
+    }));
+});
+
+task('copy:svg', () => {
+    return src([`${SRC_PATH}/img/icons/marker.svg`]).pipe(dest(`${DIST_PATH}/img/icons`)).pipe(reload({
         stream: true
     }));
 });
@@ -129,9 +135,9 @@ task('watch', () => {
 })
 
 task('default', series('clean',
-    parallel('copy:html', 'copy:img', 'copy:video', 'styles', 'scripts', 'icons'), parallel('watch', 'server'))
+    parallel('copy:html', 'copy:img', 'copy:svg', 'copy:video', 'styles', 'scripts', 'icons'), parallel('watch', 'server'))
 );
 
 task('build', series('clean',
-    parallel('copy:html', 'copy:img', 'copy:video', 'styles', 'scripts', 'icons'))
+    parallel('copy:html', 'copy:img', 'copy:svg', 'copy:video', 'styles', 'scripts', 'icons'))
 );

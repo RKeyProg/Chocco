@@ -1,17 +1,9 @@
-/* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Remove default padding */
-ul,
-ol {
-  padding: 0;
-}
-
-/* Remove default margin */
 body,
 h1,
 h2,
@@ -27,38 +19,18 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  padding: 0;
 }
 
-/* Set core root defaults */
 html {
   scroll-behavior: smooth;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.2;
-}
-
-/* Remove list styles on ul, ol elements with a class attribute */
 ul,
 ol {
   list-style: none;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
@@ -66,89 +38,72 @@ select {
   font: inherit;
 }
 
-/* Blur images when they have no alt attribute */
-img:not([alt]) {
-  filter: blur(10px);
-}
+html {
+  font-size: $base-font-size;
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  @include tablets {
+    font-size: $base-font-size - 1px;
+  }
+
+  @include phones {
+    font-size: 4vmin;
   }
 }
 
-article > * + * {
-    margin-top: 0;
-}
-
-html {
-    font-size: $base-font-size;
-
-    @include tablets {
-        font-size: $base-font-size - 1px;
-    }
-
-    @include phones {
-        font-size: 4vmin;
-    }
-}
-
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
-    font-family: 'Alegreya Sans', sans-serif;
-    font-weight: 400;
-    font-size: rem($base-font-size);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #666;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 400;
+  font-size: rem($base-font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #666;
 }
 
 .wrapper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    transition: all 1s;
-    top: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 1s;
+  top: 0;
 }
 
 .maincontent {
-    height: 100%;
-    transition: transform 1s;
-    will-change: transform;
+  height: 100%;
+  transition: transform 1s;
+  will-change: transform;
 }
 
 .container {
-    width: 95%;
-    max-width: $container-width;
-    margin: 0 auto;
-    position: relative;
-    z-index: $z-container;
+  width: 95%;
+  max-width: $container-width;
+  margin: 0 auto;
+  position: relative;
+  z-index: $z-container;
 }
 
 img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    transition: all .3s ease;
+  text-decoration: none;
+  color: inherit;
+  transition: all .3s ease;
 }
 
 h1 {
-    font-size: rem(48px);
-    text-transform: uppercase;
+  font-size: rem(48px);
+  text-transform: uppercase;
 }
 
 h4 {
-    font-size: rem(27px);
+  font-size: rem(27px);
 }

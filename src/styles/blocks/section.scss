@@ -8,6 +8,10 @@
     position: relative;
     color: #000;
 
+    @include tablets {
+        min-height: auto;
+    }
+
     @include phones {
         padding: rem(10px) 0;
     }

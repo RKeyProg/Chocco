@@ -144,7 +144,7 @@
     padding: 0;
     position: relative;
     display: flex;
-    background: url('./img/menuBG.jpg') center center / cover no-repeat;
+    background: url('./img/menuBG.webp') center center / cover no-repeat;
 
     &::before {
         @include darkening;
@@ -268,7 +268,7 @@
 }
 
 .section__orders {
-    background: url("./img/berriesBG.jpg") center top / cover;
+    background: url("./img/berriesBG.webp") center top / cover;
 }
 
 .section_font-color_green {

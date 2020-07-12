@@ -36,7 +36,7 @@
 }
 
 .section__hero {
-    background: url("./img/palm.png") right bottom 65% no-repeat;
+    background: url("./img/palm.webp") right bottom 65% no-repeat;
     background-color: $blue;
     padding: rem(24px) 0 rem(45px);
     position: relative;
@@ -56,7 +56,7 @@
         bottom: rem(-40px);
     
         @media screen and (min-width: $tablets+1) {
-            content: url("./img/sheet3.png");      
+            content: url("./img/sheet3.webp");      
         }
     }
     
@@ -67,7 +67,7 @@
         bottom: rem(-40px);
     
         @media screen and (min-width: $tablets+1) {
-            content: url("./img/berries.png");
+            content: url("./img/berries.webp");
         }
     }
     
@@ -90,7 +90,7 @@
         }
 
         @media screen and (min-width: $phones+1) {
-            content: url("./img/patternsheet.png");
+            content: url("./img/patternsheet.webp");
         }
     }
 
@@ -102,7 +102,7 @@
         z-index: $z-after;
 
         @media screen and (min-width: $phones+1) {
-            content: url("./img/cake.png");
+            content: url("./img/cake.webp");
         }
     }
 }
@@ -119,7 +119,7 @@
         content: '';
         position: absolute;
         display: block;
-        background: url("./img/blueberries.png") top 195px right 15px/68% no-repeat, url("./img/patternpalm.png") center center/cover no-repeat;
+        background: url("./img/blueberries.webp") top 195px right 15px/68% no-repeat, url("./img/patternpalm.webp") center center/cover no-repeat;
         width: rem(196px);
         min-height: rem(450px);
         top: -225px;
@@ -131,7 +131,7 @@
         content: '';
         position: absolute;
         display: block;
-        background: url("./img/raspberry.png") center center / cover no-repeat;
+        background: url("./img/raspberry.webp") center center / cover no-repeat;
         width: rem(104px);
         min-height: rem(114px);
         bottom: -43px;
@@ -161,7 +161,7 @@
         content: "";
         position: absolute;
         display: block;
-        background: url("./img/strawberry.png") center center / 100% auto no-repeat;
+        background: url("./img/strawberry.webp") center center / 100% auto no-repeat;
         width: rem(169px);
         min-height: rem(94px);
         top: 40px;
@@ -181,7 +181,7 @@
     &::after {
         content: "";
         display: block;
-        background: url("./img/berries2.png") 0 rem(54px) no-repeat, url("./img/patternsheet2.png") left top no-repeat;
+        background: url("./img/berries2.webp") 0 rem(54px) no-repeat, url("./img/patternsheet2.webp") left top no-repeat;
         width: rem(156px);
         min-height: rem(318px);
         position: absolute;
@@ -191,7 +191,7 @@
         transform: translateY(50%);
 
         @include tablets {
-            background: url("./img/berries2.png") 0 rem(54px) / contain no-repeat, url("./img/patternsheet2.png") left top / contain no-repeat;
+            background: url("./img/berries2.webp") 0 rem(54px) / contain no-repeat, url("./img/patternsheet2.webp") left top / contain no-repeat;
             width: 20%;
         }
 
@@ -213,7 +213,7 @@
         display: block;
         width: rem(200px);
         min-height: rem(280px);
-        background: url('./img/blackberriSheet.png') center center / 100% auto no-repeat;
+        background: url('./img/blackberriSheet.webp') center center / 100% auto no-repeat;
         position: absolute;
         right: 0;
         bottom: -110px;
@@ -241,7 +241,7 @@
         right: 0;
 
         @media screen and (min-width: $tablets + 1px) {
-            content: url("./img/sheet6.png");
+            content: url("./img/sheet6.webp");
         }
     }
 

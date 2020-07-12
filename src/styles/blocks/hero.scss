@@ -1,5 +1,5 @@
 .hero {
-    background: url("./img/palm.png") right bottom 65% no-repeat;
+    background: url("./img/palm.webp") right bottom 65% no-repeat;
     background-color: $blue;
     padding: rem(24px) 0 rem(45px);
     position: relative;
@@ -19,7 +19,7 @@
         bottom: rem(-40px);
     
         @media screen and (min-width: $tablets) {
-            content: url("./img/sheet3.png");      
+            content: url("./img/sheet3.webp");      
         }
     }
     
@@ -30,7 +30,7 @@
         bottom: rem(-40px);
     
         @media screen and (min-width: $tablets) {
-            content: url("./img/berries.png");
+            content: url("./img/berries.webp");
         }
     }
     
@@ -49,7 +49,7 @@
     height: 100%;
 
     @media screen and (min-width: $tablets + 1px) {
-        background: url("./img/chocclate.png") right center / 50% auto no-repeat;
+        background: url("./img/chocclate.webp") right center / 50% auto no-repeat;
     }
 }
 
@@ -70,7 +70,7 @@
             content: "";
             width: rem(316px);
             height: rem(330px);
-            background: url("./img/berries768.png") center center / contain no-repeat;
+            background: url("./img/berries768.webp") center center / contain no-repeat;
             margin-bottom: 5px;
         }
     }

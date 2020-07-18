@@ -4,17 +4,17 @@
   "description": "How to install and build Chocco 1. git clone https://github.com/RKeyProg/Chocco.git 2. cd Chocco 3. npm i",
   "main": "index.js",
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "bxslider": "^4.2.14",
-    "fancybox": "^3.0.1",
     "jquery": "^3.5.1",
     "jquery-touchswipe": "^1.6.19",
     "mobile-detect": "^1.4.4",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
+    "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.10",
     "cross-env": "^7.0.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",

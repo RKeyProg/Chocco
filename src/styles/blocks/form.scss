@@ -178,7 +178,6 @@ $radio-and-check-size: rem(25px);
 }
 
 .form__radio-picture {
-    display: block;
     border-radius: 50%;
 
     &::after {
@@ -199,10 +198,6 @@ $radio-and-check-size: rem(25px);
     ~ .form__radio-picture::after {
         display: block;
     }
-}
-
-.form__check-picture {
-    display: block;
 }
 
 .form__check-picture_active {

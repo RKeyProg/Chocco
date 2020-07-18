@@ -65,12 +65,22 @@ task('copy:video', () => {
     }));
 });
 
-task('styles', () => {
-    return src([...STYLES_LIBS, `${SRC_PATH}/styles/main.scss`])
+task('sass', () => {
+    return src(`${SRC_PATH}/styles/main.scss`)
         .pipe(gulpif(env === 'dev', sourcemaps.init()))
         .pipe(concat('main.min.scss'))
         .pipe(sassGlob())
         .pipe(sass().on('error', sass.logError))
+        .pipe(dest(`${SRC_PATH}/styles`))
+        .pipe(reload({
+            stream: true
+        }));
+});
+
+task('styles', () => {
+    return src([...STYLES_LIBS, `${SRC_PATH}/styles/main.min.css`])
+        .pipe(gulpif(env === 'dev', sourcemaps.init()))
+        .pipe(concat('main.min.css'))
         .pipe(gulpif(env === 'dev', autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
@@ -128,16 +138,16 @@ task('server', () => {
 });
 
 task('watch', () => {
-    watch(`./${SRC_PATH}/styles/**/*.scss`, series('styles'));
+    watch(`./${SRC_PATH}/styles/**/*.scss`, series('sass', 'styles'));
     watch(`./${SRC_PATH}/*.html`, series('copy:html'));
     watch(`./${SRC_PATH}/scripts/**/*.js`, series('scripts'));
     watch(`./${SRC_PATH}/img/icons/**/*.svg`, series('icons'));
 })
 
-task('default', series('clean',
+task('default', series('clean', 'sass',
     parallel('copy:html', 'copy:img', 'copy:svg', 'copy:video', 'styles', 'scripts', 'icons'), parallel('watch', 'server'))
 );
 
-task('build', series('clean',
+task('build', series('clean', 'sass',
     parallel('copy:html', 'copy:img', 'copy:svg', 'copy:video', 'styles', 'scripts', 'icons'))
 );
